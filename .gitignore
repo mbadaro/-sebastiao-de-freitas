@@ -20,3 +20,6 @@ Thumbs.db
 # Imagens de documentos de acervos com direitos de reprodução não verificados
 # (repositório público = republicação; regra D8 do plano). Ficam só na máquina local.
 pesquisa/familysearch/
+
+# Documentos pessoais do responsável (ex.: certificado da CIL): nunca no repositório público
+pesquisa/privado/
