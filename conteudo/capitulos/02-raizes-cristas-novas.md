@@ -11,7 +11,7 @@ Em 1627, o Santo Ofício enviou um visitador às capitanias do Sul do Brasil :fo
 
 Certa vez, na vila, alguns moradores estavam reunidos em uma casa para ouvir a leitura de um livro em versos sobre a vida de São José. Quando o leitor chegou à passagem da Anunciação, em que a Virgem concebe sem obra de varão, Sebastião de Freitas comentou que aquilo não era possível sem homem, em palavras que o documento chama de "mui deshonestas" :fonte{nat=fato ref="antt-caderno-promotor-24" p="fl. 316"}.
 
-A frase foi denunciada. Sebastião foi ele mesmo confessar o que havia dito e, na confissão, negou ser cristão-novo. Depois, achando que o visitador poderia descobrir a verdade, procurou o reitor do colégio dos jesuítas da vila e pediu que se registrasse que era, sim, cristão-novo :fonte{nat=fato ref="antt-caderno-promotor-24" p="fl. 316"}:
+A frase foi denunciada. Sebastião foi ele mesmo confessar o que havia dito e, na confissão, negou ser cristão-novo. Depois, achando que o visitador poderia descobrir a verdade, procurou o reitor do colégio dos jesuítas da vila e pediu que se registrasse que era, sim, cristão-novo :fonte{nat=fato ref="antt-caderno-promotor-24" p="fl. 316"}. Era o mesmo colégio em torno do qual São Paulo havia nascido, fundado em 1554 por padres da Companhia de Jesus, entre eles Manoel da Nóbrega e José de Anchieta, no lugar que hoje se chama Pátio do Colégio :fonte{nat=historiografia ref="alesp-patio-do-colegio"}:
 
 > "Veo se accusar dellas E negou ser xº nº, E parecendo lhe q podia Eu saber que era xº nº foi ter com o Reytor da Casa q nesta villa tem os Padres da Companhia pa. q. me fallase, e se tomase declaração como era xº nº, E assi o veio declarar."
 

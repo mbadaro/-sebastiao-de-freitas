@@ -141,6 +141,23 @@ Material já existente nas fontes consultadas, levantado para enriquecer os cap�
 | A.14 | A Inquisição só mandava prender quando havia ao menos duas denúncias contra a mesma pessoa | BOG06, p. 155–156 | consultado | historiografia |
 | A.15 | 1632: jesuítas espanhóis acusam os paulistas que atacavam as missões do Guairá de serem "judeus encobertos" | BOG06, p. 79–80 | consultado | historiografia |
 
+## Contexto dos lugares e personagens (2026-11-15)
+
+Pedido do responsável: enriquecer o texto com o contexto dos lugares e pessoas citados, sem inventar.
+
+| # | Informação | Fonte | Status | Natureza |
+|---|---|---|---|---|
+| C.1 | Silves: Xelb, capital do Algarve muçulmano; cerco em 1189, conquista definitiva em 1242; perda de importância com o assoreamento do Arade | Wikipédia (cita J. H. Saraiva, 1986) | informal | historiografia (citada) |
+| C.2 | Sede do bispado do Algarve transferida de Silves para Faro em 1577 | Wikipedia (Diocese de Faro) | informal | historiografia (citada) |
+| C.3 | Alagoa = Lagoa; integrada a Silves até ser elevada a vila em 1773 (d. José) | Wikipedia (Lagoa) | informal | historiografia (citada) |
+| C.4 | Misericórdia de Silves instituída em 1498/1499; assumiu o hospital (alvará de 1574); igreja do início do séc. XVI, portal manuelino (década de 1520), Imóvel de Interesse Público (1961), aberta ao público desde 2000 por acordo Santa Casa–Câmara | Wikipédia (cita SIPA/DGPC) | informal | historiografia (citada) |
+| C.5 | D. Francisco de Sousa: c. 1540, filho do conde de Prado; chegou a Salvador em 9/6/1591; governou até 1602; superintendente das minas a partir de 1608; título de marquês prometido, não recebido; morreu em São Paulo em 11/6/1611 | EVE — Enciclopédia Virtual da Expansão Portuguesa (Rita Domingues, 2009) | consultado | historiografia |
+| C.6 | Gabriel Soares de Sousa: autor do *Tratado descritivo do Brasil* (1587); viveu 17 anos na Bahia; morreu em 1591 | Wikipedia; EVE (plano apoiado pelo governador); GeneArc (morreu na expedição) | informal / consultado | historiografia (citada) |
+| C.7 | Colégio jesuíta de São Paulo, 1554 (Nóbrega, Anchieta); jesuítas expulsos do colégio em 1640 por conflitos com os bandeirantes; retorno treze anos depois | ALESP, "No Pátio do Colégio…" | informal | historiografia (citada) |
+| C.8 | Guairá (atual Paraná): reduções jesuíticas; bandeira de 1628 de Manuel Preto, com Raposo Tavares como imediato; maior parte das reduções destruída | InfoEscola | informal | historiografia (citada) |
+| C.9 | Juqueri: sesmaria dos Campos do Juqueri; povoado conhecido como vila desde 1642, em torno de capela de N. S. do Desterro; município em 1889 (Juqueri); Mairiporã em 1948 | IBGE, histórico do município | consultado | historiografia |
+| C.10 | **Divergência**: título de marquês das Minas "conferido" a d. Francisco (Silva Leme) × prometido e não recebido (EVE) | SL7, p. 169; EVE | — | divergência |
+
 ## Contexto histórico — fontes a levantar (T012, próxima rodada)
 
 Eventos de contexto que a narrativa vai precisar, ainda **sem fonte historiográfica catalogada**:

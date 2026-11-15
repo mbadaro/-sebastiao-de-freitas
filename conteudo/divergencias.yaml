@@ -28,6 +28,14 @@
       referencias: [{ ref: amorese-ps25-085 }]
   observacao: O site Amorese atribui o ano de 1596 a José Gonçalves Salvador.
 
+- id: titulo-marques-das-minas
+  tema: O título de marquês das Minas
+  versoes:
+    - texto: O título de marquês foi conferido a d. Francisco de Sousa.
+      referencias: [{ ref: silva-leme-v7, p: 169 }]
+    - texto: O título foi prometido a d. Francisco de Sousa para quando a exploração das minas começasse, mas ele morreu antes de recebê-lo.
+      referencias: [{ ref: eve-francisco-de-sousa }]
+
 - id: titulo-de-cavaleiro
   tema: Ano em que foi feito cavaleiro
   versoes:

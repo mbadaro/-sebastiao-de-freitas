@@ -89,7 +89,64 @@
   tipo: secundaria
   observacao: Conhecida por citação no site Moyarte.
 
+- id: eve-francisco-de-sousa
+  abnt: "DOMINGUES, Rita. Sousa, D. Francisco de. In: *Enciclopédia Virtual da Expansão Portuguesa*. Lisboa: CHAM, NOVA FCSH, 2009."
+  tipo: secundaria
+  url: https://eve.fcsh.unl.pt/index.php/en/node/4431
+  acesso: 15 nov. 2026
+
+- id: ibge-mairipora
+  abnt: "INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. *Mairiporã, São Paulo*: histórico. Rio de Janeiro: IBGE, [2010]."
+  tipo: secundaria
+  url: https://biblioteca.ibge.gov.br/visualizacao/dtb/saopaulo/mairipora.pdf
+  acesso: 15 nov. 2026
+
 # --- Fontes informais (origem conhecida, sem valor de fonte formal) ----------------------------
+
+- id: wikipedia-silves
+  abnt: "SILVES (Portugal). In: WIKIPÉDIA: a enciclopédia livre. [S. l.]: Wikimedia Foundation, 2026."
+  tipo: informal
+  url: https://pt.wikipedia.org/wiki/Silves_(Portugal)
+  acesso: 15 nov. 2026
+  observacao: Cita José Hermano Saraiva, O tempo e a alma (1986), para a reconquista e o assoreamento do Arade.
+
+- id: wikipedia-diocese-faro
+  abnt: "ROMAN Catholic Diocese of Faro. In: WIKIPEDIA: the free encyclopedia. [S. l.]: Wikimedia Foundation, 2026."
+  tipo: informal
+  url: https://en.wikipedia.org/wiki/Diocese_of_Faro
+  acesso: 15 nov. 2026
+
+- id: wikipedia-misericordia-silves
+  abnt: "IGREJA da Misericórdia de Silves. In: WIKIPÉDIA: a enciclopédia livre. [S. l.]: Wikimedia Foundation, 2026."
+  tipo: informal
+  url: https://pt.wikipedia.org/wiki/Igreja_da_Misericórdia_de_Silves
+  acesso: 15 nov. 2026
+  observacao: Cita o SIPA/Direção-Geral do Património Cultural e a Câmara Municipal de Silves.
+
+- id: wikipedia-lagoa
+  abnt: "LAGOA, Portugal. In: WIKIPEDIA: the free encyclopedia. [S. l.]: Wikimedia Foundation, 2026."
+  tipo: informal
+  url: https://en.wikipedia.org/wiki/Lagoa,_Portugal
+  acesso: 15 nov. 2026
+
+- id: wikipedia-gabriel-soares
+  abnt: "GABRIEL Soares de Sousa. In: WIKIPEDIA: the free encyclopedia. [S. l.]: Wikimedia Foundation, 2026."
+  tipo: informal
+  url: https://en.wikipedia.org/wiki/Gabriel_Soares_de_Sousa
+  acesso: 15 nov. 2026
+
+- id: alesp-patio-do-colegio
+  abnt: "ASSEMBLEIA LEGISLATIVA DO ESTADO DE SÃO PAULO. *No Pátio do Colégio, a certidão de nascimento de São Paulo*. São Paulo: ALESP, [20--]."
+  tipo: informal
+  url: https://www.al.sp.gov.br/noticia/?id=303295
+  acesso: 15 nov. 2026
+
+- id: infoescola-raposo-tavares
+  abnt: "INFOESCOLA. *Antônio Raposo Tavares*. [S. l.]: InfoEscola, [20--]."
+  tipo: informal
+  url: https://www.infoescola.com/biografias/antonio-raposo-tavares/
+  acesso: 15 nov. 2026
+
 
 - id: moyarte
   abnt: "MOYARTE. *História do Centro de São Paulo*. [S. l.]: Moyarte, [20--]. Páginas das décadas de 1591 a 1650."
