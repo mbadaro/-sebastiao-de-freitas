@@ -21,22 +21,22 @@ abertura:
 trajetoria:
   - data: Século XVI
     titulo: Origem no Algarve
-    texto: Natural de Alagoa, da cidade de Silves, filho de Manoel Pires, provedor da Santa Casa de Misericórdia.
+    texto: Natural de Alagoa, da cidade de Silves, filho de Manuel Pires, provedor da Santa Casa de Misericórdia.
     natureza: historiografia
     fonte: Silva Leme, Genealogia Paulistana, v. 7, p. 168
   - data: '1591'
     titulo: Chegada à Bahia
-    texto: Vem como soldado da companhia do capitão Gabriel Soares, com o governador d. Francisco de Souza.
+    texto: Vem como soldado da companhia do capitão Gabriel Soares, com o governador d. Francisco de Sousa.
     natureza: historiografia
     fonte: Silva Leme, Genealogia Paulistana, v. 7, p. 169
   - data: 1594–1595
     titulo: Expedições ao sertão
-    texto: Acompanha os capitães Jorge Corrêa e Jeronimo Pereira de Souza. Uma fonte data a segunda jornada de 1596.
+    texto: Acompanha os capitães Jorge Correia e Jerônimo Pereira de Sousa. Uma fonte data a segunda jornada de 1596.
     natureza: historiografia
     fonte: Silva Leme, Genealogia Paulistana, v. 7, p. 169
   - data: '1600'
     titulo: Armado cavaleiro
-    texto: Recebe o título em São Paulo, das mãos de d. Francisco de Souza, por seus serviços.
+    texto: Recebe o título em São Paulo, das mãos de d. Francisco de Sousa, por seus serviços.
     natureza: historiografia
     fonte: Silva Leme, Genealogia Paulistana, v. 7, p. 169
   - data: '1606'

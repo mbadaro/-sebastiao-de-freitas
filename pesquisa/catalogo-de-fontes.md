@@ -416,3 +416,21 @@ mas o servidor respondeu 404 em 2026-11-15. Status mantido como `catalogado`.
 | Patente / provisão de capitão | 1606, capitão da gente de Piratininga (Silva Leme; Bogaciovas: 12/10/1606) × 1608, provisão de capitão da vila (Moura) — podem ser atos distintos |
 | Data da patente de 1606 | 1606 (Silva Leme) × 22/07/1606 (GeneArc) × **12/10/1606** (Bogaciovas) |
 | Pai de Maria Pedroso | Antônio Rodrigues de Alvarenga (Pedro Taques, Silva Leme) × "cirurgião Antônio Rodrigues" (Bogaciovas, que trata "de Alvarenga" como acréscimo posterior) |
+
+---
+
+## Revisão das fontes da exposição (2026-11-15)
+
+Substituições aprovadas pelo responsável:
+
+| Saiu | Entrou | Afirmação |
+|---|---|---|
+| Wikipedia (Diocese de Faro) | Infopédia, "Antiga Sé de Silves" (verificada por excerto) | Bispado transferido para Faro em 1577, após 38 anos |
+| Wikipedia (Lagoa) | Silva Leme, v. 7, p. 168 + *Arade*, Revista do Arquivo Municipal de Lagoa, n. 1, 2022 | Alagoa pertencia a Silves; vila por alvará de 16/1/1773 |
+| Wikipédia (Igreja da Misericórdia de Silves) | Geoparque Algarvensis (2020) | Igreja do 1.º quarto do séc. XVI, porta manuelina, visitável. Retirados: criação em 1498/1499, alvará de 1574, IIP de 1961 (data conflitante: 1977 em outra fonte) e acordo de 2000 |
+| Wikipedia (Gabriel Soares) | Sousa, *Tratado descriptivo do Brazil em 1587* (RIHGB, t. 14, 1851); EVE; Vilardaga (2013, p. 799) | Autoria e data do Tratado; promessa do título de marquês. Retirado: "viveu 17 anos na Bahia" |
+| InfoEscola | Ribeiro, ANPUH [2015], p. 4–5 | Destruição das missões do Guairá (1628); bandeira de Raposo Tavares. Retirado: "comandada por Manuel Preto" |
+| Moyarte (d. Francisco em SP, 1599) | Vilardaga (2013), *Varia Historia*, p. 800, 807 | Instalado em São Paulo desde 1599; autorização para tirar ouro |
+| FamilySearch (batismo de 1640) | ACMSP, Livro 1 de Batismos da Sé, fl. 2 (lido em transcrição do FamilySearch) | Padrinho "seu bisavô" |
+
+Mantidas por decisão do responsável: população de c. 1600 (Moyarte, citando Teodoro Sampaio), muros de 1594 e protestos de 1612 (Moyarte, como tradição). Wikipédia mantida só para Silves islâmica, 1189/1242 e o assoreamento do Arade (sem substituta verificada).

@@ -10,6 +10,7 @@
 
 - id: antt-caderno-promotor-24
   abnt: "ARQUIVO NACIONAL DA TORRE DO TOMBO. Tribunal do Santo Ofício, Inquisição de Lisboa. *24.º Caderno do Promotor (1599-1640)*. Lisboa, [16--]. Liv. 224, fls. 311-316."
+  curta: "ANTT, 24.º Caderno do Promotor"
   tipo: primaria
   localizacao: "PT/TT/TSO-IL/030/0224, mf. 5193, imagem 646."
   url: http://digitarq.arquivos.pt/details?id=2318049
@@ -19,6 +20,7 @@
 
 - id: silva-leme-v7
   abnt: "SILVA LEME, Luiz Gonzaga da. *Genealogia paulistana*. São Paulo: Duprat & Comp., 1905. v. 7."
+  curta: "SILVA LEME, 1905, v. 7"
   tipo: secundaria
   url: https://archive.org/details/genealogia-paulistana-vii
   acesso: 15 nov. 2026
@@ -26,6 +28,7 @@
 
 - id: bogaciovas-2006
   abnt: "BOGACIOVAS, Marcelo Meira Amaral. *Tribulações do povo de Israel na São Paulo colonial*. 2006. Dissertação (Mestrado em História Social) – Faculdade de Filosofia, Letras e Ciências Humanas, Universidade de São Paulo, São Paulo, 2006."
+  curta: "BOGACIOVAS, 2006"
   tipo: secundaria
   url: https://teses.usp.br/teses/disponiveis/8/8138/tde-11072007-103932/
   acesso: 15 nov. 2026
@@ -33,141 +36,186 @@
 
 - id: bogaciovas-2015
   abnt: "BOGACIOVAS, Marcelo Meira Amaral. *Cristãos-novos em São Paulo (séculos XVI-XIX)*: assimilação e nobilitação. São Paulo: ASBRAP, 2015."
+  curta: "BOGACIOVAS, 2015"
   tipo: secundaria
 
 - id: salvador-1969
   abnt: "SALVADOR, José Gonçalves. *Cristãos-novos, jesuítas e Inquisição*: aspectos de sua atuação nas capitanias do Sul, 1530-1680. São Paulo: Pioneira: Editora da Universidade de São Paulo, 1969."
+  curta: "SALVADOR, 1969"
   tipo: secundaria
 
 - id: salvador-1976
   abnt: "SALVADOR, José Gonçalves. *Os cristãos-novos*: povoamento e conquista do solo brasileiro (1530-1680). São Paulo: Pioneira, 1976."
+  curta: "SALVADOR, 1976"
   tipo: secundaria
 
 - id: salvador-1978
   abnt: "SALVADOR, José Gonçalves. *Os cristãos-novos e o comércio no Atlântico meridional*. São Paulo: Pioneira, 1978."
+  curta: "SALVADOR, 1978"
   tipo: secundaria
 
 - id: salvador-2001
   abnt: "SALVADOR, José Gonçalves. *Vozes da história*. São Paulo: Editora da Universidade de São Paulo, 2001."
+  curta: "SALVADOR, 2001"
   tipo: secundaria
 
 - id: wolff-1986
   abnt: "WOLFF, Egon; WOLFF, Frieda. *Dicionário biográfico I*: judaizantes e judeus no Brasil, 1500-1808. Rio de Janeiro: [s. n.], 1986."
+  curta: "WOLFF; WOLFF, 1986"
   tipo: secundaria
   observacao: Conhecido por citação no perfil do FamilySearch.
 
 - id: silva-lina-2005
   abnt: "SILVA, Lina Gorenstein Ferreira da. *A Inquisição contra as mulheres*: Rio de Janeiro, séculos XVII e XVIII. São Paulo: Humanitas, 2005."
+  curta: "SILVA, 2005"
   tipo: secundaria
   observacao: Conhecido por citação na base BRASILHIS.
 
 - id: moura-1950
   abnt: "MOURA, Américo Brasiliense Antunes de. Os povoadores do campo de Piratininga: traços biográficos e genealógicos. *Revista do Instituto Histórico e Geográfico de São Paulo*, São Paulo, v. 47, p. 367, 1950."
+  curta: "MOURA, 1950"
   tipo: secundaria
   url: http://ihgsp.org.br/revista-ihgsp-vol-47/
-  observacao: Lido em citação de relatório genealógico de terceiro.
+  observacao: Lido em citação de relatório genealógico de terceiro; a conferir na revista do IHGSP.
 
 - id: sillos-asbrap-26
   abnt: "SILLOS, Luiz Gustavo de. Maria Pedroso, a filha esquecida de Sebastião de Freitas. *Revista da ASBRAP*, São Paulo, n. 26, p. 237-246, [20--]."
+  curta: "SILLOS, [20--]"
   tipo: secundaria
   url: https://www.asbrap.org.br/artigos/rev26_art_j-maria_pedroso.pdf
   observacao: Conhecido por citação no GeneArc e no FamilySearch; endereço fora do ar em 15 nov. 2026.
 
 - id: brasilhis-p2388
   abnt: "SEBASTIÃO de Freitas. In: BASE de Dados BRASILHIS: redes pessoais e circulação no Brasil durante a Monarquia Hispânica (1580-1640). Salamanca: Universidad de Salamanca, [20--]. Verbete P-2388."
+  curta: "BRASILHIS, verbete P-2388"
   tipo: secundaria
   url: https://brasilhis.usal.es/pt-br/node/4560
   acesso: 15 nov. 2026
 
 - id: certificado-cil
   abnt: "COMUNIDADE ISRAELITA DE LISBOA. *Certificado de comunidade judaica*. Lisboa, 2026. Documento particular."
+  curta: "COMUNIDADE ISRAELITA DE LISBOA, 2026"
   tipo: secundaria
   observacao: Atestação institucional emitida a um descendente; os dados do titular não são divulgados.
 
 - id: porta-2004
   abnt: "PORTA, Paula (org.). *História da cidade de São Paulo*. São Paulo: Paz e Terra, 2004."
+  curta: "PORTA, 2004"
   tipo: secundaria
   observacao: Conhecida por citação no site Moyarte.
 
 - id: eve-francisco-de-sousa
   abnt: "DOMINGUES, Rita. Sousa, D. Francisco de. In: *Enciclopédia Virtual da Expansão Portuguesa*. Lisboa: CHAM, NOVA FCSH, 2009."
+  curta: "DOMINGUES, 2009"
   tipo: secundaria
   url: https://eve.fcsh.unl.pt/index.php/en/node/4431
   acesso: 15 nov. 2026
 
 - id: ibge-mairipora
   abnt: "INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. *Mairiporã, São Paulo*: histórico. Rio de Janeiro: IBGE, [2010]."
+  curta: "IBGE, [2010]"
   tipo: secundaria
   url: https://biblioteca.ibge.gov.br/visualizacao/dtb/saopaulo/mairipora.pdf
   acesso: 15 nov. 2026
+
+- id: vilardaga-2013
+  abnt: "VILARDAGA, José Carlos. As controvertidas minas de São Paulo (1550-1650). *Varia Historia*, Belo Horizonte, v. 29, n. 51, p. 795-815, set./dez. 2013."
+  curta: "VILARDAGA, 2013"
+  tipo: secundaria
+  url: http://www.redalyc.org/articulo.oa?id=384434843008
+  acesso: 15 nov. 2026
+
+- id: ribeiro-anpuh-2015
+  abnt: "RIBEIRO, Fernando V. Aguiar. A fundação de municípios no planalto de São Paulo em um contexto de integração entre América portuguesa e espanhola (séc. XVI-XVIII). In: SIMPÓSIO NACIONAL DE HISTÓRIA, 28., 2015, Florianópolis. *Anais* [...]. São Paulo: ANPUH, [2015]."
+  curta: "RIBEIRO, [2015]"
+  tipo: secundaria
+  url: https://anpuh.org.br/uploads/anais-simposios/pdf/2019-01/1548945024_708e9640bc24845d5764563a808aace1.pdf
+  acesso: 15 nov. 2026
+  observacao: Ano e evento deduzidos dos metadados do arquivo (2015).
+
+- id: sousa-tratado-1587
+  abnt: "SOUSA, Gabriel Soares de. Tratado descriptivo do Brazil em 1587. *Revista do Instituto Historico e Geographico do Brazil*, Rio de Janeiro, t. 14, 1851."
+  curta: "SOUSA, 1851"
+  tipo: primaria
+  observacao: Primeira edição, preparada por Francisco Adolfo de Varnhagen.
+
+- id: infopedia-se-silves
+  abnt: "ANTIGA Sé de Silves. In: INFOPÉDIA: enciclopédia e dicionários Porto Editora. Porto: Porto Editora, [20--]."
+  curta: "INFOPÉDIA, Antiga Sé de Silves"
+  tipo: secundaria
+  url: https://www.infopedia.pt/$antiga-se-de-silves
+  acesso: 15 nov. 2026
+  observacao: Conteúdo verificado por excerto (o site bloqueou a leitura integral).
+
+- id: arade-2022
+  abnt: "ARADE: Revista do Arquivo Municipal de Lagoa. Lagoa: Câmara Municipal de Lagoa, n. 1, 2022."
+  curta: "ARADE, 2022"
+  tipo: secundaria
+  url: https://sapientia.ualg.pt/bitstreams/7cb7e6de-8b8d-44a9-bb91-72d4f4fa6cc4/download
+  acesso: 15 nov. 2026
+  observacao: "A vila e concelho de Lagoa, instituída por alvará do rei D. José I, de 16-01-1773."
+
+- id: geoparque-misericordia-silves
+  abnt: "GEOPARQUE ALGARVENSIS. *Igreja da Misericórdia [de Silves]*. Loulé: Geoparque Algarvensis, 2020."
+  curta: "GEOPARQUE ALGARVENSIS, 2020"
+  tipo: secundaria
+  url: https://geoparquealgarvensis.pt/patrimonio-cultura/56-patrimonio-arquitetonico/836-igreja-da-misericordia-en
+  acesso: 15 nov. 2026
+
+- id: acmsp-batismos-se-1
+  abnt: "ARQUIVO DA CÚRIA METROPOLITANA DE SÃO PAULO. *Livro 1 de Batismos da Sé (1640-1662)*. São Paulo, 1640-1662."
+  curta: "ACMSP, Livro 1 de Batismos da Sé"
+  tipo: primaria
+  localizacao: "FamilySearch, DGS 004624406, imagem 10."
+  observacao: Lido em transcrição de colaborador publicada no FamilySearch; imagem não conferida pelo projeto.
 
 # --- Fontes informais (origem conhecida, sem valor de fonte formal) ----------------------------
 
 - id: wikipedia-silves
   abnt: "SILVES (Portugal). In: WIKIPÉDIA: a enciclopédia livre. [S. l.]: Wikimedia Foundation, 2026."
+  curta: "SILVES (Portugal), 2026"
   tipo: informal
   url: https://pt.wikipedia.org/wiki/Silves_(Portugal)
   acesso: 15 nov. 2026
   observacao: Cita José Hermano Saraiva, O tempo e a alma (1986), para a reconquista e o assoreamento do Arade.
 
-- id: wikipedia-diocese-faro
-  abnt: "ROMAN Catholic Diocese of Faro. In: WIKIPEDIA: the free encyclopedia. [S. l.]: Wikimedia Foundation, 2026."
-  tipo: informal
-  url: https://en.wikipedia.org/wiki/Diocese_of_Faro
-  acesso: 15 nov. 2026
 
-- id: wikipedia-misericordia-silves
-  abnt: "IGREJA da Misericórdia de Silves. In: WIKIPÉDIA: a enciclopédia livre. [S. l.]: Wikimedia Foundation, 2026."
-  tipo: informal
-  url: https://pt.wikipedia.org/wiki/Igreja_da_Misericórdia_de_Silves
-  acesso: 15 nov. 2026
-  observacao: Cita o SIPA/Direção-Geral do Património Cultural e a Câmara Municipal de Silves.
 
-- id: wikipedia-lagoa
-  abnt: "LAGOA, Portugal. In: WIKIPEDIA: the free encyclopedia. [S. l.]: Wikimedia Foundation, 2026."
-  tipo: informal
-  url: https://en.wikipedia.org/wiki/Lagoa,_Portugal
-  acesso: 15 nov. 2026
 
-- id: wikipedia-gabriel-soares
-  abnt: "GABRIEL Soares de Sousa. In: WIKIPEDIA: the free encyclopedia. [S. l.]: Wikimedia Foundation, 2026."
-  tipo: informal
-  url: https://en.wikipedia.org/wiki/Gabriel_Soares_de_Sousa
-  acesso: 15 nov. 2026
 
 - id: alesp-patio-do-colegio
   abnt: "ASSEMBLEIA LEGISLATIVA DO ESTADO DE SÃO PAULO. *No Pátio do Colégio, a certidão de nascimento de São Paulo*. São Paulo: ALESP, [20--]."
+  curta: "ALESP, [20--]"
   tipo: informal
   url: https://www.al.sp.gov.br/noticia/?id=303295
   acesso: 15 nov. 2026
 
-- id: infoescola-raposo-tavares
-  abnt: "INFOESCOLA. *Antônio Raposo Tavares*. [S. l.]: InfoEscola, [20--]."
-  tipo: informal
-  url: https://www.infoescola.com/biografias/antonio-raposo-tavares/
-  acesso: 15 nov. 2026
 
 
 - id: moyarte
   abnt: "MOYARTE. *História do Centro de São Paulo*. [S. l.]: Moyarte, [20--]. Páginas das décadas de 1591 a 1650."
+  curta: "MOYARTE, [20--]"
   tipo: informal
   url: https://moyarte.com.br/centro-de-sao-paulo/historia-do-centro-de-sao-paulo/
   acesso: 15 nov. 2026
 
 - id: genearc-7956
   abnt: "GENEARC. *Sebastião de Freitas*. [S. l.]: GeneArc, [20--]. Ficha genealógica n. 7956."
+  curta: "GENEARC, [20--]"
   tipo: informal
   url: https://www.genearc.net/index.php?op=ZGV0YWxoZVBlc3NvYS5waHA=&id=Nzk1Ng==
   acesso: 12 nov. 2026
 
 - id: amorese-ps25-085
   abnt: "AMORESE. *Sebastião de Freitas*. [S. l.]: Amorese Genealogia, [20--]."
+  curta: "AMORESE, [20--]"
   tipo: informal
   url: https://www.amorese.com.br/GENEALOGIA/ps25/ps25_085.html
   acesso: 12 nov. 2026
 
 - id: familysearch-lz21-h7q
   abnt: "FAMILYSEARCH. *Sebastião de Freitas (1565-1644)*: fontes. Salt Lake City: FamilySearch, 2026. Árvore colaborativa, perfil LZ21-H7Q."
+  curta: "FAMILYSEARCH, 2026"
   tipo: informal
   url: https://www.familysearch.org/tree/person/sources/LZ21-H7Q
   acesso: 15 nov. 2026

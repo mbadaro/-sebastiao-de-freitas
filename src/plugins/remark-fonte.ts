@@ -27,6 +27,13 @@ export interface CitacaoUsada {
   natureza: string;
   refs: string[];
   p?: string;
+  /** Página de cada referência, quando p traz uma por fonte separadas por ";" (mesma ordem de ref). */
+  paginas?: (string | undefined)[];
+}
+
+/** "d. Francisco" e "D. Francisco" nunca quebram de linha entre o "d." e o nome. */
+export function semQuebraDom(texto: string): string {
+  return texto.replace(/(^|[^\p{L}])([dD])\. (?=\p{Lu})/gu, '$1$2.\u00A0');
 }
 
 function exigeFonte(caminho: string): boolean {
@@ -73,7 +80,10 @@ export default function remarkFonte() {
             throw new Error(`${nomeArquivo} › informação sem fonte não pode ser "fato" (FR-007)`);
           }
           const n = citacoes.length + 1;
-          citacoes.push({ n, natureza: nat, refs: ref.trim().split(/\s+/), p });
+          const refs = ref.trim().split(/\s+/);
+          const partes = p?.split(';').map((x) => x.trim());
+          const paginas = refs.length > 1 && partes && partes.length === refs.length ? partes : undefined;
+          citacoes.push({ n, natureza: nat, refs, p: paginas ? undefined : p, paginas });
           filhos[i] = {
             type: 'html',
             value:
@@ -106,6 +116,13 @@ export default function remarkFonte() {
       }
     };
     percorrer(arvore);
+
+    // Tipografia: espaço inseparável depois de "d."/"D." antes de nome próprio.
+    const tipografia = (no: No) => {
+      if (no.type === 'text' && no.value) no.value = semQuebraDom(no.value);
+      (no.children ?? []).forEach(tipografia);
+    };
+    tipografia(arvore);
 
     arquivo.data.astro ??= {};
     arquivo.data.astro.frontmatter ??= {};

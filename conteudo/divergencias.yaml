@@ -61,7 +61,7 @@
 - id: pai-de-maria-pedroso
   tema: Nome do pai de Maria Pedroso, esposa de Sebastião
   versoes:
-    - texto: Antonio Rodrigues de Alvarenga.
+    - texto: Antônio Rodrigues de Alvarenga.
       referencias: [{ ref: silva-leme-v7, p: 169 }]
     - texto: O cirurgião Antônio Rodrigues; o sobrenome "de Alvarenga" teria sido acrescentado por Pedro Taques, seguido por Silva Leme.
       referencias: [{ ref: bogaciovas-2006, p: 79 }]

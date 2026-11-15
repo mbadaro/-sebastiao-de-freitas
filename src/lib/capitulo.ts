@@ -4,12 +4,14 @@
  * Tudo acontece na geração do site; nada depende de JavaScript no navegador.
  */
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
+import { semQuebraDom } from '../plugins/remark-fonte';
 
 export interface Citacao {
   n: number;
   natureza: string;
   refs: string[];
   p?: string;
+  paginas?: (string | undefined)[];
 }
 
 const rotulos: Record<string, string> = {
@@ -20,7 +22,7 @@ const rotulos: Record<string, string> = {
 };
 
 export function escapar(s: string): string {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  return semQuebraDom(s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'));
 }
 
 /** Converte o itálico em Markdown (*título*) da referência ABNT em <cite>. */
@@ -28,10 +30,16 @@ export function abntHtml(abnt: string): string {
   return escapar(abnt).replace(/\*([^*]+)\*/g, '<cite>$1</cite>');
 }
 
+/** Localizador da citação: "p. 65", ou "fl. 316" quando a fonte é numerada por folhas. */
+export function localizador(p: string | number): string {
+  const t = String(p).trim();
+  return /^(fl|fls|f)\.?\s/i.test(t) ? escapar(t) : `p. ${escapar(t)}`;
+}
+
 /** Referência ABNT com a página citada: "..., 2005, p. 65." (sem ponto duplicado). */
 export function abntComPagina(abnt: string, p?: string | number): string {
   const html = abntHtml(abnt);
-  return p === undefined || p === '' ? html : `${html.replace(/\.\s*$/, '')}, p. ${escapar(String(p))}.`;
+  return p === undefined || p === '' ? html : `${html.replace(/\.\s*$/, '')}, ${localizador(p)}.`;
 }
 
 export async function capitulosOrdenados() {
@@ -70,18 +78,25 @@ export async function montarCapitulo(entrada: CollectionEntry<'capitulos'>) {
     html = html.replace(marcador, await htmlDivergencia(id));
   }
 
-  const citacoes = await Promise.all(
-    (fm.citacoes ?? []).map(async (c) => {
-      const refs = await Promise.all(c.refs.map((id) => getEntry('referencias', id)));
-      return {
-        ...c,
-        rotulo: rotulos[c.natureza],
-        fontes: refs.map((r, i) => {
-          if (!r) throw new Error(`capítulo ${entrada.id}: referência "${c.refs[i]}" não existe`);
-          return { id: r.id, html: abntComPagina(r.data.abnt, c.p), tipo: r.data.tipo, url: r.data.url };
-        }),
-      };
-    }),
-  );
+  // Notas: referência completa na 1.ª ocorrência do capítulo; forma curta (campo "curta") nas seguintes.
+  const jaCitadas = new Set<string>();
+  const citacoes = [];
+  for (const c of fm.citacoes ?? []) {
+    const refs = await Promise.all(c.refs.map((id) => getEntry('referencias', id)));
+    citacoes.push({
+      ...c,
+      rotulo: rotulos[c.natureza],
+      fontes: refs.map((r, i) => {
+        if (!r) throw new Error(`capítulo ${entrada.id}: referência "${c.refs[i]}" não existe`);
+        const pagina = c.paginas?.[i] ?? c.p;
+        const repetida = jaCitadas.has(r.id) && r.data.curta;
+        jaCitadas.add(r.id);
+        const html = repetida
+          ? `${escapar(r.data.curta!)}${pagina ? `, ${localizador(pagina)}` : ''}.`
+          : abntComPagina(r.data.abnt, pagina);
+        return { id: r.id, html, tipo: r.data.tipo, url: repetida ? undefined : r.data.url };
+      }),
+    });
+  }
   return { html, citacoes };
 }

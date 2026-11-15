@@ -48,6 +48,8 @@ const referencias = defineCollection({
   schema: z.object({
     id: idValido,
     abnt: z.string().min(1, 'abnt não pode ser vazio'),
+    /** Forma curta (autor, ano) usada nas notas depois da primeira citação no capítulo. */
+    curta: z.string().optional(),
     tipo: z.enum(['primaria', 'secundaria', 'informal']),
     localizacao: z.string().optional(),
     url: z.url().optional(),
