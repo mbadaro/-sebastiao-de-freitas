@@ -9,9 +9,21 @@ site. **Os capítulos só usam o que está aqui** (regra editorial de `tasks.md`
 - **Status da fonte**: `verificada` (conferida no original ou em reprodução fiel) · `consultado`
   (lida em transcrição ou citação de terceiros) · `catalogado` (conhecida, não lida) ·
   `informal` (origem conhecida, sem valor de fonte formal).
-- **Natureza proposta**: `fato` · `historiografia` · `tradicao` · `hipotese`. Regras: `fato` só
-  com documento primário visto; fonte `consultado`/`catalogado` → no máximo `historiografia`,
-  marcada **a confirmar**; fonte `informal` → `tradicao` ou fora do site.
+- **Natureza proposta**: `fato` · `historiografia` · `tradicao` · `hipotese`. "(a confirmar)" indica
+  apenas que a atribuição deve citar o intermediário; **não impede a publicação**.
+
+**Regra de atribuição** (aprovada pelo responsável em 2026-11-15): o site **reúne o que já existe
+sobre Sebastião e diz de onde cada informação veio** — não é pesquisa original, e nada é retirado
+por falta de verificação.
+
+| Situação da fonte | Como entra no site |
+|---|---|
+| Obra lida diretamente (ex.: Silva Leme, Bogaciovas, BRASILHIS) | `historiografia`, atribuída ao autor ("segundo Bogaciovas…") |
+| Documento lido só em transcrição de terceiros (ex.: Caderno do Promotor) | `historiografia`, atribuída a quem transcreveu; vira `fato` se alguém conferir a imagem |
+| Obra conhecida só por citação (ex.: livros de Salvador) | Citada pelo intermediário ("Salvador, citado por…") |
+| Fonte informal (sites, árvores colaborativas, posts) | `tradicao`, com a origem indicada |
+| Origem desconhecida | `sem-fonte`; nunca `fato` |
+
 - **SL7** = SILVA LEME, *Genealogia paulistana*, v. 7. São Paulo: Duprat & Comp., 1905 —
   `verificada` em 2026-11-15 na digitalização do Internet Archive (Public Domain Mark 1.0).
 - **BOG06** = BOGACIOVAS, *Tribulações do povo de Israel na São Paulo colonial*, USP, 2006 —

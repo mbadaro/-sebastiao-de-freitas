@@ -30,10 +30,12 @@ fundação de conteúdo.
 
 ## Regra editorial (vale para toda tarefa que produz conteúdo)
 
-- Conteúdo histórico só entra no acervo **a partir do fichamento** (`pesquisa/fichamento.md`) e
-  de fontes com status **verificada**.
-- Informação não confirmada **nunca** é apresentada como fato: entra como `tradicao` ou
-  `hipotese`, atribuída à sua origem, ou fica fora até ser verificada.
+- Conteúdo histórico só entra no acervo **a partir do fichamento** (`pesquisa/fichamento.md`), com a
+  origem de cada informação indicada conforme a regra de atribuição (aprovada em 2026-11-15, ver
+  `pesquisa/catalogo-de-fontes.md`). O site reúne e atribui; não retira conteúdo por falta de
+  verificação.
+- Informação não confirmada **nunca** é apresentada como fato: entra como `historiografia`,
+  `tradicao` ou `hipotese`, atribuída à sua origem.
 - **Origem e vínculo sefardita**: cada afirmação traz sua origem explícita (ex.: "segundo José
   Gonçalves Salvador"; "conforme certificado da Comunidade Israelita de Lisboa") e a natureza
   correspondente. `fato` só com documento primário consultado. Isso vale também para frases de

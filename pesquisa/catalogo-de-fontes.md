@@ -21,7 +21,18 @@ genealógica) · `informal` (origem conhecida, sem valor de fonte formal: site, 
 | `verificada` | Informação conferida na própria obra ou documento original (ou em reprodução fiel), com página |
 | `pendente` | Precisa de acesso, material ou decisão que ainda não temos |
 
-Só fontes `verificada` sustentam afirmações `fato` ou `historiografia` no site.
+**Regra de atribuição** (aprovada pelo responsável em 2026-11-15): o site **reúne o que já existe
+sobre Sebastião e diz de onde cada informação veio** — não é pesquisa original, e nada é retirado
+por falta de verificação.
+
+| Situação da fonte | Como entra no site |
+|---|---|
+| Obra lida diretamente (ex.: Silva Leme, Bogaciovas, BRASILHIS) | `historiografia`, atribuída ao autor ("segundo Bogaciovas…") |
+| Documento lido só em transcrição de terceiros (ex.: Caderno do Promotor) | `historiografia`, atribuída a quem transcreveu; vira `fato` se alguém conferir a imagem |
+| Obra conhecida só por citação (ex.: livros de Salvador) | Citada pelo intermediário ("Salvador, citado por…") |
+| Fonte informal (sites, árvores colaborativas, posts) | `tradicao`, com a origem indicada |
+| Origem desconhecida | `sem-fonte`; nunca `fato` |
+
 
 **Direitos**: "acesso" = podemos ler e citar; "reprodução" = podemos publicar o texto ou a imagem.
 
