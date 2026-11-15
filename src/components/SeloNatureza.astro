@@ -1,0 +1,49 @@
+---
+/**
+ * Selo da natureza da informação (T025; FR-006; Princípio II).
+ * A distinção nunca depende só de cor: cada natureza tem rótulo escrito e marca própria.
+ */
+export type Natureza = 'fato' | 'historiografia' | 'tradicao' | 'hipotese';
+
+interface Props {
+  natureza: Natureza;
+}
+
+const rotulos: Record<Natureza, { texto: string; marca: string }> = {
+  fato: { texto: 'Fato documentado', marca: '■' },
+  historiografia: { texto: 'Informação historiográfica', marca: '◆' },
+  tradicao: { texto: 'Tradição genealógica', marca: '▲' },
+  hipotese: { texto: 'Hipótese', marca: '○' },
+};
+
+const { natureza } = Astro.props;
+const { texto, marca } = rotulos[natureza];
+---
+
+<span class={`selo selo--${natureza}`}><span aria-hidden="true">{marca}</span> {texto}</span>
+
+<style>
+  .selo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    padding: 0.1em 0.6em;
+    border: var(--linha-fina) solid currentColor;
+    border-radius: 999px;
+    font-family: var(--fonte-texto);
+    font-size: var(--texto-pequeno);
+    font-weight: 600;
+    line-height: 1.6;
+    white-space: nowrap;
+    color: var(--texto-secundario);
+  }
+  .selo--fato {
+    color: var(--titulo);
+  }
+  .selo--historiografia {
+    color: var(--link);
+  }
+  .selo--hipotese {
+    border-style: dashed;
+  }
+</style>

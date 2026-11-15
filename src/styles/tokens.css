@@ -1,0 +1,90 @@
+/*
+ * Tokens de design — identidade "Museu Digital Imersivo" (plano, Identidade visual; D14).
+ * Toda cor, fonte, espaçamento e duração do site vem daqui.
+ *
+ * Contraste verificado (WCAG 2.2 AA; mínimo 4,5:1 texto, 3:1 texto grande e interface):
+ *   grafite    sobre marfim          12,8  texto corrido
+ *   marfim     sobre azul profundo   13,5  texto corrido
+ *   marfim     sobre azul petróleo    8,6  texto corrido
+ *   petróleo   sobre marfim           8,6  links e títulos em área clara
+ *   dourado    sobre azul profundo    5,8  texto e detalhes em área escura
+ *   acinzentado sobre azul profundo   5,0  texto secundário em área escura
+ *   dourado    sobre petróleo         3,7  SÓ texto grande e interface
+ *   acinzentado sobre petróleo        3,2  SÓ texto grande e interface
+ *   dourado    sobre marfim           2,4  REPROVADO → usar --cor-dourado-escuro (4,6)
+ *   acinzentado sobre marfim          2,7  REPROVADO → usar --cor-acinzentado-escuro (4,7)
+ */
+
+:root {
+  /* Paleta do briefing */
+  --cor-azul-profundo: #142638;
+  --cor-azul-petroleo: #244760;
+  --cor-marfim: #f3f0e8;
+  --cor-dourado: #b69a70;
+  --cor-acinzentado: #8296a6;
+  --cor-grafite: #202a33;
+
+  /* Variantes escurecidas para áreas claras (contraste ≥ 4,5:1 sobre marfim) */
+  --cor-dourado-escuro: #816842;
+  --cor-acinzentado-escuro: #596d7d;
+
+  /* Tipografia (D15) */
+  --fonte-titulo: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --fonte-texto: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  /* Escala fluida: celular → computador */
+  --texto-pequeno: 0.875rem;
+  --texto-base: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --texto-destaque: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --titulo-3: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem); /* ≥ 24 px: mínimo para Playfair */
+  --titulo-2: clamp(1.875rem, 1.5rem + 1.6vw, 2.75rem);
+  --titulo-1: clamp(2.5rem, 1.8rem + 3.4vw, 4.75rem);
+  --entrelinha-texto: 1.65;
+  --entrelinha-titulo: 1.15;
+  --largura-leitura: 68ch;
+
+  /* Espaçamentos */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 1rem;
+  --esp-4: 1.5rem;
+  --esp-5: 2.5rem;
+  --esp-6: 4rem;
+  --esp-7: clamp(4rem, 3rem + 5vw, 8rem);
+  --largura-max: 72rem;
+  --margem-lateral: clamp(1rem, 0.5rem + 3vw, 3rem);
+
+  /* Forma */
+  --raio: 4px;
+  --linha-fina: 1px;
+  --sombra: 0 1px 2px rgb(20 38 56 / 0.08), 0 8px 24px rgb(20 38 56 / 0.08);
+
+  /* Movimento (D16) — anulado por prefers-reduced-motion em global.css */
+  --duracao-curta: 180ms;
+  --duracao-media: 500ms;
+  --curva: cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+/* Superfícies: cada uma redefine os tokens de conteúdo usados pelos componentes. */
+:root,
+.superficie-clara {
+  --fundo: var(--cor-marfim);
+  --texto: var(--cor-grafite);
+  --texto-secundario: var(--cor-acinzentado-escuro);
+  --titulo: var(--cor-azul-profundo);
+  --link: var(--cor-azul-petroleo);
+  --destaque: var(--cor-dourado-escuro);
+  --borda: rgb(32 42 51 / 0.18);
+  --foco: var(--cor-azul-petroleo);
+}
+
+.superficie-escura {
+  --fundo: var(--cor-azul-profundo);
+  --texto: var(--cor-marfim);
+  --texto-secundario: var(--cor-acinzentado);
+  --titulo: var(--cor-marfim);
+  --link: var(--cor-dourado);
+  --destaque: var(--cor-dourado);
+  --borda: rgb(243 240 232 / 0.2);
+  --foco: var(--cor-dourado);
+}

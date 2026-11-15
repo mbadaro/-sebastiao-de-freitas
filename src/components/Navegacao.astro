@@ -1,0 +1,141 @@
+---
+/**
+ * Navegação principal (T021).
+ * Sem JavaScript, a lista aparece sempre. Com JavaScript, no celular vira menu
+ * recolhível com botão acessível (aria-expanded) — melhoria progressiva.
+ */
+import { url, secoes } from '../lib/url';
+
+const atual = Astro.url.pathname;
+---
+
+<nav class="navegacao" aria-label="Navegação principal" data-navegacao>
+  <button class="navegacao__botao" type="button" aria-expanded="false" aria-controls="menu-principal" hidden>
+    <span class="navegacao__icone" aria-hidden="true"></span>
+    Menu
+  </button>
+  <ul id="menu-principal" class="navegacao__lista">
+    {
+      secoes.map((s) => {
+        const href = url(s.caminho);
+        return (
+          <li>
+            <a href={href} aria-current={atual.startsWith(href) ? 'page' : undefined}>
+              {s.rotulo}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>
+
+<script>
+  const nav = document.querySelector<HTMLElement>('[data-navegacao]');
+  const botao = nav?.querySelector<HTMLButtonElement>('button');
+  if (nav && botao) {
+    nav.classList.add('navegacao--js');
+    botao.hidden = false;
+    botao.addEventListener('click', () => {
+      const aberto = botao.getAttribute('aria-expanded') === 'true';
+      botao.setAttribute('aria-expanded', String(!aberto));
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && botao.getAttribute('aria-expanded') === 'true') {
+        botao.setAttribute('aria-expanded', 'false');
+        botao.focus();
+      }
+    });
+  }
+</script>
+
+<style>
+  .navegacao__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--esp-1) var(--esp-4);
+  }
+  .navegacao__lista a {
+    display: inline-block;
+    padding: var(--esp-2) 0;
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    letter-spacing: 0.03em;
+    border-bottom: 2px solid transparent;
+  }
+  .navegacao__lista a:hover,
+  .navegacao__lista a[aria-current='page'] {
+    border-bottom-color: var(--destaque);
+  }
+
+  .navegacao__botao {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--esp-2);
+    min-height: 44px;
+    padding: var(--esp-2) var(--esp-3);
+    background: transparent;
+    color: var(--texto);
+    border: var(--linha-fina) solid var(--borda);
+    border-radius: var(--raio);
+    font: inherit;
+    font-size: 0.9375rem;
+    cursor: pointer;
+  }
+  .navegacao__icone,
+  .navegacao__icone::before,
+  .navegacao__icone::after {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    position: relative;
+  }
+  .navegacao__icone::before,
+  .navegacao__icone::after {
+    content: '';
+    position: absolute;
+  }
+  .navegacao__icone::before { top: -6px; }
+  .navegacao__icone::after { top: 6px; }
+
+  /* Celular, com JavaScript: menu recolhível. */
+  @media (max-width: 56rem) {
+    .navegacao--js .navegacao__lista {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      flex-direction: column;
+      gap: 0;
+      padding: var(--esp-2) var(--margem-lateral) var(--esp-4);
+      background: var(--cor-azul-profundo);
+      border-bottom: var(--linha-fina) solid var(--borda);
+    }
+    .navegacao--js [aria-expanded='true'] + .navegacao__lista {
+      display: flex;
+    }
+    .navegacao--js .navegacao__lista a {
+      display: block;
+      padding: var(--esp-3) 0;
+      border-bottom: var(--linha-fina) solid var(--borda);
+    }
+  }
+  /* Computador: botão nunca aparece. */
+  @media (min-width: 56.0625rem) {
+    .navegacao__botao {
+      display: none;
+    }
+  }
+  /* Celular sem JavaScript: lista visível abaixo da marca. */
+  @media (max-width: 56rem) {
+    .navegacao:not(.navegacao--js) .navegacao__lista {
+      gap: 0 var(--esp-3);
+    }
+  }
+</style>

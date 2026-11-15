@@ -1,0 +1,56 @@
+---
+/** Rodapé do site (T022). */
+import { url, secoes } from '../lib/url';
+---
+
+<footer class="rodape superficie-escura">
+  <div class="conteiner rodape__grade">
+    <div>
+      <p class="rodape__marca">Sebastião de Freitas</p>
+      <p class="rodape__texto">
+        Exposição histórica digital. Cada informação indica sua natureza e sua fonte.
+      </p>
+    </div>
+    <nav aria-label="Seções do site">
+      <ul class="rodape__lista">
+        {secoes.map((s) => <li><a href={url(s.caminho)}>{s.rotulo}</a></li>)}
+        <li><a href={url('sobre/')}>Sobre o projeto</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .rodape {
+    padding-block: var(--esp-6);
+    border-top: var(--linha-fina) solid var(--borda);
+  }
+  .rodape__grade {
+    display: grid;
+    gap: var(--esp-5);
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+  .rodape__marca {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: var(--titulo);
+    margin-bottom: var(--esp-2);
+  }
+  .rodape__texto {
+    color: var(--texto-secundario);
+    font-size: var(--texto-pequeno);
+  }
+  .rodape__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    columns: 2;
+    column-gap: var(--esp-4);
+  }
+  .rodape__lista a {
+    display: inline-block;
+    padding: var(--esp-1) 0;
+    color: var(--texto);
+    font-size: 0.9375rem;
+  }
+</style>

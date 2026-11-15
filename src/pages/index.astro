@@ -1,14 +1,13 @@
 ---
-// Página provisória (T004). Será substituída pela página inicial na Fase 4.
+// Página provisória (T004/Fase 3). Será substituída pela página inicial na Fase 4.
+import LayoutBase from '../layouts/LayoutBase.astro';
+import Secao from '../components/Secao.astro';
+import SeloNatureza from '../components/SeloNatureza.astro';
 ---
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sebastião de Freitas — em construção</title>
-  </head>
-  <body>
-    <h1>Sebastião de Freitas</h1>
-    <p>Exposição histórica digital em construção.</p>
-  </body>
-</html>
+<LayoutBase titulo="Sebastião de Freitas" descricao="Exposição histórica digital sobre Sebastião de Freitas, em construção.">
+  <Secao superficie="escura" rotuloId="t">
+    <h1 id="t">Sebastião de Freitas</h1>
+    <p>Em construção.</p>
+  </Secao>
+  <Secao superficie="clara"><p><SeloNatureza natureza="fato" /> <SeloNatureza natureza="hipotese" /></p></Secao>
+</LayoutBase>

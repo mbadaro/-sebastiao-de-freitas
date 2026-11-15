@@ -1,7 +1,7 @@
 # Sebastião de Freitas — Exposição Histórica Digital
 
 Acervo histórico digital sobre a vida, a trajetória e o legado de Sebastião de Freitas
-(c. 1565–1644), construído com Spec-Driven Development (Spec Kit).
+(séculos XVI–XVII), construído com Spec-Driven Development (Spec Kit).
 
 ## Documentos do projeto
 

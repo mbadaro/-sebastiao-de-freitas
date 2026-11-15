@@ -1,0 +1,67 @@
+---
+/**
+ * Layout base de todas as páginas (T020): idioma, SEO, compartilhamento, navegação.
+ * Título e descrição são obrigatórios (FR-027).
+ */
+import '../styles/global.css';
+import Cabecalho from '../components/Cabecalho.astro';
+import Rodape from '../components/Rodape.astro';
+import { url } from '../lib/url';
+
+interface Props {
+  titulo: string;
+  descricao: string;
+  /** Caminho da imagem de compartilhamento dentro de public/ (sem rosto de Sebastião). */
+  imagemCompartilhamento?: string;
+  tipo?: 'website' | 'article';
+}
+
+const {
+  titulo,
+  descricao,
+  imagemCompartilhamento = 'og/padrao.png',
+  tipo = 'website',
+} = Astro.props;
+
+const nomeSite = 'Sebastião de Freitas';
+const tituloCompleto = titulo === nomeSite ? titulo : `${titulo} | ${nomeSite}`;
+const canonica = new URL(Astro.url.pathname, Astro.site).href;
+const imagemAbsoluta = new URL(url(imagemCompartilhamento), Astro.site).href;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{tituloCompleto}</title>
+    <meta name="description" content={descricao} />
+    <link rel="canonical" href={canonica} />
+    <link
+      rel="preload"
+      href={url('fontes/source-sans-3-latin.woff2')}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
+
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content={nomeSite} />
+    <meta property="og:type" content={tipo} />
+    <meta property="og:title" content={tituloCompleto} />
+    <meta property="og:description" content={descricao} />
+    <meta property="og:url" content={canonica} />
+    <meta property="og:image" content={imagemAbsoluta} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <slot name="head" />
+  </head>
+  <body class="superficie-clara">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+    <Cabecalho />
+    <main id="conteudo" tabindex="-1">
+      <slot />
+    </main>
+    <Rodape />
+  </body>
+</html>

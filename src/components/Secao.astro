@@ -1,0 +1,22 @@
+---
+/** Seção de página com superfície clara ou escura (T023). */
+interface Props {
+  superficie: 'clara' | 'escura';
+  /** id do título da seção, para aria-labelledby. */
+  rotuloId?: string;
+  classe?: string;
+}
+const { superficie, rotuloId, classe = '' } = Astro.props;
+---
+
+<section class={`secao superficie-${superficie} ${classe}`} aria-labelledby={rotuloId}>
+  <div class="conteiner">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .secao {
+    padding-block: var(--esp-7);
+  }
+</style>

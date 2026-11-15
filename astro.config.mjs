@@ -7,4 +7,11 @@ export default defineConfig({
   base: '/sebastiao-de-freitas',
   trailingSlash: 'always',
   output: 'static',
+  // Política de segurança de conteúdo gerada pelo Astro, com hashes dos scripts e estilos
+  // (plano, Segurança): só recursos do próprio domínio.
+  security: {
+    csp: {
+      directives: ["default-src 'self'", "img-src 'self' data:", "font-src 'self'"],
+    },
+  },
 });

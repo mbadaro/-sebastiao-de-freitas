@@ -1,0 +1,46 @@
+---
+/** Cabeçalho do site (T021): marca e navegação principal. */
+import Navegacao from './Navegacao.astro';
+import { url } from '../lib/url';
+---
+
+<header class="cabecalho superficie-escura">
+  <div class="conteiner cabecalho__barra">
+    <a class="marca" href={url()}>
+      <span class="marca__nome">Sebastião de Freitas</span>
+      <span class="marca__periodo">Séculos XVI–XVII</span>
+    </a>
+    <Navegacao />
+  </div>
+</header>
+
+<style>
+  .cabecalho {
+    border-bottom: var(--linha-fina) solid var(--borda);
+    position: relative;
+    z-index: 10;
+  }
+  .cabecalho__barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--esp-3);
+    min-height: 4.5rem;
+  }
+  .marca {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--titulo);
+    line-height: 1.2;
+  }
+  .marca__nome {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem; /* 24 px: mínimo para Playfair */
+  }
+  .marca__periodo {
+    font-size: var(--texto-pequeno);
+    letter-spacing: 0.12em;
+    color: var(--texto-secundario);
+  }
+</style>
