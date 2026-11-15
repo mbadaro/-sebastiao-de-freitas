@@ -53,12 +53,12 @@ e `pesquisa/` (levantamento de fontes; documentação de trabalho, não é publi
 
 - [X] T001 ⏳ Instalar Node.js LTS na máquina do responsável (via `winget install OpenJS.NodeJS.LTS`, executado ou autorizado por ele) e confirmar `node -v` e `npm -v`; registrar a versão em `README.md`
 - [X] T002 Inicializar Git na raiz do projeto, criar `.gitignore` (`node_modules/`, `dist/`, `.astro/`) e fazer o primeiro commit com `.specify/`, `.claude/` e `specs/` (repositório local; nada é publicado)
-- [ ] T003 ⏳ 🛑 Criar o repositório **público** no GitHub na conta do responsável e enviar o ramo principal (`git remote add origin` + `git push`). Decisão aprovada no plano (Q-1), mas **a execução exige confirmação explícita do responsável no momento**, porque torna público todo o conteúdo do repositório; antes do envio, revisar com ele a lista de arquivos versionados
+- [X] T003 ⏳ 🛑 Criar o repositório **público** no GitHub na conta do responsável e enviar o ramo principal (`git remote add origin` + `git push`). Decisão aprovada no plano (Q-1), mas **a execução exige confirmação explícita do responsável no momento**, porque torna público todo o conteúdo do repositório; antes do envio, revisar com ele a lista de arquivos versionados
 - [X] T004 Criar projeto Astro mínimo na raiz, com TypeScript estrito: `package.json`, `astro.config.mjs`, `tsconfig.json`, `src/pages/index.astro` provisório
 - [X] T005 [P] Criar a estrutura de pastas do plano: `conteudo/capitulos/`, `conteudo/paginas/`, `conteudo/imagens/`, `src/layouts/`, `src/components/`, `src/plugins/`, `src/lib/`, `src/styles/`, `scripts/`, `dados-geo/`, `public/`, `tests/e2e/`, `tests/validacao/`, `pesquisa/`
 - [X] T006 Instalar somente as dependências previstas no plano (`astro`, `remark-directive`, `@astrojs/sitemap`; desenvolvimento: `d3-geo`, `@playwright/test`, `@axe-core/playwright`) e criar os scripts `dev`, `build`, `preview`, `validar` e `test` em `package.json`
 - [X] T007 [P] Criar `.github/workflows/ci.yml`: `npm ci`, `npm audit --audit-level=high` (falha em alto/crítico), `npm run validar`, `npm run build`, `npm test`
-- [ ] T008 [P] ⏳ 🛑 Criar `.github/workflows/publicar.yml`: publicação no GitHub Pages a partir do ramo principal, com permissões mínimas; endereço provisório `*.github.io` serve de prévia. **Ativar o GitHub Pages só após confirmação explícita do responsável** (o site fica acessível publicamente); até lá, a prévia é local (`npm run preview`)
+- [X] T008 [P] ⏳ 🛑 Criar `.github/workflows/publicar.yml`: publicação no GitHub Pages a partir do ramo principal, com permissões mínimas; endereço provisório `*.github.io` serve de prévia. **Ativar o GitHub Pages só após confirmação explícita do responsável** (o site fica acessível publicamente); até lá, a prévia é local (`npm run preview`)
 - [X] T009 [P] Criar `.github/dependabot.yml` com atualização semanal de npm e GitHub Actions
 
 **Ponto de verificação**: `npm run build` gera `dist/`; após as confirmações de T003 e T008, um
@@ -144,7 +144,7 @@ Esses mecanismos chegam nas fases 5 e 9 e são ligados à página depois (T053, 
 - [X] T034 [US1] Compor `src/pages/index.astro` com `LayoutBase` e as cinco seções, título e descrição próprios e imagem padrão de compartilhamento em `public/og/padrao.png` (composição tipográfica, sem rosto de Sebastião)
 - [X] T035 [US1] Aplicar animações discretas de entrada em CSS nas seções da página inicial, todas desativadas com `prefers-reduced-motion: reduce`
 - [X] T036 [US1] Verificar a página inicial e registrar os resultados em `specs/001-acervo-mvp/checklists/aprovacao-visual.md`: axe sem falhas, 360/768/1280 px, teclado, NVDA, Lighthouse em modo celular (Desempenho ≥ 90, Acessibilidade 100, SEO ≥ 95, LCP ≤ 2,5 s, CLS ≤ 0,1)
-- [ ] T037 [US1] Disponibilizar a prévia ao responsável: no GitHub Pages (endereço `*.github.io`), se T008 já tiver sido confirmada, ou localmente com `npm run preview`
+- [X] T037 [US1] Disponibilizar a prévia ao responsável: no GitHub Pages (endereço `*.github.io`), se T008 já tiver sido confirmada, ou localmente com `npm run preview`
 - [ ] T038 🛑 [US1] **Revisão e aprovação da direção visual com o responsável**; registrar decisões e ajustes em `specs/001-acervo-mvp/checklists/aprovacao-visual.md`. **Nenhuma outra página é implementada antes desta aprovação**
 - [ ] T039 [US1] Incorporar os ajustes aprovados aos tokens e componentes reutilizáveis (`src/styles/tokens.css`, `src/styles/global.css`, `src/components/`), não apenas à página inicial
 
