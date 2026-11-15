@@ -1,0 +1,27 @@
+---
+/** Sobre o projeto (T078): método e legenda das naturezas. */
+import { getEntry, render } from 'astro:content';
+import LayoutBase from '../../layouts/LayoutBase.astro';
+import CabecaPagina from '../../components/CabecaPagina.astro';
+
+const entrada = (await getEntry('paginas', 'sobre'))!;
+const { Content } = await render(entrada);
+const titulo = entrada.data.titulo as string;
+const descricao = entrada.data.descricao as string;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: titulo,
+  description: descricao,
+  inLanguage: 'pt-BR',
+  url: new URL(Astro.url.pathname, Astro.site!).href,
+};
+---
+
+<LayoutBase titulo={titulo} descricao={descricao}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <CabecaPagina sobretitulo="O projeto" titulo={titulo} />
+  <article class="conteiner corpo-pagina texto-capitulo">
+    <Content />
+  </article>
+</LayoutBase>

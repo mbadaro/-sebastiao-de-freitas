@@ -1,2 +1,22 @@
 # alteracoes — formato em specs/001-acervo-mvp/contracts/conteudo.md
-[]
+# Alterações relevantes de conteúdo (FR-011). "afeta": caminhos das páginas, sem barra inicial.
+- id: revisao-de-fontes-2026-11
+  data: "2026-11-15"
+  afeta:
+    - exposicao/origem-em-portugal/
+    - exposicao/raizes-cristas-novas-e-sefarditas/
+    - exposicao/chegada-ao-brasil/
+    - exposicao/atuacao-publica-e-militar/
+    - exposicao/ultimos-anos-e-falecimento/
+    - exposicao/legado/
+  descricao: >-
+    Fontes informais substituídas por obras acadêmicas e documentos oficiais onde havia
+    alternativa melhor (Infopédia, revista Arade, Geoparque Algarvensis, Vilardaga, Ribeiro,
+    Decreto n.º 44075 de 1961). Retiradas afirmações sem apoio nas fontes ("viveu 17 anos na
+    Bahia", "comandada por Manuel Preto"). A data de morte passou a indicar o que é certo
+    (vivo em novembro de 1640) e o que vem de genealogias sem fonte (1644).
+  motivo: Revisão das fontes dos capítulos pelo responsável pelo projeto.
+  referencias:
+    - { ref: vilardaga-2013 }
+    - { ref: ribeiro-anpuh-2015 }
+    - { ref: decreto-44075-1961 }

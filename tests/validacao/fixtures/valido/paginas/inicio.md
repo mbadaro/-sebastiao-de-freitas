@@ -1,77 +1,42 @@
 ---
-# Página inicial (T028) — conteúdo de PRÉVIA para a aprovação visual.
-# Regra editorial: toda informação traz a origem explícita. As fontes abaixo estão com status
-# "consultado" (pesquisa/catalogo-de-fontes.md): lidas em transcrição ou citação, ainda não
-# conferidas na obra original. Por isso a página exibe o aviso de prévia.
+# Página inicial (T053). Os marcos da trajetória e os lugares vêm dos cadastros
+# (acontecimentos.yaml e lugares.yaml); aqui ficam só os textos de abertura e as escolhas editoriais.
 titulo: Sebastião de Freitas
 descricao: Exposição histórica digital sobre Sebastião de Freitas, português do Algarve que viveu na vila de São Paulo entre os séculos XVI e XVII.
 
 abertura:
   sobretitulo: Exposição histórica digital
   apresentacao: >-
-    Natural de Silves, no Algarve, segundo a Genealogia Paulistana, chegou ao Brasil como
-    soldado em 1591 e fez sua vida na vila de São Paulo, entre expedições ao sertão, a Câmara
-    e a família que fundou.
+    Natural de Silves, no Algarve, chegou ao Brasil como soldado em 1591 e fez sua vida na
+    vila de São Paulo, entre expedições ao sertão, a Câmara e a família que fundou.
   sefardita: >-
-    O historiador José Gonçalves Salvador o identifica como cristão-novo, descendente de
-    judeus convertidos à força em Portugal, e a Comunidade Israelita de Lisboa reconhece
-    sua origem sefardita.
-  fonte_sefardita: Salvador, citado em compilações genealógicas; certificado da CIL (fontes em verificação)
+    Era cristão-novo, descendente de judeus convertidos à força em Portugal, e ele mesmo o
+    declarou ao Santo Ofício. Historiadores o incluem entre os cristãos-novos de São Paulo, e a
+    Comunidade Israelita de Lisboa reconhece a origem sefardita da família.
+  fonte_sefardita: Inquisição de Lisboa, 24.º Caderno do Promotor, fl. 316 (Torre do Tombo); Salvador; Bogaciovas; certificado da CIL
 
-trajetoria:
-  - data: Século XVI
-    titulo: Origem no Algarve
-    texto: Natural de Alagoa, da cidade de Silves, filho de Manoel Pires, provedor da Santa Casa de Misericórdia.
-    natureza: historiografia
-    fonte: Silva Leme, Genealogia Paulistana, v. 7, p. 168
-  - data: '1591'
-    titulo: Chegada à Bahia
-    texto: Vem como soldado da companhia do capitão Gabriel Soares, com o governador d. Francisco de Souza.
-    natureza: historiografia
-    fonte: Silva Leme, Genealogia Paulistana, v. 7, p. 169
-  - data: 1594–1595
-    titulo: Expedições ao sertão
-    texto: Acompanha os capitães Jorge Corrêa e Jeronimo Pereira de Souza. Uma fonte data a segunda jornada de 1596.
-    natureza: historiografia
-    fonte: Silva Leme, Genealogia Paulistana, v. 7, p. 169
-  - data: '1600'
-    titulo: Armado cavaleiro
-    texto: Recebe o título em São Paulo, das mãos de d. Francisco de Souza, por seus serviços.
-    natureza: historiografia
-    fonte: Silva Leme, Genealogia Paulistana, v. 7, p. 169
-  - data: '1606'
-    titulo: Capitão da gente de Piratininga
-    texto: Recebe a patente para acudir aos rebates de inimigos na costa.
-    natureza: historiografia
-    fonte: Silva Leme, v. 7, p. 169, citando Pedro Taques
-  - data: Data a confirmar
-    titulo: Casamento e família
-    texto: Casa-se em São Paulo com Maria Pedroso. Silva Leme registra sete filhos; Sillos identifica uma oitava.
-    natureza: historiografia
-    fonte: Silva Leme, v. 7, p. 169; Sillos, Revista da ASBRAP, n. 26
-
-lugares:
-  - nome: Silves, Algarve
-    pais: Portugal
-    texto: Terra natal, segundo Silva Leme.
-  - nome: Bahia
-    pais: Brasil
-    texto: Chegada em 1591, com a companhia de Gabriel Soares.
-  - nome: Vila de São Paulo
-    pais: Brasil
-    texto: Onde viveu, serviu e constituiu família.
+# Marcos da trajetória em destaque (ids de conteudo/acontecimentos.yaml).
+destaques: []
 
 documentos:
+  - tipo: Documento de época
+    titulo: 24.º Caderno do Promotor
+    autoria: Inquisição de Lisboa, 1599–1640. Arquivo Nacional da Torre do Tombo
+    texto: Registra a denúncia contra Sebastião e a sua declaração de que era cristão-novo (fl. 316).
+    situacao: Imagem do original conferida
   - tipo: Obra genealógica
     titulo: Genealogia Paulistana
     autoria: Luiz Gonzaga da Silva Leme, 1903–1905
     texto: Referência clássica das famílias paulistas. O título Freitas (v. 7) registra origem, carreira e filhos de Sebastião.
-  - tipo: Obra setecentista
-    titulo: Nobiliarquia Paulistana
-    autoria: Pedro Taques de Almeida Paes Leme, século XVIII
-    texto: Fonte citada por Silva Leme para a patente de 1606 e os serviços de Sebastião.
+    situacao: Conferida na edição original
   - tipo: Historiografia
-    titulo: Estudos sobre os cristãos-novos
-    autoria: José Gonçalves Salvador
-    texto: Base historiográfica da identificação de Sebastião como cristão-novo. Obra e página em verificação.
+    titulo: Tribulações do povo de Israel na São Paulo colonial
+    autoria: Marcelo Meira Amaral Bogaciovas, 2006 (dissertação, USP)
+    texto: Estuda os cristãos-novos de São Paulo e reúne os registros de Sebastião em processos de 1640 e 1644.
+    situacao: Consultada na íntegra
+  - tipo: Registro paroquial
+    titulo: Livro 1 de Batismos da Sé
+    autoria: São Paulo, 1640–1662. Arquivo da Cúria Metropolitana
+    texto: O batismo do bisneto, em 1640, com Sebastião como padrinho, anotado como "seu bisavô".
+    situacao: Lido em transcrição do FamilySearch
 ---

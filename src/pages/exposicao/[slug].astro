@@ -5,6 +5,7 @@ import NavegacaoCapitulos from '../../components/NavegacaoCapitulos.astro';
 import ListaCitacoes from '../../components/ListaCitacoes.astro';
 import { capitulosOrdenados, montarCapitulo } from '../../lib/capitulo';
 import { url } from '../../lib/url';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const capitulos = await capitulosOrdenados();
@@ -23,6 +24,13 @@ export async function getStaticPaths() {
 const { entrada, numero, total, anterior, proximo } = Astro.props;
 const { html, citacoes } = await montarCapitulo(entrada);
 const site = Astro.site!;
+// FR-011: última revisão registrada que afeta este capítulo.
+const revisao = (await getCollection('alteracoes'))
+  .filter((a) => a.data.afeta.includes(`exposicao/${entrada.data.slug}/`))
+  .sort((a, b) => b.data.data.localeCompare(a.data.data))[0];
+const dataRevisao = revisao
+  ? new Date(`${revisao.data.data}T12:00:00Z`).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+  : undefined;
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -65,6 +73,11 @@ const jsonLd = {
   <article class="conteiner capitulo">
     <div class="texto-capitulo" set:html={html} />
     <ListaCitacoes citacoes={citacoes} />
+    {revisao && (
+      <p class="revisado">
+        Revisado em {dataRevisao}. <a href={url(`sobre/historico-de-revisoes/#${revisao.id}`)}>O que mudou</a>
+      </p>
+    )}
     <NavegacaoCapitulos anterior={anterior} proximo={proximo} />
   </article>
 </LayoutBase>
@@ -84,6 +97,11 @@ const jsonLd = {
   .trilha {
     font-size: var(--texto-pequeno);
     margin-bottom: var(--esp-4);
+    color: var(--texto-secundario);
+  }
+  .revisado {
+    margin-top: var(--esp-5);
+    font-size: var(--texto-pequeno);
     color: var(--texto-secundario);
   }
   .capitulo {

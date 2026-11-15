@@ -7,9 +7,11 @@ import { url } from '../lib/url';
 interface Marco {
   data: string;
   titulo: string;
-  texto: string;
+  texto?: string;
   natureza: Natureza;
+  /** Fontes em forma curta (HTML já escapado). */
   fonte: string;
+  href?: string;
 }
 interface Props {
   marcos: Marco[];
@@ -32,11 +34,11 @@ const { marcos } = Astro.props;
       marcos.map((m) => (
         <li class="marco">
           <p class="marco__data">{m.data}</p>
-          <h3 class="marco__titulo">{m.titulo}</h3>
-          <p class="marco__texto">{m.texto}</p>
+          <h3 class="marco__titulo">{m.href ? <a href={m.href}>{m.titulo}</a> : m.titulo}</h3>
+          {m.texto && <p class="marco__texto">{m.texto}</p>}
           <p class="marco__meta">
             <SeloNatureza natureza={m.natureza} />
-            <span class="marco__fonte">{m.fonte}</span>
+            <span class="marco__fonte" set:html={m.fonte} />
           </p>
         </li>
       ))

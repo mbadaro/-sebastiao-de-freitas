@@ -1,0 +1,69 @@
+---
+/** Histórico de revisões (T078; FR-011), gerado de conteudo/alteracoes.yaml. */
+import { getCollection } from 'astro:content';
+import LayoutBase from '../../layouts/LayoutBase.astro';
+import CabecaPagina from '../../components/CabecaPagina.astro';
+import { fontesCurtas } from '../../lib/acervo';
+import { url } from '../../lib/url';
+
+const titulo = 'Histórico de revisões';
+const descricao = 'As alterações relevantes feitas no conteúdo da exposição sobre Sebastião de Freitas, com data, motivo e páginas afetadas.';
+const alteracoes = await Promise.all(
+  (await getCollection('alteracoes'))
+    .sort((a, b) => b.data.data.localeCompare(a.data.data))
+    .map(async (a) => ({ a, fontes: await fontesCurtas(a.data.referencias) })),
+);
+const formatar = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+
+<LayoutBase titulo={titulo} descricao={descricao}>
+  <CabecaPagina sobretitulo="O projeto" titulo={titulo} trilha={[{ rotulo: 'Sobre', href: url('sobre/') }]} />
+  <div class="conteiner corpo-pagina">
+    {alteracoes.length === 0 && <p>Nenhuma alteração registrada até agora.</p>}
+    <ol class="revisoes">
+      {
+        alteracoes.map(({ a, fontes }) => (
+          <li id={a.id}>
+            <h2 class="revisao__data">{formatar(a.data.data)}</h2>
+            <p>{a.data.descricao}</p>
+            <p class="revisao__meta">Motivo: {a.data.motivo}</p>
+            <p class="revisao__meta">
+              Páginas afetadas:{' '}
+              {a.data.afeta.map((c, i) => (
+                <>
+                  {i > 0 && ', '}
+                  <a href={url(c)}>{c.replace(/\/$/, '')}</a>
+                </>
+              ))}
+            </p>
+            {fontes.length > 0 && (
+              <p class="revisao__meta">
+                Novas fontes:{' '}
+                {fontes.map((f, i) => (
+                  <>
+                    {i > 0 && '; '}
+                    <a href={f.href} set:html={f.html} />
+                  </>
+                ))}
+              </p>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</LayoutBase>
+
+<style>
+  .revisoes {
+    list-style: none;
+    padding: 0;
+  }
+  .revisao__data {
+    font-size: var(--titulo-3);
+  }
+  .revisao__meta {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+  }
+</style>

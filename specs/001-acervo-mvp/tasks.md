@@ -197,7 +197,7 @@ toda afirmação mostra natureza e fonte; um capítulo do meio abre direto pelo 
 - [X] T050 [US1] Criar `src/pages/exposicao/[slug].astro`: capítulo com `Article` e `BreadcrumbList`, navegação anterior/próximo, imagens via `Figura`, título e descrição do frontmatter
 - [X] T051 [P] [US1] Cadastrar em `conteudo/divergencias.yaml` as divergências do fichamento (ao menos as 6 conhecidas), cada versão com sua referência
 - [X] T052 ⏳ [US1] Redigir os capítulos em `conteudo/capitulos/NN-<slug>.md` **exclusivamente** a partir de `pesquisa/fichamento.md` e de fontes `verificada`, seguindo a [regra editorial](#regra-editorial-vale-para-toda-tarefa-que-produz-conteúdo) (informação não confirmada nunca como fato), na estrutura provisória do data-model (origem em Portugal; raízes cristãs-novas e sefarditas; chegada ao Brasil; São Paulo e família; atuação pública e militar; últimos anos e falecimento; legado): `:fonte` em todo parágrafo, contexto histórico ligado aos acontecimentos, lacunas declaradas, nenhuma hipótese própria; enviar ao responsável para revisão humana antes de publicar (Princípio II)
-- [ ] T053 [US1] Substituir o conteúdo provisório da página inicial pelos dados das coleções (`src/pages/index.astro` e componentes da Fase 4)
+- [X] T053 [US1] Substituir o conteúdo provisório da página inicial pelos dados das coleções (`src/pages/index.astro` e componentes da Fase 4)
 - [X] T054 [US1] Criar `tests/e2e/exposicao.spec.ts`: início → primeiro capítulo → último pelo "próximo"; abertura direta de capítulo do meio; da página inicial até a referência de uma afirmação em no máximo 3 ações (SC-003); divergência com versões lado a lado
 
 **Ponto de verificação**: US1 funcional e testável sozinha. **MVP mínimo publicável.**
@@ -251,7 +251,7 @@ acessível por teclado, presumidos rotulados, lista completa sem JavaScript.
 - [X] T066 [US4] Criar `src/components/Mapa.astro`: SVG com lugares focáveis e clicáveis; `aproximada`/`regiao` como área sombreada; trajeto `presumido` tracejado **e** com rótulo "presumido"; painel do lugar com nome histórico, nome atual, acontecimentos e fontes; JavaScript ≤ 40 KB
 - [X] T067 [US4] Acrescentar a `src/components/Mapa.astro` a lista textual de lugares e trajetos com o mesmo conteúdo do mapa, operável por teclado (FR-016)
 - [X] T068 [US4] Criar `src/pages/mapa.astro` e `src/pages/lugares/[id].astro` (dado estruturado `Place`)
-- [ ] T069 [US4] Atualizar `src/components/PreviaLugares.astro` da página inicial para usar `lugares.yaml` e a vista `atlantico` gerada
+- [X] T069 [US4] Atualizar `src/components/PreviaLugares.astro` da página inicial para usar `lugares.yaml` e a vista `atlantico` gerada
 - [X] T070 [US4] Criar `tests/e2e/mapa.spec.ts`: 100% dos lugares da trajetória no mapa e na lista (SC-004); painel abre por teclado; trajeto presumido com rótulo; lista completa com JavaScript desativado
 
 **Ponto de verificação**: US4 funcional e independente.
@@ -294,10 +294,10 @@ passar pela narrativa.
 
 **Objetivo**: requisitos transversais, verificação final e publicação no domínio próprio.
 
-- [ ] T078 [P] Criar `conteudo/paginas/sobre.md` e `src/pages/sobre/index.astro` (método do projeto e legenda das naturezas) e `src/pages/sobre/historico-de-revisoes.astro` a partir de `conteudo/alteracoes.yaml`, com "Revisado em" e link nas páginas afetadas (FR-011)
-- [ ] T079 [P] Criar `src/pages/404.astro` com links para as seções
-- [ ] T080 [P] SEO: ativar `@astrojs/sitemap` em `astro.config.mjs`, criar `public/robots.txt` apontando o sitemap e `src/lib/seo.ts` com os dados estruturados JSON-LD de cada rota conforme `contracts/rotas.md` (datas aproximadas como texto)
-- [ ] T081 [P] Criar imagens de compartilhamento por seção em `public/og/` (composição tipográfica ou imagem com direitos; sem rosto de Sebastião) e ligá-las no `LayoutBase`
+- [X] T078 [P] Criar `conteudo/paginas/sobre.md` e `src/pages/sobre/index.astro` (método do projeto e legenda das naturezas) e `src/pages/sobre/historico-de-revisoes.astro` a partir de `conteudo/alteracoes.yaml`, com "Revisado em" e link nas páginas afetadas (FR-011)
+- [X] T079 [P] Criar `src/pages/404.astro` com links para as seções
+- [X] T080 [P] SEO: ativar `@astrojs/sitemap` em `astro.config.mjs`, criar `public/robots.txt` apontando o sitemap e `src/lib/seo.ts` com os dados estruturados JSON-LD de cada rota conforme `contracts/rotas.md` (datas aproximadas como texto)
+- [X] T081 [P] Criar imagens de compartilhamento por seção em `public/og/` (composição tipográfica ou imagem com direitos; sem rosto de Sebastião) e ligá-las no `LayoutBase`
 - [ ] T082 Revisão editorial final registrada em `specs/001-acervo-mvp/checklists/revisao-conteudo.md`: natureza frase a frase, ABNT, direitos de reprodução de cada imagem, ausência de rosto de Sebastião, regra dos 100 anos, ausência de dados pessoais do responsável
 - [ ] T083 Executar `quickstart.md` completo (seções 1 a 4), Lighthouse em página inicial, capítulo e mapa, e navegação com NVDA; registrar resultados em `specs/001-acervo-mvp/checklists/verificacao-final.md`
 - [ ] T084 ⏳ Realizar o teste com 3 leitores (recrutados pelo responsável) sem conhecimento prévio (SC-001) e registrar o resultado em `specs/001-acervo-mvp/checklists/verificacao-final.md`

@@ -1,6 +1,6 @@
 ---
 /** Família (T073; US5): pessoas agrupadas por vínculo, com a divergência sobre o número de filhos. */
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import LayoutBase from '../../layouts/LayoutBase.astro';
 import CabecaPagina from '../../components/CabecaPagina.astro';
 import PessoaCard from '../../components/PessoaCard.astro';
@@ -17,7 +17,7 @@ const grupos = [
   { titulo: 'Os filhos', vinculos: ['filho', 'filha'], divergencia: 'numero-de-filhos' },
   { titulo: 'Genros e noras', vinculos: ['conjuge-de-filho'] },
 ].map((g) => ({ ...g, pessoas: pessoas.filter((p) => g.vinculos.includes(p.data.vinculo)) }));
-const divergencia = await htmlDivergencia('numero-de-filhos');
+const divergencia = (await getEntry('divergencias', 'numero-de-filhos')) ? await htmlDivergencia('numero-de-filhos') : '';
 ---
 
 <LayoutBase titulo={titulo} descricao={descricao}>
@@ -31,7 +31,7 @@ const divergencia = await htmlDivergencia('numero-de-filhos');
       grupos.map((g) => (
         <section aria-labelledby={`grupo-${g.vinculos[0]}`} class="grupo">
           <h2 id={`grupo-${g.vinculos[0]}`}>{g.titulo}</h2>
-          {g.divergencia && <div class="texto-capitulo" set:html={divergencia} />}
+          {g.divergencia && divergencia && <div class="texto-capitulo" set:html={divergencia} />}
           <div class="cartoes">
             {g.pessoas.map((p) => (
               <PessoaCard pessoa={p} />

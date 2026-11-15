@@ -1,7 +1,7 @@
 ---
 /**
- * Página inicial (T034) — primeira entrega e referência visual do site.
- * Conteúdo de prévia em conteudo/paginas/inicio.md; passa a ler as coleções em T053.
+ * Página inicial (T034, T053). Textos de abertura em conteudo/paginas/inicio.md;
+ * marcos e lugares vêm das coleções (acontecimentos, lugares).
  */
 import LayoutBase from '../layouts/LayoutBase.astro';
 import Hero from '../components/Hero.astro';
@@ -10,22 +10,36 @@ import PreviaLugares from '../components/PreviaLugares.astro';
 import Secao from '../components/Secao.astro';
 import DestaqueDocumento from '../components/DestaqueDocumento.astro';
 import DescubraAHistoria from '../components/DescubraAHistoria.astro';
-import { frontmatter as p } from '../../conteudo/paginas/inicio.md';
 import { url } from '../lib/url';
 import { verificarIntegridade } from '../lib/integridade';
+import { getCollection, getEntry } from 'astro:content';
+import { fontesCurtas } from '../lib/acervo';
+import { formatarData } from '../lib/datas';
 
 // Integridade do acervo: interrompe a geração do site se houver ligação quebrada (T044).
 await verificarIntegridade();
+
+// Lido pela coleção (respeita CONTEUDO_DIR nos testes de validação).
+const p = (await getEntry('paginas', 'inicio'))!.data as Record<string, any>;
+
+const marcos = await Promise.all(
+  (p.destaques as string[]).map(async (id) => {
+    const a = await getEntry('acontecimentos', id);
+    if (!a) throw new Error(`inicio.md: acontecimento "${id}" não existe`);
+    const fontes = await fontesCurtas(a.data.referencias);
+    return {
+      data: formatarData(a.data.data),
+      titulo: a.data.titulo,
+      natureza: a.data.natureza,
+      fonte: fontes.map((f) => f.html).join('; '),
+      href: url(`linha-do-tempo/#${a.id}`),
+    };
+  }),
+);
+const lugares = (await getCollection('lugares')).filter((l) => l.data.vista.includes('atlantico'));
 ---
 
 <LayoutBase titulo={p.titulo} descricao={p.descricao}>
-  <div class="aviso-previa" role="note">
-    <p>
-      <strong>Prévia da identidade visual.</strong> Textos provisórios; as fontes citadas estão em
-      verificação.
-    </p>
-  </div>
-
   <Hero
     sobretitulo={p.abertura.sobretitulo}
     apresentacao={p.abertura.apresentacao}
@@ -33,9 +47,9 @@ await verificarIntegridade();
     fonteSefardita={p.abertura.fonte_sefardita}
   />
 
-  <PreviaTrajetoria marcos={p.trajetoria} />
+  <PreviaTrajetoria marcos={marcos} />
 
-  <PreviaLugares lugares={p.lugares} />
+  <PreviaLugares lugares={lugares} />
 
   <Secao superficie="clara" rotuloId="documentos-titulo">
     <p class="sobretitulo">Documentos e evidências</p>
@@ -45,7 +59,7 @@ await verificarIntegridade();
       Sebastião de Freitas.
     </p>
     <ul class="documentos">
-      {p.documentos.map((d: { tipo: string; titulo: string; autoria: string; texto: string }) => <li><DestaqueDocumento {...d} /></li>)}
+      {p.documentos.map((d: { tipo: string; titulo: string; autoria: string; texto: string; situacao: string }) => <li><DestaqueDocumento {...d} /></li>)}
     </ul>
     <p class="documentos__acoes">
       <a class="botao" href={url('fontes/')}>Ver todas as fontes</a>
@@ -56,16 +70,6 @@ await verificarIntegridade();
 </LayoutBase>
 
 <style>
-  .aviso-previa {
-    background: var(--cor-dourado);
-    color: var(--cor-azul-profundo);
-    text-align: center;
-    font-size: var(--texto-pequeno);
-    padding: var(--esp-2) var(--margem-lateral);
-  }
-  .aviso-previa p {
-    margin: 0 auto;
-  }
   .documentos__intro {
     color: var(--texto-secundario);
     margin-bottom: var(--esp-5);

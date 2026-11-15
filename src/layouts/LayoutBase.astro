@@ -19,14 +19,22 @@ interface Props {
 const {
   titulo,
   descricao,
-  imagemCompartilhamento = 'og/padrao.png',
+  imagemCompartilhamento,
   tipo = 'website',
 } = Astro.props;
+
+// Imagem de compartilhamento por seção (T081), escolhida pelo primeiro trecho do endereço.
+const secaoOg: Record<string, string> = {
+  exposicao: 'exposicao', sefarditas: 'sefarditas', 'linha-do-tempo': 'linha-do-tempo',
+  mapa: 'mapa', lugares: 'mapa', familia: 'familia', fontes: 'fontes',
+};
+const trecho = Astro.url.pathname.replace(import.meta.env.BASE_URL.replace(/\/$/, ''), '').split('/').filter(Boolean)[0] ?? '';
+const imagem = imagemCompartilhamento ?? `og/${secaoOg[trecho] ?? 'padrao'}.png`;
 
 const nomeSite = 'Sebastião de Freitas';
 const tituloCompleto = titulo === nomeSite ? titulo : `${titulo} | ${nomeSite}`;
 const canonica = new URL(Astro.url.pathname, Astro.site).href;
-const imagemAbsoluta = new URL(url(imagemCompartilhamento), Astro.site).href;
+const imagemAbsoluta = new URL(url(imagem), Astro.site).href;
 ---
 
 <!doctype html>

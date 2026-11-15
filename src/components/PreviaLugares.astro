@@ -1,23 +1,22 @@
 ---
 /**
- * Seção "Lugares e caminhos" da página inicial (T031).
- * Mapa estático Portugal–Brasil; trajetos presumidos tracejados e rotulados (FR-015).
+ * Seção "Lugares e caminhos" da página inicial (T031, T069).
+ * Usa a vista "atlantico" gerada a partir de lugares.yaml e trajetos.yaml (mesmo mapa de /mapa/).
  * A lista ao lado é a alternativa textual do mapa (FR-016).
  */
+import type { CollectionEntry } from 'astro:content';
 import Secao from './Secao.astro';
-import mapa from '../assets/mapas/atlantico.svg?raw';
+import Mapa from './Mapa.astro';
+import { gerarMapa } from '../lib/mapa';
 import { url } from '../lib/url';
 
-interface Lugar {
-  nome: string;
-  pais: string;
-  texto: string;
-}
 interface Props {
-  lugares: Lugar[];
+  lugares: CollectionEntry<'lugares'>[];
 }
 const { lugares } = Astro.props;
-const contorno = mapa.replace(/<!--[\s\S]*?-->/, '').replace(/^\s*<svg[^>]*>|<\/svg>\s*$/g, '');
+// Mesma numeração do mapa.
+const ordem = (await gerarMapa('atlantico')).pontos;
+const lista = ordem.map((p) => ({ n: p.n, l: lugares.find((l) => l.id === p.id)! })).filter((x) => x.l);
 ---
 
 <Secao superficie="escura" rotuloId="lugares-titulo">
@@ -31,13 +30,12 @@ const contorno = mapa.replace(/<!--[\s\S]*?-->/, '').replace(/^\s*<svg[^>]*>|<\/
       </p>
       <ol class="lugares">
         {
-          lugares.map((l, i) => (
+          lista.map(({ n, l }) => (
             <li>
-              <span class="lugares__numero" aria-hidden="true">{i + 1}</span>
+              <span class="lugares__numero" aria-hidden="true">{n}</span>
               <span>
-                <strong>{l.nome}</strong> <span class="lugares__pais">({l.pais})</span>
-                <br />
-                {l.texto}
+                <a href={url(`lugares/${l.id}/`)}><strong>{l.data.nome_historico}</strong></a>{' '}
+                <span class="lugares__pais">({l.data.pais === 'portugal' ? 'Portugal' : 'Brasil'})</span>
               </span>
             </li>
           ))
@@ -50,26 +48,7 @@ const contorno = mapa.replace(/<!--[\s\S]*?-->/, '').replace(/^\s*<svg[^>]*>|<\/
       <a class="botao" href={url('mapa/')}>Explorar o mapa</a>
     </div>
 
-    <figure class="mapa">
-      <svg viewBox="80 20 560 720" role="img" aria-labelledby="mapa-titulo mapa-desc">
-        <title id="mapa-titulo">Mapa: de Silves, no Algarve, à Bahia e à vila de São Paulo</title>
-        <desc id="mapa-desc">
-          Três lugares ligados por trajetos tracejados, que indicam percurso presumido. A mesma
-          informação está na lista desta seção.
-        </desc>
-        <g set:html={contorno} />
-        <path class="rota" d="M565,105 C470,260 360,420 298,576" />
-        <path class="rota" d="M298,576 C270,620 245,650 226,675" />
-        <text class="rota__rotulo" x="420" y="330" transform="rotate(-58 420 330)">trajeto presumido</text>
-        <g class="ponto"><circle cx="565" cy="105" r="9" /><text x="565" y="109">1</text></g>
-        <g class="ponto"><circle cx="298" cy="576" r="9" /><text x="298" y="580">2</text></g>
-        <g class="ponto"><circle cx="226" cy="675" r="9" /><text x="226" y="679">3</text></g>
-        <text class="nome" x="582" y="98">Silves</text>
-        <text class="nome" x="316" y="574">Bahia</text>
-        <text class="nome" x="244" y="690">São Paulo</text>
-      </svg>
-      <figcaption>Contornos: Natural Earth (domínio público). Mapa esquemático.</figcaption>
-    </figure>
+    <Mapa vista="atlantico" destino="pagina" />
   </div>
 </Secao>
 
@@ -90,7 +69,7 @@ const contorno = mapa.replace(/<!--[\s\S]*?-->/, '').replace(/^\s*<svg[^>]*>|<\/
   .lugares li {
     display: flex;
     gap: var(--esp-3);
-    align-items: flex-start;
+    align-items: center;
   }
   .lugares__numero {
     flex: none;
@@ -118,56 +97,5 @@ const contorno = mapa.replace(/<!--[\s\S]*?-->/, '').replace(/^\s*<svg[^>]*>|<\/
     flex: none;
     width: 2.5rem;
     border-top: 2px dashed var(--cor-dourado);
-  }
-  .mapa {
-    margin: 0;
-  }
-  .mapa svg {
-    width: 100%;
-    max-height: 36rem;
-  }
-  .mapa :global(.mapa-terra) {
-    fill: var(--cor-azul-petroleo);
-    stroke: var(--cor-acinzentado);
-    stroke-width: 0.8;
-  }
-  .mapa :global(.mapa-grade) {
-    fill: none;
-    stroke: var(--cor-acinzentado);
-    stroke-width: 0.4;
-    opacity: 0.3;
-  }
-  .rota {
-    fill: none;
-    stroke: var(--cor-dourado);
-    stroke-width: 2.5;
-    stroke-dasharray: 7 8;
-  }
-  .rota__rotulo {
-    fill: var(--cor-dourado);
-    font-size: 19px;
-    font-style: italic;
-    letter-spacing: 0.04em;
-  }
-  .ponto circle {
-    fill: var(--cor-dourado);
-    stroke: var(--cor-azul-profundo);
-    stroke-width: 2;
-  }
-  .ponto text {
-    fill: var(--cor-azul-profundo);
-    font-size: 13px;
-    font-weight: 700;
-    text-anchor: middle;
-  }
-  .nome {
-    fill: var(--cor-marfim);
-    font-size: 21px;
-    font-weight: 600;
-  }
-  figcaption {
-    font-size: 0.8125rem;
-    color: var(--texto-secundario);
-    text-align: right;
   }
 </style>

@@ -1,0 +1,18 @@
+---
+/** Página não encontrada (T079), com links para as seções. */
+import LayoutBase from '../layouts/LayoutBase.astro';
+import CabecaPagina from '../components/CabecaPagina.astro';
+import { url, secoes } from '../lib/url';
+---
+
+<LayoutBase titulo="Página não encontrada" descricao="O endereço procurado não existe na exposição sobre Sebastião de Freitas. Use os links para chegar às seções do site.">
+  <CabecaPagina sobretitulo="Erro 404" titulo="Página não encontrada" descricao="Este endereço não existe, ou mudou de lugar." />
+  <div class="conteiner corpo-pagina">
+    <p>Talvez você procure uma destas seções:</p>
+    <ul>
+      <li><a href={url()}>Página inicial</a></li>
+      {secoes.map((s) => <li><a href={url(s.caminho)}>{s.rotulo}</a></li>)}
+      <li><a href={url('sobre/')}>Sobre o projeto</a></li>
+    </ul>
+  </div>
+</LayoutBase>
