@@ -179,7 +179,7 @@ Só fontes `verificada` sustentam afirmações `fato` ou `historiografia` no sit
 ### certificado-cil
 
 - **Identificação**: certificado da Comunidade Israelita de Lisboa atestando a origem sefardita
-  de Sebastião de Freitas, emitido a um descendente (o responsável pelo projeto).
+  de Sebastião de Freitas, emitido a um descendente.
 - **Status**: `pendente` — emissor, data e teor a serem fornecidos, **sem dados pessoais do
   descendente** (Princípio V).
 - **Classificação**: secundaria (atestação institucional contemporânea).
