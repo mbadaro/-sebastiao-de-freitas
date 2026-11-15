@@ -118,6 +118,29 @@ por falta de verificação.
 | 7.4 | Vínculo notável — convivência com Antônio Raposo Tavares na bandeira do Guairá (1628) | ver 5.12 | informal | tradicao (a confirmar) | — |
 | 7.5 | Vínculo notável — a bisneta Mécia da Cunha (n. 1656) casou c. 1675 com Francisco Vieira Tavares, filho de Diogo da Costa Tavares, meio-irmão de Antônio Raposo Tavares | anexo genealógico do certificado da CIL (casamento); informação do responsável (parentesco com Raposo Tavares) | consultado | tradicao (a confirmar) | Fonte documental do casamento e da filiação de Francisco: pendente |
 
+## Ampliação da narrativa (2026-11-15)
+
+Material já existente nas fontes consultadas, levantado para enriquecer os capítulos.
+
+| # | Informação | Fonte e página | Status | Natureza |
+|---|---|---|---|---|
+| A.1 | Mecia de Freitas casou 1.º com João de Brito Cassão, natural de Portugal, falecido em 1640; 2.º, em 1643, em São Paulo, com Manoel Soeiro Ramires, de Lisboa. Teve do 1.º casamento Sebastião de Brito (falecido solteiro antes de 1640) e Estevão de Brito Cassão | SL7, p. 178–179 (OCR registra "Maria"; GeneArc e a ordem dos capítulos indicam Mecia) | verificada | historiografia |
+| A.2 | Anna Ribeiro casou com Sebastião Fernandes Correa, natural de Santa Eulália, 1.º provedor proprietário e contador da fazenda real da capitania de São Vicente e São Paulo | SL7, p. 191 (Cap. 5.º) | verificada | historiografia |
+| A.3 | Neta Maria Pedroso (filha de Anna) casou em 1640, em São Paulo, com d. Simão de Toledo Piza, natural de Angra, Ilha Terceira — pais do bisneto Sebastião batizado em nov./1640, de quem Sebastião foi padrinho | SL7, p. 191; ver 4.10 | verificada | historiografia |
+| A.4 | João de Freitas faleceu em 1655 com testamento; casado com Anna de Moraes, filha de Balthasar de Moraes de Antas; 4 filhos | SL7, p. 202 | verificada | historiografia |
+| A.16 | Neto Joaquim Pedroso de Moraes (filho de João) morreu nas Minas Gerais "depois de ter occupado honrosos cargos em S. Paulo" | SL7, p. 202–203 | verificada | historiografia |
+| A.5 | Antonio Pedroso de Freitas casou em 1635, em São Paulo, com Clara Parente († 1654), filha de Pedro Madeira; foi inventariado em 1672 em Jundiaí; 9 filhos, entre eles um Sebastião de Freitas | SL7, p. 229 | verificada | historiografia |
+| A.6 | Genros na Câmara de São Paulo: João de Brito Cassão (1613, 1621, 1627, 1628), Brás Leme (1622), Sebastião Fernandes Corrêa (1619; juiz em 1624, ano em que Sebastião também integrava a Câmara) | Moyarte, décadas 1611–1630 | informal | tradicao |
+| A.7 | Em novembro de 1599, o governador-geral d. Francisco de Sousa chega a São Paulo para visitar as minas recém-descobertas | Moyarte, década 1591–1600 | informal | tradicao |
+| A.8 | Por volta de 1600, São Paulo tinha cerca de 190 casas e 1.500 habitantes | Moyarte, citando Teodoro Sampaio | informal | historiografia (citada) |
+| A.9 | 1591: índios carijó, tupinaé e tupiniquim atacam várias vezes a vila; em boa parte do ano a Câmara não se reuniu porque seus membros tinham ido "à guerra com o senhor capitão" | Moyarte, citando Porta (2004), p. 648 | informal | historiografia (citada) |
+| A.10 | 1594: conclusão dos muros de defesa da vila de São Paulo | Moyarte | informal | tradicao |
+| A.11 | 10/1/1603: motim popular na vila, ao som do sino do Conselho — "Viva o povo! Morra o mau governo!" | Moyarte, citando Porta (2004), p. 649 | informal | historiografia (citada) |
+| A.12 | 1612: concluída a Igreja Matriz; protestos da população e da Câmara contra o monopólio dos jesuítas sobre o trabalho indígena | Moyarte | informal | tradicao |
+| A.13 | Visitação de 1627–1628: o inquisidor Luís Pires da Veiga, que estivera em Luanda em 1626, veio às capitanias do Sul; em 1º/4/1628, perto da meia-noite, os bens de Cornélio de Arzão, natural da Holanda, foram sequestrados em São Paulo. Bogaciovas pergunta o que teria trazido "uma importante figura da Inquisição para a pequena vila de São Paulo" | BOG06, p. 155–157 | consultado | historiografia |
+| A.14 | A Inquisição só mandava prender quando havia ao menos duas denúncias contra a mesma pessoa | BOG06, p. 155–156 | consultado | historiografia |
+| A.15 | 1632: jesuítas espanhóis acusam os paulistas que atacavam as missões do Guairá de serem "judeus encobertos" | BOG06, p. 79–80 | consultado | historiografia |
+
 ## Contexto histórico — fontes a levantar (T012, próxima rodada)
 
 Eventos de contexto que a narrativa vai precisar, ainda **sem fonte historiográfica catalogada**:

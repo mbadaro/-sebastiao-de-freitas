@@ -84,6 +84,11 @@
   tipo: secundaria
   observacao: Atestação institucional emitida a um descendente; os dados do titular não são divulgados.
 
+- id: porta-2004
+  abnt: "PORTA, Paula (org.). *História da cidade de São Paulo*. São Paulo: Paz e Terra, 2004."
+  tipo: secundaria
+  observacao: Conhecida por citação no site Moyarte.
+
 # --- Fontes informais (origem conhecida, sem valor de fonte formal) ----------------------------
 
 - id: moyarte

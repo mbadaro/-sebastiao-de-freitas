@@ -2,7 +2,7 @@
 titulo: São Paulo e a família
 slug: sao-paulo-e-familia
 ordem: 4
-descricao: O casamento de Sebastião de Freitas com Maria Pedroso, em São Paulo, e os filhos registrados pelas fontes genealógicas.
+descricao: O casamento de Sebastião de Freitas com Maria Pedroso, em São Paulo, os filhos, os casamentos e os genros que governaram a vila ao seu lado.
 ---
 
 Por volta de 1592, pouco depois de chegar, Sebastião casou-se em São Paulo com Maria Pedroso, uma jovem nascida na própria vila, por volta de 1576 :fonte{nat=historiografia ref="bogaciovas-2006 moura-1950" p="79"}. Ela era filha de Antonio Rodrigues de Alvarenga e de Anna Ribeiro :fonte{nat=historiografia ref="silva-leme-v7" p="169"}.
@@ -13,4 +13,10 @@ O casal teve sete filhos conhecidos: Izabel, Maria, Catharina, Mecia, Anna Ribei
 
 ::divergencia{id=numero-de-filhos}
 
-Das filhas, sabe-se mais sobre três. Izabel uniu-se a Braz Leme e morreu em 1655, deixando testamento. Maria casou-se duas vezes, primeiro com João de Barros Freire e, viúva, com Henrique da Cunha Gago, o moço. Catharina casou-se em 1632 com Francisco de Barros Freire :fonte{nat=historiografia ref="silva-leme-v7" p="170"}.
+As filhas casaram-se com homens da vila e de fora dela. Izabel uniu-se a Braz Leme e morreu em 1655, deixando testamento. Maria casou-se duas vezes, primeiro com João de Barros Freire e, viúva, com Henrique da Cunha Gago, o moço. Catharina casou-se em 1632 com Francisco de Barros Freire :fonte{nat=historiografia ref="silva-leme-v7" p="170"}.
+
+Mecia casou-se primeiro com João de Brito Cassão, português, que morreu em 1640; o filho mais velho do casal, batizado com o nome do avô, Sebastião, morrera solteiro antes disso. Viúva, Mecia casou-se outra vez em 1643, com Manoel Soeiro Ramires, natural de Lisboa :fonte{nat=historiografia ref="silva-leme-v7" p="178-179"}. Anna Ribeiro casou-se com Sebastião Fernandes Correa, natural de Santa Eulália, que foi o primeiro provedor e contador da fazenda real da capitania :fonte{nat=historiografia ref="silva-leme-v7" p="191"}.
+
+Os dois filhos homens também formaram família. João de Freitas casou-se com Anna de Moraes, filha de Balthasar de Moraes de Antas, e morreu em 1655, com testamento, deixando quatro filhos :fonte{nat=historiografia ref="silva-leme-v7" p="202"}. Antonio Pedroso de Freitas casou-se em 1635 com Clara Parente e teve nove filhos; um deles também recebeu o nome do avô, Sebastião de Freitas. Antonio morreu em Jundiaí, onde foi feito o seu inventário em 1672 :fonte{nat=historiografia ref="silva-leme-v7" p="229"}.
+
+Os casamentos teceram uma rede que alcançava o governo da vila. Três genros de Sebastião aparecem na Câmara de São Paulo nas décadas de 1610 e 1620: João de Brito Cassão, Braz Leme e Sebastião Fernandes Correa. Em 1624, sogro e genro estiveram juntos na Câmara, com Sebastião Fernandes Correa como juiz :fonte{nat=tradicao ref="moyarte"}.

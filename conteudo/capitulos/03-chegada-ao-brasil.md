@@ -7,8 +7,12 @@ descricao: Como Sebastião de Freitas chegou à Bahia em 1591, como soldado de u
 
 Sebastião de Freitas chegou ao Brasil em 1591, como soldado. Fazia parte da companhia do capitão Gabriel Soares, que desembarcou na Bahia com o novo governador-geral, d. Francisco de Sousa :fonte{nat=historiografia ref="silva-leme-v7" p="168-169"}.
 
-A expedição perseguia uma promessa. Um baiano chamado Roberio Dias havia oferecido ao rei d. Filipe minas de prata no sertão, garantindo que havia "mais prata no Brasil do que Bilbão dava ferro em Biscaia", e pedira em troca o título de marquês das Minas. O título acabou com d. Francisco de Sousa. Despeitado, Roberio morreu levando consigo o segredo da mina, de onde, dizia-se, tirara a prata da sua baixela :fonte{nat=historiografia ref="silva-leme-v7" p="169"}.
+A expedição perseguia uma promessa. Um baiano chamado Roberio Dias havia oferecido ao rei d. Filipe minas de prata no sertão, garantindo que havia "mais prata no Brasil do que Bilbão dava ferro em Biscaia", e pedira em troca o título de marquês das Minas. O título acabou com d. Francisco de Sousa. Despeitado, Roberio morreu levando consigo o segredo da mina, de onde tirara a prata da sua baixela e da sua capela, sem revelá-lo nem aos herdeiros :fonte{nat=historiografia ref="silva-leme-v7" p="169"}.
 
-Da Bahia, Sebastião seguiu para o sul, para a capitania de São Vicente, e se fixou na pequena vila de São Paulo, no planalto de Piratininga, onde viveria o resto da vida :fonte{nat=historiografia ref="silva-leme-v7" p="169"}.
+Da Bahia, Sebastião seguiu para o sul, para a capitania de São Vicente, e se fixou na vila de São Paulo, no planalto de Piratininga :fonte{nat=historiografia ref="silva-leme-v7" p="169"}.
+
+A vila que o recebeu era pequena. Na passagem do século XVI para o XVII, tinha cerca de 190 casas e 1.500 habitantes, segundo o historiador Teodoro Sampaio, e alguns moradores ainda deixavam o gado solto pelas ruas :fonte{nat=historiografia ref="moyarte"}. Era também uma vila sob ameaça. Em 1591, indígenas carijó, tupinaé e tupiniquim a atacaram várias vezes, e a Câmara passou boa parte do ano sem se reunir, porque seus membros tinham ido "à guerra com o senhor capitão" :fonte{nat=historiografia ref="moyarte porta-2004" p="648"}. Em 1594 foram concluídos os muros de defesa da vila :fonte{nat=tradicao ref="moyarte"}.
+
+A busca por metais continuava. Em novembro de 1599, o próprio d. Francisco de Sousa subiu a São Paulo para visitar as minas recém-descobertas na região :fonte{nat=tradicao ref="moyarte"}. Foi em São Paulo, em 1600, que ele armaria Sebastião cavaleiro, como se verá adiante :fonte{nat=historiografia ref="silva-leme-v7" p="169"}.
 
 ::divergencia{id=local-de-moradia}
