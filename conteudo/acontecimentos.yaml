@@ -115,6 +115,16 @@
   lugares: [sao-paulo]
   capitulo: raizes-cristas-novas-e-sefarditas
 
+- id: bandeira-dos-limites
+  titulo: Raposo Tavares chefia a bandeira dos limites, de São Paulo a Belém do Pará
+  data: { ano: 1648, precisao: intervalo, ate: 1651 }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: eve-raposo-tavares }
+  pessoas: [raposo-tavares]
+  capitulo: atuacao-publica-e-militar
+
 - id: expulsao-dos-jesuitas
   titulo: Os jesuítas são expulsos do colégio de São Paulo; voltam treze anos depois
   data: { ano: 1640, precisao: exata }
@@ -304,12 +314,24 @@
   capitulo: raizes-cristas-novas-e-sefarditas
   divergencia: declaracao-cristao-novo
 
+- id: filho-ao-sertao
+  titulo: Manda ao sertão um filho ainda menino, "na bandeira de Antônio Raposo"
+  data: { ano: 1616, precisao: exata }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: moura-1950, p: 367 }
+  pessoas: [sebastiao-de-freitas]
+  capitulo: atuacao-publica-e-militar
+
 - id: bandeira-ao-guaira
-  titulo: Teria acompanhado Raposo Tavares na bandeira ao Guairá
+  titulo: Vai na bandeira do Guairá, a de Antônio Raposo Tavares
   data: { ano: 1628, precisao: exata }
   tipo: trajetoria
-  natureza: tradicao
+  natureza: historiografia
   referencias:
+    - { ref: moura-1950, p: 367 }
+    - { ref: eve-raposo-tavares }
     - { ref: genearc-7956 }
     - { ref: amorese-ps25-085 }
   pessoas: [sebastiao-de-freitas, raposo-tavares]

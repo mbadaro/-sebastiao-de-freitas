@@ -284,12 +284,14 @@
   vinculo: notavel
   ligacao_notavel:
     tipo: convivencia
-    descricao: Bandeirante. Segundo a tradição genealógica, Sebastião o teria acompanhado na bandeira ao Guairá, em 1628. O parentesco por casamento entre as duas famílias depende de fonte ainda não reunida.
-    natureza: tradicao
+    descricao: Bandeirante, nascido em Beja por volta de 1598. Sebastião esteve na bandeira do Guairá, de 1628, que Raposo Tavares organizou. Mais tarde, duas bisnetas de Sebastião se casaram com filhos do capitão Diogo da Costa Tavares, apontado como meio-irmão de Raposo Tavares (parentesco ainda sem fonte localizada).
+    natureza: historiografia
     referencias:
-      - { ref: genearc-7956 }
-      - { ref: amorese-ps25-085 }
+      - { ref: moura-1950, p: 367 }
+      - { ref: eve-raposo-tavares }
+      - { ref: silva-leme-v5, p: "62-63, 94" }
   natureza: historiografia
   referencias:
+    - { ref: eve-raposo-tavares }
     - { ref: ribeiro-anpuh-2015, p: 4-5 }
-  evidencia_historica: { ref: ribeiro-anpuh-2015, p: 4-5 }
+  obito: { ano: 1658, precisao: exata }

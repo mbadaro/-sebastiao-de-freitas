@@ -18,6 +18,21 @@
 
 # --- Obras genealógicas e historiográficas ----------------------------------------------------
 
+- id: silva-leme-v5
+  abnt: "SILVA LEME, Luiz Gonzaga da. *Genealogia paulistana*. São Paulo: Duprat & Comp., 1905. v. 5."
+  curta: "SILVA LEME, 1905, v. 5"
+  tipo: secundaria
+  url: https://archive.org/details/genealogia-paulistana-v
+  acesso: 15 nov. 2026
+  observacao: Título Cunhas Gagos. A p. 63 foi conferida na digitalização do Internet Archive; a p. 94 falta nessa digitalização e foi lida em excerto reproduzido por terceiros.
+
+- id: eve-raposo-tavares
+  abnt: "CERDEIRA, Pedro. António Raposo Tavares. In: ENCICLOPÉDIA Virtual da Expansão Portuguesa. Lisboa: CHAM, Universidade Nova de Lisboa, 2009."
+  curta: "CERDEIRA, 2009"
+  tipo: secundaria
+  url: https://eve.fcsh.unl.pt/index.php/en/node/5262
+  acesso: 15 nov. 2026
+
 - id: silva-leme-v7
   abnt: "SILVA LEME, Luiz Gonzaga da. *Genealogia paulistana*. São Paulo: Duprat & Comp., 1905. v. 7."
   curta: "SILVA LEME, 1905, v. 7"

@@ -13,6 +13,8 @@ Os descendentes também ocuparam postos de confiança da Coroa. O genro Sebasti�
 
 A história da família guarda uma ironia. Um bisneto, o padre Gaspar Gonçalves de Araújo, tornou-se em 1713 comissário do Santo Ofício, agente da mesma Inquisição diante da qual o bisavô se declarara cristão-novo, quase um século antes :fonte{nat=historiografia ref="bogaciovas-2006" p="78"}.
 
+As famílias de Sebastião e dos Tavares voltariam a se cruzar. Duas bisnetas de Sebastião, filhas da sua neta Mécia da Cunha, casaram-se com filhos do capitão Diogo da Costa Tavares: Maria Leite, que em 1663 já era casada com Antônio Vieira Tavares, e Mécia da Cunha Lobo, que por volta de 1675 se casou com Francisco Vieira Tavares :fonte{nat=historiografia ref="silva-leme-v5" p="62-63, 94"}. Diogo da Costa Tavares é apontado como meio-irmão de Antônio Raposo Tavares, mas a fonte desse parentesco ainda não foi localizada :fonte{nat=tradicao ref="sem-fonte"}.
+
 Com o tempo, a família saiu da vila de São Paulo. Antônio Pedroso foi inventariado em Jundiaí, em 1672, e um neto, Joaquim Pedroso de Morais, filho de João, morreu nas Minas Gerais "depois de ter occupado honrosos cargos em S. Paulo" :fonte{nat=historiografia ref="silva-leme-v7" p="202-203; 229"}.
 
 Pelos seus descendentes, a memória do soldado do Algarve chegou até hoje, e com ela as suas raízes sefarditas, reconhecidas pela Comunidade Israelita de Lisboa :fonte{nat=historiografia ref="certificado-cil"}.

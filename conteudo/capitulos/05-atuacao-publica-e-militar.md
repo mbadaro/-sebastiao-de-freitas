@@ -1,8 +1,8 @@
 ---
-titulo: Soldado, capitão e juiz
+titulo: Soldado, bandeirante e juiz
 slug: atuacao-publica-e-militar
 ordem: 5
-descricao: As expedições ao sertão, o título de cavaleiro, a patente de capitão e os cargos de Sebastião de Freitas na Câmara de São Paulo.
+descricao: As expedições ao sertão, a bandeira do Guairá, o título de cavaleiro, a patente de capitão e os cargos de Sebastião de Freitas na Câmara de São Paulo.
 ---
 
 Sebastião logo participou da defesa da vila. Em 1594 acompanhou o capitão Jorge Correia na guerra contra os indígenas que haviam cercado São Paulo; no ano seguinte voltou ao sertão com o capitão Jerônimo Pereira de Sousa, levando os próprios escravos para a luta :fonte{nat=historiografia ref="silva-leme-v7" p="169"}. Em 1599, quando piratas estrangeiros atacaram Santos, esteve entre os que acudiram em socorro do porto :fonte{nat=historiografia ref="bogaciovas-2006 moura-1950" p="79; 367"}.
@@ -23,4 +23,12 @@ Ao longo de três décadas, passou por quase todos os cargos da vila. Foi almota
 
 Foram também anos de disputa entre os moradores e os jesuítas. Em 1612, uma ordem do rei proibiu os padres de escravizar indígenas, e a população e os oficiais da Câmara protestaram contra o monopólio que os jesuítas exerciam sobre o trabalho indígena :fonte{nat=tradicao ref="moyarte"}.
 
-Segundo a tradição genealógica, em 1628, já perto dos sessenta anos, Sebastião teria acompanhado Antônio Raposo Tavares na grande bandeira ao Guairá :fonte{nat=tradicao ref="genearc-7956 amorese-ps25-085"}. O Guairá era a região onde os jesuítas espanhóis haviam fundado reduções, aldeias que reuniam indígenas guarani. Em 1628 os paulistas destruíram as missões do Guairá, e a bandeira de Raposo Tavares, que entre 1628 e 1638 atacou o Guairá e o Tape, foi vista pelo historiador Afonso Taunay como "um ponto culminante da história do bandeirismo" :fonte{nat=historiografia ref="ribeiro-anpuh-2015" p="4-5"}. Os ataques paulistas às missões jesuíticas da região provocaram reação forte: em 1632, o provincial dos jesuítas escreveu ao rei acusando os paulistas de serem "judeus encobertos" e de dizerem que guerreavam os indígenas com a autoridade "que Moyses les dava em la escriptura" :fonte{nat=historiografia ref="bogaciovas-2006" p="79-80"}.
+Foi também um homem do sertão. O historiador José Gonçalves Salvador o chama de "o bem conhecido entradista Sebastião de Freitas", de *entrada*, como se chamavam as expedições ao interior :fonte{nat=historiografia ref="salvador-1969"}, e o inclui entre os "notáveis cristãos-novos e marranos" das bandeiras paulistas :fonte{nat=historiografia ref="salvador-1978" p="102-130"}.
+
+O sertão chegou também aos filhos. Em 1616, segundo o historiador Américo de Moura, Sebastião mandou ao sertão "um menino seu filho na bandeira de Antônio Raposo" :fonte{nat=historiografia ref="moura-1950" p="367"}. Moura não diz qual dos filhos, e não se sabe se esse Antônio Raposo é o mesmo Antônio Raposo Tavares, que só chegou ao Brasil em 1618 :fonte{nat=historiografia ref="eve-raposo-tavares"}.
+
+Doze anos depois, já perto dos sessenta, o próprio Sebastião "estêve em 1628 na bandeira de Guairá", registra Moura :fonte{nat=historiografia ref="moura-1950" p="367"}. Genealogias on-line repetem a informação e o põem ao lado de Antônio Raposo Tavares :fonte{nat=tradicao ref="genearc-7956 amorese-ps25-085"}. Raposo Tavares, nascido em Beja por volta de 1598, organizou em 1628 a bandeira contra as missões jesuíticas do Guairá e deu um golpe decisivo nas reduções da região :fonte{nat=historiografia ref="eve-raposo-tavares"}.
+
+O Guairá era a região onde os jesuítas espanhóis haviam fundado reduções, aldeias que reuniam indígenas guarani. Em 1628 os paulistas destruíram as missões do Guairá, e a bandeira de Raposo Tavares, que entre 1628 e 1638 atacou o Guairá e o Tape, foi vista pelo historiador Afonso Taunay como "um ponto culminante da história do bandeirismo" :fonte{nat=historiografia ref="ribeiro-anpuh-2015" p="4-5"}. Os ataques paulistas às missões jesuíticas da região provocaram reação forte: em 1632, o provincial dos jesuítas escreveu ao rei acusando os paulistas de serem "judeus encobertos" e de dizerem que guerreavam os indígenas com a autoridade "que Moyses les dava em la escriptura" :fonte{nat=historiografia ref="bogaciovas-2006" p="79-80"}.
+
+Raposo Tavares seguiria pelo sertão por décadas. Entre 1648 e 1651, chefiou a chamada bandeira dos limites, que ligou São Paulo a Belém do Pará :fonte{nat=historiografia ref="eve-raposo-tavares"}.

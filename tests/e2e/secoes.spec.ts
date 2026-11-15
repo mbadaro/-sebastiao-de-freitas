@@ -93,7 +93,7 @@ test.describe('família (US5)', () => {
     await page.goto('familia/vinculos-notaveis/');
     const raposo = page.locator('.notavel', { hasText: 'Raposo Tavares' });
     await expect(raposo.locator('.notavel__tipo')).toContainText('Convivência');
-    await expect(raposo.locator('.notavel__tipo')).toContainText('Tradição genealógica');
+    await expect(raposo.locator('.notavel__tipo')).toContainText('Informação historiográfica');
     await expect(raposo.locator('.notavel__fontes a').first()).toBeVisible();
   });
 });

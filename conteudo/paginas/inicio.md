@@ -23,6 +23,7 @@ destaques:
   - armado-cavaleiro
   - patente-de-capitao
   - declaracao-de-cristao-novo
+  - bandeira-ao-guaira
   - padrinho-do-bisneto
 
 documentos:
