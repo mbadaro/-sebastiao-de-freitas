@@ -38,7 +38,7 @@ Só fontes `verificada` sustentam afirmações `fato` ou `historiografia` no sit
 | [familysearch-lz21-h7q](#familysearch-lz21-h7q) | Perfil de Sebastião de Freitas no FamilySearch | informal (árvore) + documentos anexos | pendente | Alta (documentos anexos) |
 | [youtube-mgy870a2smm](#youtube-mgy870a2smm) | Vídeo "Como e Porque escolhi o Sebastião de Freitas" | informal | consultado | Baixa |
 | [instagram-dhzy6mvxulb](#instagram-dhzy6mvxulb) | Post do Arquivo Histórico Digital de Catalão | informal | consultado | Baixa |
-| [silva-leme-v7](#silva-leme-v7) | Silva Leme, *Genealogia Paulistana*, v. 7 (obra impressa) | secundaria | pendente | Alta |
+| [silva-leme-v7](#silva-leme-v7) | Silva Leme, *Genealogia Paulistana*, v. 7 (Duprat & Comp., 1905) | secundaria | **verificada** (p. 168–170) | Alta |
 | [pedro-taques-nobiliarquia](#pedro-taques-nobiliarquia) | Pedro Taques, *Nobiliarquia Paulistana* | secundaria | catalogado | Alta |
 | [salvador-cristaos-novos](#salvador-cristaos-novos) | José Gonçalves Salvador, obra sobre cristãos-novos (título a confirmar), p. 138 | secundaria | catalogado | Alta (vínculo sefardita) |
 | [sillos-asbrap-26](#sillos-asbrap-26) | Sillos, "Maria Pedroso, a filha esquecida de Sebastião de Freitas", *Revista da ASBRAP* n. 26 | secundaria | catalogado | Alta |
@@ -155,9 +155,13 @@ Só fontes `verificada` sustentam afirmações `fato` ou `historiografia` no sit
 
 ### silva-leme-v7
 
-- **Identificação**: SILVA LEME, Luiz Gonzaga da. *Genealogia Paulistana*. São Paulo, 1903–1905.
-  9 v. (dados de edição a conferir).
-- **Status**: `pendente` — localizar exemplar digitalizado (ver T012).
+- **Identificação (ABNT)**: SILVA LEME, Luiz Gonzaga da. *Genealogia paulistana*. São Paulo:
+  Duprat & Comp., 1905. v. 7.
+- **Localização**: https://archive.org/details/genealogia-paulistana-vii (digitalização do
+  exemplar da Biblioteca Pública de Nova York, Public Domain Mark 1.0).
+- **Status**: `verificada` em 2026-11-15 — folha de rosto (Duprat & Comp., 1905) e título Freitas,
+  p. 168–170, conferidos no texto da digitalização; batem com a transcrição do site Árvore.
+- **Direitos**: domínio público — o texto e a imagem das páginas podem ser reproduzidos.
 - **Relevância**: alta; base de quase todas as demais.
 
 ### pedro-taques-nobiliarquia
