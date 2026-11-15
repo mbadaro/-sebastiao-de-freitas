@@ -162,6 +162,14 @@
   url: https://geoparquealgarvensis.pt/patrimonio-cultura/56-patrimonio-arquitetonico/836-igreja-da-misericordia-en
   acesso: 15 nov. 2026
 
+- id: decreto-44075-1961
+  abnt: "PORTUGAL. Decreto n.º 44075, de 5 de dezembro de 1961. *Diário do Governo*, Lisboa, 1961."
+  curta: "PORTUGAL, Decreto n.º 44075, 1961"
+  tipo: primaria
+  url: https://diariodarepublica.pt/dr/detalhe/decreto/44075-1961-184960
+  acesso: 15 nov. 2026
+  observacao: "Art. 2.º: classifica como imóvel de interesse público a Igreja da Misericórdia, em Silves (distrito de Faro). Data do dia conforme a Wikipédia; ano confirmado no Diário da República."
+
 - id: acmsp-batismos-se-1
   abnt: "ARQUIVO DA CÚRIA METROPOLITANA DE SÃO PAULO. *Livro 1 de Batismos da Sé (1640-1662)*. São Paulo, 1640-1662."
   curta: "ACMSP, Livro 1 de Batismos da Sé"
@@ -182,6 +190,28 @@
 
 
 
+
+- id: wikipedia-misericordia-silves
+  abnt: "IGREJA da Misericórdia de Silves. In: WIKIPÉDIA: a enciclopédia livre. [S. l.]: Wikimedia Foundation, 2026."
+  curta: "IGREJA da Misericórdia de Silves, 2026"
+  tipo: informal
+  url: https://pt.wikipedia.org/wiki/Igreja_da_Misericórdia_de_Silves
+  acesso: 15 nov. 2026
+  observacao: Cita o SIPA/Direção-Geral do Património Cultural e a Câmara Municipal de Silves.
+
+- id: wikipedia-santa-casa
+  abnt: "SANTA Casa da Misericórdia. In: WIKIPÉDIA: a enciclopédia livre. [S. l.]: Wikimedia Foundation, 2026."
+  curta: "SANTA Casa da Misericórdia, 2026"
+  tipo: informal
+  url: https://pt.wikipedia.org/wiki/Santa_Casa_da_Misericórdia
+  acesso: 15 nov. 2026
+
+- id: sulinformacao-santa-casa-silves-2023
+  abnt: "CÂMARA e Santa Casa de Silves assinam protocolo de Rendimento Social de Inserção. *Sul Informação*, Faro, dez. 2023."
+  curta: "SUL INFORMAÇÃO, 2023"
+  tipo: informal
+  url: https://www.sulinformacao.pt/en/2023/12/camara-e-santa-casa-de-silves-assinam-protocolo-de-rendimento-social-de-insercao/
+  acesso: 15 nov. 2026
 
 - id: alesp-patio-do-colegio
   abnt: "ASSEMBLEIA LEGISLATIVA DO ESTADO DE SÃO PAULO. *No Pátio do Colégio, a certidão de nascimento de São Paulo*. São Paulo: ALESP, [20--]."
