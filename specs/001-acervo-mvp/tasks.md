@@ -299,7 +299,7 @@ passar pela narrativa.
 - [X] T080 [P] SEO: ativar `@astrojs/sitemap` em `astro.config.mjs`, criar `public/robots.txt` apontando o sitemap e `src/lib/seo.ts` com os dados estruturados JSON-LD de cada rota conforme `contracts/rotas.md` (datas aproximadas como texto)
 - [X] T081 [P] Criar imagens de compartilhamento por seção em `public/og/` (composição tipográfica ou imagem com direitos; sem rosto de Sebastião) e ligá-las no `LayoutBase`
 - [ ] T082 Revisão editorial final registrada em `specs/001-acervo-mvp/checklists/revisao-conteudo.md`: natureza frase a frase, ABNT, direitos de reprodução de cada imagem, ausência de rosto de Sebastião, regra dos 100 anos, ausência de dados pessoais do responsável
-- [ ] T083 Executar `quickstart.md` completo (seções 1 a 4), Lighthouse em página inicial, capítulo e mapa, e navegação com NVDA; registrar resultados em `specs/001-acervo-mvp/checklists/verificacao-final.md`
+- [X] T083 Executar `quickstart.md` completo (seções 1 a 4), Lighthouse em página inicial, capítulo e mapa, e navegação com NVDA; registrar resultados em `specs/001-acervo-mvp/checklists/verificacao-final.md`
 - [ ] T084 ⏳ Realizar o teste com 3 leitores (recrutados pelo responsável) sem conhecimento prévio (SC-001) e registrar o resultado em `specs/001-acervo-mvp/checklists/verificacao-final.md`
 - [ ] T085 ⏳ 🛑 Registrar o domínio `.com.br` (nome escolhido e registro pago pelo responsável no Registro.br), configurar DNS, `public/CNAME` e a opção `site` em `astro.config.mjs`
 - [ ] T086 ⏳ 🛑 Publicar a versão final no domínio próprio, após aprovação explícita do responsável, e enviar o sitemap ao Google Search Console (conta do responsável)
