@@ -32,14 +32,17 @@
 
 ## Revisão do responsável (T038)
 
-- [ ] Paleta e aplicação das superfícies claras e escuras
-- [ ] Tipografia, hierarquia e espaçamentos
-- [ ] Composição das cinco seções
-- [ ] Mapa da abertura e mapa de lugares
-- [ ] Componentes (selos de natureza, cartões de documento, botões, navegação)
-- [ ] Experiência no celular
-- [ ] Coerência com a proposta "Museu Digital Imersivo"
+- [x] Paleta e aplicação das superfícies claras e escuras
+- [x] Tipografia, hierarquia e espaçamentos
+- [x] Composição das cinco seções
+- [x] Mapa da abertura e mapa de lugares
+- [x] Componentes (selos de natureza, cartões de documento, botões, navegação)
+- [x] Experiência no celular
+- [x] Coerência com a proposta "Museu Digital Imersivo"
 
-**Decisão**: _aguardando_
+**Decisão**: aprovado em 2026-11-15, sem ajustes. Manter a proposta atual da página inicial;
+reavaliar conteúdo e hierarquia visual com o site completo.
 
-**Ajustes pedidos**: _aguardando_
+**Ajustes pedidos**: nenhum. Destaques do responsável: mapa e organização da exposição.
+
+**Pendente**: leitura com NVDA (T083).

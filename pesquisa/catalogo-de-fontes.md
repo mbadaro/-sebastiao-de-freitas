@@ -278,6 +278,91 @@ imagens segue as condições de cada arquivo.
 - **Localização**: https://www.geni.com/people/Sebasti%C3%A3o-de-Freitas/6000000009334711712
 - **Classificação**: informal (árvore colaborativa). **Status**: `catalogado`. Datas c. 1568–1644.
 
+### antt-caderno-promotor-24 ⭐
+
+- **Identificação**: TRIBUNAL DO SANTO OFÍCIO, Inquisição de Lisboa. *24.º Caderno do Promotor*
+  (1599–1640), liv. 224, fls. 311–316, "Sam Paulo". Arquivo Nacional da Torre do Tombo,
+  PT/TT/TSO-IL/030/0224, mf. 5193 (imagem 646).
+- **Localização**: http://digitarq.arquivos.pt/details?id=2318049
+- **Classificação**: `primaria` — é a denúncia da Visitação de 1627 (data pela BRASILHIS).
+- **Status**: `consultado` por **transcrição de terceiros** (duas transcrições independentes e
+  concordantes: notas do FamilySearch e relatório genealógico em
+  `pesquisa/familysearch/relatorioGenealogico.pdf`, p. 10). Conferência na imagem 646: pendente.
+- **Teor (transcrição)**: "Denunciouse de hum Sebastião de Freitas natural do Algarve. Estando com
+  outros moradores da mesma villa de Sam Paulo, na casa em q Estavão se pos hum delles a Ler por
+  hum livro de Outavas da vida de S. Joseph autor Joseph de Valderidesso, no canto da Annunciação
+  da Virgem Nossa Snra, E como concebera sem obra de varão ficando virgem, dice o Sebastião de
+  Freitas q não podia conceber sem homem [...]. Veo se accusar dellas E negou ser xº nº, E
+  parecendo lhe q podia Eu saber que era xº nº foi ter com o Reytor da Casa q nesta villa tem os
+  Padres da Companhia pa. q. me fallase, e se tomase declaração como era xº nº, E assi o veio
+  declarar".
+- **Leitura**: ele **primeiro negou** ser cristão-novo e **depois declarou** sê-lo, por
+  intermédio do reitor do colégio dos jesuítas. A BRASILHIS registra só a negação.
+- **Direitos**: documento do século XVII; reprodução da imagem conforme as condições do ANTT.
+
+### moura-povoadores-1950
+
+- **Identificação**: MOURA, Américo Brasiliense Antunes de. Os povoadores do campo de
+  Piratininga (traços biográficos e genealógicos). *Revista do Instituto Histórico e Geográfico de
+  São Paulo*, v. 47, p. 367, 1950 (2. ed.; 1. ed. 1952 segundo o FamilySearch — conferir).
+- **Localização**: http://ihgsp.org.br/revista-ihgsp-vol-47/
+- **Status**: `consultado` por citação (relatório genealógico, p. 3).
+- **O que diz**: casou em 1592; morava em Piratininga ("Sesm." I, 50; "Reg." VII, 55);
+  **almotacel em 1596 e 1598; juiz ordinário em 1600, 1624 e 1626; vereador em 1604 e 1609**;
+  provisão de cavaleiro em 1601 ("Reg." I, 105); 1594 com Jorge Corrêa; 1595 com Manuel Soeiro;
+  1599 no socorro a Santos; **1608, provisão de capitão da vila**; em 1616 mandou ao sertão um
+  menino.
+- **Relevância**: muito alta — cargos com referência ao *Registo Geral* e às *Sesmarias*.
+
+### Obras citadas pelo FamilySearch (T014)
+
+Lista de 49 fontes do perfil LZ21-H7Q, impressa pelo responsável em 2026-11-15
+(`pesquisa/familysearch/relatorioFontesFamilySearch.pdf`). Novas em relação ao catálogo:
+
+| Material | O que acrescenta | Status |
+|---|---|---|
+| Silva Leme, *Genealogia Paulistana* v. VII no Internet Archive — https://archive.org/details/genealogia-paulistana-vii/page/168 | Digitalização em **domínio público** (Public Domain Mark 1.0): permite **verificar** e reproduzir a página | catalogado |
+| Pedro Taques, *Nobiliarchia paulistana*, t. III, p. 254 — Biblioteca Digital SEADE | Edição on-line da obra setecentista | catalogado |
+| Batismo do bisneto Sebastião, Sé de São Paulo, nov./1640 (ACMSP, Livro 1 de Batismos, fl. 2; FamilySearch DGS 004624406, img. 10) | Padrinho "seu bisavô" Sebastião de Freitas — vivo em 1640 | catalogado |
+| Casamento de Brás de Barros com Maria Pedroso, filha de Sebastião de Freitas, Sé de São Paulo, 23/10/1638 (ACMSP, Livro 1 de Casamentos, fl. 16) | Confirma a filha estudada por Sillos | catalogado |
+| Testamento de Izabel de Freitas, 1655 | Filiação de Izabel | catalogado |
+| Inventário de Pedro Álvares, 1609 (Projeto Compartilhar) | Sebastião entre os arrematantes | catalogado |
+| Cartas de Datas de Terra (Arquivo Municipal de São Paulo; Projeto Compartilhar) | Terras | catalogado |
+| Salvador, *Cristãos-novos, jesuítas e Inquisição* (1969) | "Outro denunciado foi o bem conhecido entradista Sebastião de Freitas, português natural do Algarve" | catalogado |
+| Salvador, *Os cristãos-novos: povoamento e conquista do solo brasileiro (1530–1680)* (1976), p. 29, 138, 139, 147, 150, 270, 309 | Cristão-novo | catalogado |
+| Salvador, *Os cristãos-novos e o comércio no Atlântico meridional* (1978), p. 102–130 | Entre os "notáveis cristãos-novos e marranos" das bandeiras | catalogado |
+| Salvador, *Os cristãos-novos em Minas Gerais durante o ciclo do ouro* (1992), p. 2 | Cristão-novo | catalogado |
+| Salvador, *Vozes da História* (2001), p. 127–142 | "Aparece como cristão-novo numa relação do Santo Ofício, redigida ao tempo do visitador Pires da Veiga" — esclarece a obra citada pelo Amorese | catalogado |
+| Egon e Frieda Wolff, *Dicionário biográfico I: judaizantes e judeus no Brasil 1500–1808* (1986), v. 1, p. 81 | "Freitas, Sebastião de. Xn. morador da vila de Santos" (diverge: Santos) | catalogado |
+| Bogaciovas, *Cristãos-novos em São Paulo (séculos XVI–XIX): assimilação e nobilitação* (ASBRAP, 2015), p. 109–110 | Tronco de família paulista cristã-nova | catalogado |
+| Jornal *Correio Paulistano*, 27/06/1948 (Hemeroteca BN) | "Cavaleiro fidalgo e sertanista" | catalogado |
+| Velhos Troncos Mineiros (1955), v. 1, p. 54–55 | Casamento e filha Maria de Freitas | catalogado |
+| Revista do IHGSP v. 25 (1927); Barros Souza (1944); Anuário Genealógico Brasileiro v. 10 | Referências secundárias | catalogado |
+
+Notas: várias entradas do FamilySearch trazem transcrições feitas por colaboradores (algumas
+declaradamente com apoio de IA); tratar como `consultado`, nunca como `verificada`, até conferir
+a imagem do documento.
+
+### Relatórios genealógicos (material de estudo)
+
+| Arquivo | O que é | Uso |
+|---|---|---|
+| `pesquisa/familysearch/relatorioGenealogico.pdf` | Relatório de terceiro (anonimizado, divulgado para estudo) para certificação na CIL | Transcrição do Caderno do Promotor; citação de Américo de Moura; organização das provas |
+| `pesquisa/familysearch/relatorioGenealogicoII.pdf` | Relatório de terceiro sobre outra linhagem | Pouco útil; contém dados de pessoa viva — **não usar** |
+| `pesquisa/privado/Relatorio Genealogico Completo.pdf` | Relatório genealógico privado (2023), mantido fora do repositório | Uso **apenas** das páginas sobre Sebastião e seu tempo; nada da linhagem recente (Princípio V) |
+
+### certificado-cil (atualização)
+
+- **Status**: `consultado` em 2026-11-15 (arquivo em `pesquisa/privado/`, fora do repositório).
+- **O que atesta, sem dados pessoais**: certificado de comunidade judaica emitido pela Comunidade
+  Israelita de Lisboa em 2026, atestando descendência direta de progenitor procedente de
+  comunidade sefardita de origem portuguesa; a linhagem anexa tem Sebastião de Freitas como
+  ascendente mais antigo. Meios de prova declarados: assentos paroquiais, documentação do Santo
+  Ofício/Inquisição, estudos de genealogia, registos civis, testamentos.
+- **Dados de Sebastião no anexo**: nascido c. 1565 em Alagoa, Silves; casado em 1592 com Maria
+  Pedroso; **falecido c. 1625** (diverge dos documentos que o mostram vivo em 1640).
+- **Natureza para o site**: `historiografia` (atestação institucional contemporânea).
+
 ### Sillos — acesso
 
 O artigo aparece indexado em https://www.asbrap.org.br/artigos/rev26_art_j-maria_pedroso.pdf,
@@ -305,6 +390,9 @@ mas o servidor respondeu 404 em 2026-11-15. Status mantido como `catalogado`.
 | Inquisição | denunciado em 1628 (Instagram) × penitência por comentários (Salvador, via Amorese) |
 | Época | séculos XVII–XVIII (post) × c. 1565–1644 (demais) |
 | Ano de nascimento | c. 1565 (GeneArc, Amorese; sem fonte) × **c. 1568** (Bogaciovas: 72 anos em 1640, em documento eclesiástico) |
-| Condição de cristão-novo | identificado como cristão-novo (Salvador, citado pelo Amorese); rumor de sangue cristão-novo na família apurado em 1687 (Bogaciovas) × **negou ser cristão-novo** ao confessar na Visitação de 1627 (BRASILHIS, citando Silva 2005) |
+| Condição de cristão-novo | **Resolvida em parte pelo documento primário** (24.º Caderno do Promotor, por transcrição): negou e depois declarou ser cristão-novo. Convergem: Salvador (várias obras), Wolff (1986), Bogaciovas (2006, 2015), certificado da CIL. A BRASILHIS registra só a negação. Pendente: conferir a imagem no ANTT |
+| Ano de morte | 1644, em Juqueri (GeneArc, Amorese, sem fonte) × c. 1625 (anexo do certificado da CIL e relatório da historiadora) — **c. 1625 é contrariado** por documentos que o mostram vivo em agosto e novembro de 1640 |
+| Local de moradia | vila de São Paulo (demais) × vila de Santos (Wolff, 1986) |
+| Patente / provisão de capitão | 1606, capitão da gente de Piratininga (Silva Leme; Bogaciovas: 12/10/1606) × 1608, provisão de capitão da vila (Moura) — podem ser atos distintos |
 | Data da patente de 1606 | 1606 (Silva Leme) × 22/07/1606 (GeneArc) × **12/10/1606** (Bogaciovas) |
 | Pai de Maria Pedroso | Antônio Rodrigues de Alvarenga (Pedro Taques, Silva Leme) × "cirurgião Antônio Rodrigues" (Bogaciovas, que trata "de Alvarenga" como acréscimo posterior) |
