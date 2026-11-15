@@ -1,0 +1,22 @@
+# Dependências e saídas de build
+node_modules/
+dist/
+.astro/
+
+# Testes (Playwright)
+test-results/
+playwright-report/
+
+# Ambiente e logs
+.env*
+*.log
+
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Imagens de documentos de acervos com direitos de reprodução não verificados
+# (repositório público = republicação; regra D8 do plano). Ficam só na máquina local.
+pesquisa/familysearch/
