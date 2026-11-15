@@ -1,7 +1,9 @@
-# Publicação no GitHub Pages (T008).
-# Só roda manualmente até o responsável confirmar a ativação do GitHub Pages.
+# Publicação no GitHub Pages (T008) — ativada pelo responsável em 2026-11-15.
+# Publica a cada envio ao ramo principal; também pode ser disparada manualmente.
 name: Publicar
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
