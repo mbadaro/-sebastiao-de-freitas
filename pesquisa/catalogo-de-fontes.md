@@ -131,6 +131,10 @@ por falta de verificação.
 - **Classificação**: informal (divulgação histórica).
 - **Status**: `consultado` em 2026-11-12.
 - **Resumo**: em 1600, "Câmara Municipal: Sebastião de Freitas (juiz)".
+- **Atualização (2026-11-15)**: lidas também as páginas das décadas 1601–1610, 1611–1620,
+  1621–1630, 1631–1640 e 1641–1650 (mesmo endereço, trocando o final por
+  `seculo-17-decada-AAAA-AAAA.html`). Sebastião aparece na composição da Câmara em **1600 (juiz)**,
+  **1604**, **1609**, **1624** e **1626 (juiz)**. Anos coincidem com Moura (1950).
 - **O que cita**: nada para esse dado.
 - **Pendências**: confirmar nas Atas da Câmara de São Paulo.
 
