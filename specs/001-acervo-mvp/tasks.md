@@ -106,7 +106,7 @@ Natureza conforme a regra de atribuição aprovada em 2026-11-15 (obra lida → 
 "Museu Digital Imersivo" (plano, seção Identidade visual; research D14–D16).
 
 - [X] T017 [P] Criar `src/styles/tokens.css`: as seis cores do briefing (`#142638`, `#244760`, `#F3F0E8`, `#B69A70`, `#8296A6`, `#202A33`), variantes escurecidas de dourado e azul acinzentado para fundo claro com contraste ≥ 4,5:1, escala tipográfica, espaçamentos, raios e durações; comentar as combinações permitidas e reprovadas conforme a tabela de contraste do plano
-- [X] T018 [P] Adicionar Playfair Display e Source Sans 3 (SIL OFL), versões variáveis WOFF2 com subconjunto latino, em `public/fontes/` com os arquivos de licença; declarar `@font-face` com `font-display: swap` em `src/styles/fontes.css`; limite "≤ 4 arquivos WOFF2, ≤ 150 KB no total"
+- [X] T018 [P] Adicionar Playfair Display e Source Sans 3 (SIL OFL), versões variáveis WOFF2 com subconjunto latino, em `public/tipografia/` (renomeada de `public/fontes/` para não colidir com a rota `/fontes/`) com os arquivos de licença; declarar `@font-face` com `font-display: swap` em `src/styles/fontes.css`; limite "≤ 4 arquivos WOFF2, ≤ 150 KB no total"
 - [X] T019 Criar `src/styles/global.css`: base tipográfica (Playfair Display só em títulos e destaques "≥ 24 px"), foco visível, superfícies `clara` e `escura` que redefinem os tokens de texto, link e destaque, transições de página por CSS (`@view-transition`) e desativação de toda animação com `prefers-reduced-motion: reduce`
 - [X] T020 Criar `src/layouts/LayoutBase.astro`: `lang="pt-BR"`, `<title>`, `meta description`, URL canônica, Open Graph e Twitter Card como propriedades obrigatórias, CSP via `<meta>` (só recursos do próprio domínio), link "Pular para o conteúdo", pré-carregamento da fonte de texto
 - [X] T021 [P] Criar `src/components/Cabecalho.astro` e `src/components/Navegacao.astro`: links para exposição, sefarditas, linha do tempo, mapa, família e fontes; menu móvel com botão `aria-expanded` operável por teclado
@@ -173,7 +173,7 @@ Constituição ([data-model.md](data-model.md), [contracts/conteudo.md](contract
 - [X] T040 Criar `src/content.config.ts` com as coleções `capitulos`, `paginas`, `acontecimentos`, `lugares`, `trajetos`, `pessoas`, `referencias`, `divergencias`, `imagens` e `alteracoes`, lendo de `conteudo/`, com esquemas que exijam: `id` "minúsculas, sem acentos, palavras separadas por hífen"; natureza em `fato | historiografia | tradicao | hipotese`; data com `ano` inteiro e `precisao` em `exata | aproximada | antes-de | depois-de | intervalo` (`ate` quando `intervalo`); capítulo com `titulo`, `slug`, `ordem` e `descricao` de "50–160 caracteres"; referência com `abnt` não vazio e `tipo` em `primaria | secundaria | informal`; lugar com `pais` em `portugal | brasil`, `coordenadas`, `precisao` em `exata | aproximada | regiao` e `vista` em `atlantico | sao-vicente`; trajeto com `comprovacao` em `documentado | presumido`; pessoa com `vinculo` em `protagonista | pai | mae | conjuge | sogro | sogra | filho | filha | conjuge-de-filho | notavel` e `ligacao_notavel.tipo` em `descendencia | casamento | convivencia`; divergência com "mínimo 2" versões; imagem com `alt`, `legenda`, `credito`, `origem`, `licenca` e `tipo` em `historica | fotografia-atual | ilustracao`; alteração com `data`, `afeta`, `descricao` e `motivo`; ids cruzados via `reference()`; regras como `refine` do esquema: pessoa "só é publicada se cumprir ao menos uma condição: tem `obito`; ou `nascimento.ano` ≤ (ano atual − 100); ou tem `evidencia_historica`", trajeto `documentado` "exige ao menos uma referência que não seja `informal` nem `sem-fonte`", nenhum id de pessoa igual a `vinculos-notaveis`
 - [X] T041 [P] Criar `src/lib/datas.ts`: ordenação por `ano` e formatação `exata` → "1600", `aproximada` → "c. 1565", `antes-de` → "antes de 1632", `depois-de` → "depois de 1600", `intervalo` → "1599–1605"; `exibicao` substitui a formatação automática (ex.: "1595 ou 1596")
 - [X] T042 [P] Criar `src/plugins/remark-fonte.ts` com `remark-directive`: `:fonte{nat ref p}` vira `SeloNatureza` + chamada numerada para a referência; `ref` aceita várias ids separadas por espaço e o id reservado `sem-fonte`; `::divergencia{id}` vira o bloco de divergência; o build falha com natureza inválida, id inexistente, parágrafo de capítulo ou página temática sem nenhum `:fonte` (citação de transcrição herda o marcador do parágrafo seguinte) ou `nat=fato` com `sem-fonte`/referência `informal`; registrar o plugin em `astro.config.mjs`
-- [ ] T043 [P] Criar `src/lib/ligacoes.ts` com funções simples de filtro (onde cada referência é usada; acontecimentos por lugar e por pessoa); pode ser criado na primeira história que precisar dele (US4 ou US6)
+- [X] T043 [P] Criar `src/lib/ligacoes.ts` com funções simples de filtro (onde cada referência é usada; acontecimentos por lugar e por pessoa); pode ser criado na primeira história que precisar dele (US4 ou US6)
 - [X] T044 Configurar `npm run validar` (verificação do Astro + build) e garantir `ordem` e `slug` únicos, arquivo de imagem existente e mensagens de erro em pt-BR no formato "arquivo › item: regra"; criar `scripts/validar-conteudo.ts` **somente** para regras que não couberem no esquema (T040) nem no plugin (T042)
 - [X] T045 Criar os casos negativos de `quickstart.md` (seção 1) em `tests/validacao/validar-conteudo.test.ts`, que executam a validação (T044) sobre fixtures em `tests/validacao/fixtures/` e esperam falha, usando o executor de testes nativo do Node (`node:test`, sem dependência nova): parágrafo sem fonte, `fato` com `sem-fonte`, referência inexistente, pessoa nascida em 1950 sem óbito, imagem sem `alt`, capítulo sem `descricao`
 - [X] T046 ⏳ Cadastrar em `conteudo/referencias.yaml` as referências aprovadas em T016, com ABNT conferida na obra (editora, ano, volume) e `localizacao` quando houver; referência cuja obra ainda não foi acessada entra com a ABNT marcada "a conferir" e não sustenta `fato` — depende de T016 e do acesso às obras
@@ -228,11 +228,11 @@ divergências visíveis e ligações para capítulo e lugar.
 **Teste independente**: abrir só `/linha-do-tempo/`; ordem correta, vida × contexto
 distinguíveis, ligações funcionando, tudo visível sem JavaScript.
 
-- [ ] T059 [P] [US3] Cadastrar em `conteudo/acontecimentos.yaml`, conforme a regra editorial, todos os acontecimentos `trajetoria` do fichamento e os de `contexto` selecionados editorialmente, com `natureza`, `referencias` (ao menos uma, ou `sem-fonte`), `lugares`, `pessoas`, `capitulo` com âncora e `divergencia` quando houver
-- [ ] T060 [US3] Criar `src/components/LinhaDoTempo.astro`: `<ol>` cronológica gerada no build; `trajetoria` × `contexto` distinguíveis por forma e rótulo, não só por cor; datas via `src/lib/datas.ts`; divergência visível; ligações para capítulo e para o lugar no mapa
-- [ ] T061 [US3] Acrescentar a `src/components/LinhaDoTempo.astro` o filtro "vida de Sebastião / contexto / ambos" com script pequeno (≤ 20 KB); sem JavaScript, todos os itens ficam visíveis
-- [ ] T062 [US3] Criar `src/pages/linha-do-tempo.astro` com âncoras `#<id-acontecimento>` e dado estruturado `ItemList`
-- [ ] T063 [US3] Criar `tests/e2e/linha-do-tempo.spec.ts`: ordem cronológica; 100% dos acontecimentos `trajetoria` presentes (SC-004); navegação por teclado; conteúdo completo com JavaScript desativado
+- [X] T059 [P] [US3] Cadastrar em `conteudo/acontecimentos.yaml`, conforme a regra editorial, todos os acontecimentos `trajetoria` do fichamento e os de `contexto` selecionados editorialmente, com `natureza`, `referencias` (ao menos uma, ou `sem-fonte`), `lugares`, `pessoas`, `capitulo` com âncora e `divergencia` quando houver
+- [X] T060 [US3] Criar `src/components/LinhaDoTempo.astro`: `<ol>` cronológica gerada no build; `trajetoria` × `contexto` distinguíveis por forma e rótulo, não só por cor; datas via `src/lib/datas.ts`; divergência visível; ligações para capítulo e para o lugar no mapa
+- [X] T061 [US3] Acrescentar a `src/components/LinhaDoTempo.astro` o filtro "vida de Sebastião / contexto / ambos" com script pequeno (≤ 20 KB); sem JavaScript, todos os itens ficam visíveis
+- [X] T062 [US3] Criar `src/pages/linha-do-tempo.astro` com âncoras `#<id-acontecimento>` e dado estruturado `ItemList`
+- [X] T063 [US3] Criar `tests/e2e/linha-do-tempo.spec.ts`: ordem cronológica; 100% dos acontecimentos `trajetoria` presentes (SC-004); navegação por teclado; conteúdo completo com JavaScript desativado
 
 **Ponto de verificação**: US3 funcional e independente.
 
@@ -246,13 +246,13 @@ painel por lugar e lista textual equivalente.
 **Teste independente**: abrir só `/mapa/`; todos os lugares da trajetória presentes, painel
 acessível por teclado, presumidos rotulados, lista completa sem JavaScript.
 
-- [ ] T064 [P] [US4] Cadastrar, conforme a regra editorial, `conteudo/lugares.yaml` (nome histórico, nome atual, país, coordenadas, `precisao`, `raio_km`, `vista`, referências) e `conteudo/trajetos.yaml` (`de`, `para`, `comprovacao`, `acontecimento`, referências) a partir do fichamento
-- [ ] T065 [US4] Completar `scripts/gerar-mapas.ts`: vistas `atlantico` e `sao-vicente`, projeção de lugares e trajetos e validação "coordenadas dentro dos limites da vista declarada"
-- [ ] T066 [US4] Criar `src/components/Mapa.astro`: SVG com lugares focáveis e clicáveis; `aproximada`/`regiao` como área sombreada; trajeto `presumido` tracejado **e** com rótulo "presumido"; painel do lugar com nome histórico, nome atual, acontecimentos e fontes; JavaScript ≤ 40 KB
-- [ ] T067 [US4] Acrescentar a `src/components/Mapa.astro` a lista textual de lugares e trajetos com o mesmo conteúdo do mapa, operável por teclado (FR-016)
-- [ ] T068 [US4] Criar `src/pages/mapa.astro` e `src/pages/lugares/[id].astro` (dado estruturado `Place`)
+- [X] T064 [P] [US4] Cadastrar, conforme a regra editorial, `conteudo/lugares.yaml` (nome histórico, nome atual, país, coordenadas, `precisao`, `raio_km`, `vista`, referências) e `conteudo/trajetos.yaml` (`de`, `para`, `comprovacao`, `acontecimento`, referências) a partir do fichamento
+- [X] T065 [US4] Completar `scripts/gerar-mapas.ts`: vistas `atlantico` e `sao-vicente`, projeção de lugares e trajetos e validação "coordenadas dentro dos limites da vista declarada"
+- [X] T066 [US4] Criar `src/components/Mapa.astro`: SVG com lugares focáveis e clicáveis; `aproximada`/`regiao` como área sombreada; trajeto `presumido` tracejado **e** com rótulo "presumido"; painel do lugar com nome histórico, nome atual, acontecimentos e fontes; JavaScript ≤ 40 KB
+- [X] T067 [US4] Acrescentar a `src/components/Mapa.astro` a lista textual de lugares e trajetos com o mesmo conteúdo do mapa, operável por teclado (FR-016)
+- [X] T068 [US4] Criar `src/pages/mapa.astro` e `src/pages/lugares/[id].astro` (dado estruturado `Place`)
 - [ ] T069 [US4] Atualizar `src/components/PreviaLugares.astro` da página inicial para usar `lugares.yaml` e a vista `atlantico` gerada
-- [ ] T070 [US4] Criar `tests/e2e/mapa.spec.ts`: 100% dos lugares da trajetória no mapa e na lista (SC-004); painel abre por teclado; trajeto presumido com rótulo; lista completa com JavaScript desativado
+- [X] T070 [US4] Criar `tests/e2e/mapa.spec.ts`: 100% dos lugares da trajetória no mapa e na lista (SC-004); painel abre por teclado; trajeto presumido com rótulo; lista completa com JavaScript desativado
 
 **Ponto de verificação**: US4 funcional e independente.
 
@@ -266,10 +266,10 @@ vínculos notáveis.
 **Teste independente**: abrir só `/familia/`; pessoas no limite definido, fontes e divergência
 de número de filhos visíveis; vínculos notáveis com tipo de ligação.
 
-- [ ] T071 [P] ⏳ [US5] Cadastrar `conteudo/pessoas.yaml` a partir do fichamento, conforme a regra editorial (o vínculo por casamento com a família de Raposo Tavares depende de fonte ainda não fornecida): pais, esposa, sogros, filhos e cônjuges dos filhos, com `relacoes`, `lacunas` (ex.: nome da mãe não localizado) e `referencias`; vínculos notáveis com `ligacao_notavel` (Raposo Tavares: `convivencia` na bandeira de 1628 e `casamento` de Mécia da Cunha Lobo com Francisco Vieira Tavares, só com fonte); nenhum dado da árvore pessoal do responsável
-- [ ] T072 [P] [US5] Criar `src/components/PessoaCard.astro` (nome, variantes, datas, vínculo, natureza, fontes)
-- [ ] T073 [US5] Criar `src/pages/familia/index.astro`, `src/pages/familia/[id].astro` (dado estruturado `Person`) e `src/pages/familia/vinculos-notaveis.astro`, exibindo a divergência de número de filhos
-- [ ] T074 [US5] Criar `tests/e2e/familia.spec.ts`: pessoas por vínculo; divergência lado a lado; vínculo notável com tipo, natureza e fonte
+- [X] T071 [P] ⏳ [US5] Cadastrar `conteudo/pessoas.yaml` a partir do fichamento, conforme a regra editorial (o vínculo por casamento com a família de Raposo Tavares depende de fonte ainda não fornecida): pais, esposa, sogros, filhos e cônjuges dos filhos, com `relacoes`, `lacunas` (ex.: nome da mãe não localizado) e `referencias`; vínculos notáveis com `ligacao_notavel` (Raposo Tavares: `convivencia` na bandeira de 1628 e `casamento` de Mécia da Cunha Lobo com Francisco Vieira Tavares, só com fonte); nenhum dado da árvore pessoal do responsável
+- [X] T072 [P] [US5] Criar `src/components/PessoaCard.astro` (nome, variantes, datas, vínculo, natureza, fontes)
+- [X] T073 [US5] Criar `src/pages/familia/index.astro`, `src/pages/familia/[id].astro` (dado estruturado `Person`) e `src/pages/familia/vinculos-notaveis.astro`, exibindo a divergência de número de filhos
+- [X] T074 [US5] Criar `tests/e2e/familia.spec.ts`: pessoas por vínculo; divergência lado a lado; vínculo notável com tipo, natureza e fonte
 
 **Ponto de verificação**: US5 funcional e independente.
 
@@ -282,9 +282,9 @@ de número de filhos visíveis; vínculos notáveis com tipo de ligação.
 **Teste independente**: da página inicial, achar uma informação específica e sua referência sem
 passar pela narrativa.
 
-- [ ] T075 [US6] Criar `src/pages/fontes.astro`: todas as referências em ABNT agrupadas por tipo (primárias, secundárias, informais), âncoras `#<id-referencia>` e "onde é usada" calculado por `src/lib/ligacoes.ts`
-- [ ] T076 [US6] Revisar `src/components/Navegacao.astro` e `src/components/Rodape.astro` para que todas as seções e o sumário da exposição sejam alcançáveis de qualquer página
-- [ ] T077 [US6] Criar `tests/e2e/consulta.spec.ts`: da página inicial a um capítulo, lugar ou pessoa sem passar pela narrativa; fontes agrupadas por tipo; "onde é usada" com links válidos
+- [X] T075 [US6] Criar `src/pages/fontes.astro`: todas as referências em ABNT agrupadas por tipo (primárias, secundárias, informais), âncoras `#<id-referencia>` e "onde é usada" calculado por `src/lib/ligacoes.ts`
+- [X] T076 [US6] Revisar `src/components/Navegacao.astro` e `src/components/Rodape.astro` para que todas as seções e o sumário da exposição sejam alcançáveis de qualquer página
+- [X] T077 [US6] Criar `tests/e2e/consulta.spec.ts`: da página inicial a um capítulo, lugar ou pessoa sem passar pela narrativa; fontes agrupadas por tipo; "onde é usada" com links válidos
 
 **Ponto de verificação**: todas as histórias funcionam de forma independente.
 

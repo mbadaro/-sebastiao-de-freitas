@@ -1,2 +1,78 @@
 # lugares — formato em specs/001-acervo-mvp/contracts/conteudo.md
-[]
+# coordenadas: [latitude, longitude] do lugar atual correspondente.
+- id: alagoa
+  nome_historico: Alagoa, termo de Silves
+  nome_atual: Lagoa, Algarve
+  pais: portugal
+  coordenadas: [37.135, -8.453]
+  precisao: exata
+  vista: [atlantico]
+  descricao: Onde Sebastião nasceu, por volta de 1568. Pertencia então à cidade de Silves e só se tornou vila em 1773.
+  referencias:
+    - { ref: silva-leme-v7, p: 168 }
+    - { ref: arade-2022 }
+- id: silves
+  nome_historico: Cidade de Silves
+  nome_atual: Silves, Algarve
+  pais: portugal
+  coordenadas: [37.19, -8.44]
+  precisao: exata
+  vista: [atlantico]
+  descricao: Cidade natal citada pelas fontes, antiga sede do bispado do Algarve. O pai de Sebastião foi provedor da sua Santa Casa de Misericórdia.
+  referencias:
+    - { ref: silva-leme-v7, p: 168 }
+    - { ref: bogaciovas-2006, p: 79 }
+- id: salvador
+  nome_historico: Cidade do Salvador, Bahia
+  nome_atual: Salvador, Bahia
+  pais: brasil
+  coordenadas: [-12.97, -38.51]
+  precisao: exata
+  vista: [atlantico]
+  descricao: Sede do governo-geral, onde Sebastião desembarcou em 1591 com a companhia de Gabriel Soares e o governador d. Francisco de Sousa.
+  referencias:
+    - { ref: silva-leme-v7, p: 168-169 }
+    - { ref: eve-francisco-de-sousa }
+- id: sao-paulo
+  nome_historico: Vila de São Paulo de Piratininga
+  nome_atual: São Paulo
+  pais: brasil
+  coordenadas: [-23.548, -46.633]
+  precisao: exata
+  vista: [atlantico, sao-vicente]
+  descricao: A vila onde Sebastião viveu, casou-se, serviu na Câmara e foi capitão. Ali declarou ser cristão-novo e, em 1640, batizou o bisneto na Sé.
+  referencias:
+    - { ref: silva-leme-v7, p: 169 }
+- id: santos
+  nome_historico: Vila de Santos
+  nome_atual: Santos
+  pais: brasil
+  coordenadas: [-23.96, -46.33]
+  precisao: exata
+  vista: [sao-vicente]
+  descricao: Porto da capitania. Em 1599, Sebastião esteve entre os que acudiram a vila contra o ataque de piratas estrangeiros.
+  referencias:
+    - { ref: bogaciovas-2006, p: 79 }
+    - { ref: moura-1950, p: 367 }
+- id: juqueri
+  nome_historico: Campos do Juqueri
+  nome_atual: Mairiporã
+  pais: brasil
+  coordenadas: [-23.32, -46.59]
+  precisao: regiao
+  raio_km: 8
+  vista: [sao-vicente]
+  descricao: Onde, segundo genealogias que não indicam a fonte, Sebastião teria tido uma fazenda e morrido, em 1644.
+  referencias:
+    - { ref: genearc-7956 }
+    - { ref: ibge-mairipora }
+- id: jundiai
+  nome_historico: Vila de Jundiaí
+  nome_atual: Jundiaí
+  pais: brasil
+  coordenadas: [-23.186, -46.884]
+  precisao: exata
+  vista: [sao-vicente]
+  descricao: Onde foi feito, em 1672, o inventário de Antônio Pedroso de Freitas, filho de Sebastião.
+  referencias:
+    - { ref: silva-leme-v7, p: 229 }

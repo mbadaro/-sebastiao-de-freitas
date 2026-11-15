@@ -1,0 +1,82 @@
+---
+/** Página de uma pessoa (T073; US5). Endereço permanente: /familia/<id>/ (dado estruturado Person). */
+import { getCollection, type CollectionEntry } from 'astro:content';
+import LayoutBase from '../../layouts/LayoutBase.astro';
+import CabecaPagina from '../../components/CabecaPagina.astro';
+import PessoaCard from '../../components/PessoaCard.astro';
+import { acontecimentosDaPessoa, fontesCurtas, naturezas } from '../../lib/acervo';
+import { formatarData } from '../../lib/datas';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  return (await getCollection('pessoas')).map((p) => ({ params: { id: p.id }, props: { pessoa: p } }));
+}
+const { pessoa } = Astro.props as { pessoa: CollectionEntry<'pessoas'> };
+const d = pessoa.data;
+const eventos = await acontecimentosDaPessoa(pessoa.id);
+const notavel = d.ligacao_notavel;
+const fontesNotavel = notavel ? await fontesCurtas(notavel.referencias) : [];
+const descricao = (
+  notavel ? `${d.nome}: ${notavel.descricao}` : `${d.nome}, na família de Sebastião de Freitas: datas, relações, lacunas e fontes.`
+).slice(0, 158);
+const site = Astro.site!;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: d.nome,
+  birthDate: d.nascimento ? formatarData(d.nascimento) : undefined,
+  deathDate: d.obito ? formatarData(d.obito) : undefined,
+  url: new URL(Astro.url.pathname, site).href,
+};
+const trilha = [{ rotulo: 'Família', href: url('familia/') }];
+if (notavel) trilha.push({ rotulo: 'Vínculos notáveis', href: url('familia/vinculos-notaveis/') });
+---
+
+<LayoutBase titulo={d.nome} descricao={descricao}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <CabecaPagina sobretitulo="Família" titulo={d.nome} trilha={trilha} />
+  <div class="conteiner corpo-pagina">
+    {
+      notavel && (
+        <section class="notavel">
+          <h2>Ligação com Sebastião</h2>
+          <p>{notavel.descricao}</p>
+          <p class="fontes">
+            {naturezas[notavel.natureza]}. Fontes:{' '}
+            {fontesNotavel.map((f, i) => (
+              <>
+                {i > 0 && '; '}
+                <a href={f.href} set:html={f.html} />
+              </>
+            ))}
+          </p>
+        </section>
+      )
+    }
+    <PessoaCard pessoa={pessoa} completo />
+    {
+      eventos.length > 0 && (
+        <section>
+          <h2>Na linha do tempo</h2>
+          <ul>
+            {eventos.map((a) => (
+              <li>
+                <a href={url(`linha-do-tempo/#${a.id}`)}>{formatarData(a.data.data)}</a>: {a.data.titulo}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </div>
+</LayoutBase>
+
+<style>
+  .notavel {
+    margin-bottom: var(--esp-4);
+  }
+  .fontes {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+  }
+</style>

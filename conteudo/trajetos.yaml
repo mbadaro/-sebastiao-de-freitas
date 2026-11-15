@@ -1,2 +1,18 @@
 # trajetos — formato em specs/001-acervo-mvp/contracts/conteudo.md
-[]
+# "presumido": as fontes registram os lugares, não o percurso.
+- id: algarve-bahia
+  de: silves
+  para: salvador
+  comprovacao: presumido
+  acontecimento: chegada-a-bahia
+  descricao: Do Algarve à Bahia, em 1591. As fontes registram a origem e a chegada, não o porto de partida nem a rota.
+  referencias:
+    - { ref: silva-leme-v7, p: 168-169 }
+- id: bahia-sao-paulo
+  de: salvador
+  para: sao-paulo
+  comprovacao: presumido
+  acontecimento: fixa-se-em-sao-paulo
+  descricao: Da Bahia à capitania de São Vicente e à vila de São Paulo. As fontes não registram a data nem o caminho.
+  referencias:
+    - { ref: silva-leme-v7, p: 169 }

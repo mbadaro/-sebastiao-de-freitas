@@ -1,0 +1,115 @@
+---
+/** Cartão de pessoa (T072; US5): nome, variantes, datas, vínculo, natureza, fontes e lacunas. */
+import { getEntry, type CollectionEntry } from 'astro:content';
+import { fontesCurtas, naturezas } from '../lib/acervo';
+import { formatarData } from '../lib/datas';
+import { url } from '../lib/url';
+
+interface Props {
+  pessoa: CollectionEntry<'pessoas'>;
+  completo?: boolean;
+}
+const { pessoa, completo = false } = Astro.props;
+const d = pessoa.data;
+const vinculos: Record<string, string> = {
+  protagonista: 'Protagonista',
+  pai: 'Pai',
+  mae: 'Mãe',
+  conjuge: 'Esposa',
+  sogro: 'Sogro',
+  sogra: 'Sogra',
+  filho: 'Filho',
+  filha: 'Filha',
+  'conjuge-de-filho': 'Cônjuge de filho ou filha',
+  notavel: 'Vínculo notável',
+};
+const datas = [d.nascimento && `nasc. ${formatarData(d.nascimento)}`, d.obito && `m. ${formatarData(d.obito)}`].filter(Boolean).join(' · ');
+const relacoes = await Promise.all(d.relacoes.map(async (r) => ({ tipo: r.tipo, p: await getEntry('pessoas', r.pessoa.id) })));
+const fontes = completo ? await fontesCurtas(d.referencias) : [];
+const Tag = completo ? 'div' : 'article';
+---
+
+<Tag class="pessoa">
+  {
+    completo ? (
+      <p class="pessoa__vinculo">{vinculos[d.vinculo]}</p>
+    ) : (
+      <>
+        <p class="pessoa__vinculo">{vinculos[d.vinculo]}</p>
+        <h3 class="pessoa__nome">
+          <a href={url(`familia/${pessoa.id}/`)}>{d.nome}</a>
+        </h3>
+      </>
+    )
+  }
+  {d.variantes.length > 0 && <p class="pessoa__variantes">Também grafado: {d.variantes.join(', ')}</p>}
+  {datas && <p class="pessoa__datas">{datas}</p>}
+  {
+    relacoes.length > 0 && (
+      <ul class="pessoa__relacoes">
+        {relacoes.map((r) => r.p && (
+          <li>
+            {r.tipo}: <a href={url(`familia/${r.p.id}/`)}>{r.p.data.nome}</a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+  {d.lacunas && <p class="pessoa__lacunas">{d.lacunas}</p>}
+  {
+    completo && (
+      <p class="pessoa__fontes">
+        {naturezas[d.natureza]}. Fontes:{' '}
+        {fontes.map((f, i) => (
+          <>
+            {i > 0 && '; '}
+            <a href={f.href} set:html={f.html} />
+          </>
+        ))}
+      </p>
+    )
+  }
+</Tag>
+
+<style>
+  .pessoa {
+    border: var(--linha-fina) solid var(--borda);
+    border-radius: var(--raio);
+    padding: var(--esp-3);
+    background: rgb(255 255 255 / 0.35);
+  }
+  .pessoa > :first-child {
+    margin-top: 0;
+  }
+  .pessoa > :last-child {
+    margin-bottom: 0;
+  }
+  .pessoa__vinculo {
+    font-size: var(--texto-pequeno);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--destaque);
+    margin-bottom: var(--esp-1);
+  }
+  .pessoa__nome {
+    font-size: var(--texto-destaque);
+    margin: 0 0 var(--esp-2);
+  }
+  .pessoa__datas,
+  .pessoa__variantes {
+    color: var(--texto-secundario);
+    margin: var(--esp-1) 0;
+  }
+  .pessoa__relacoes {
+    padding-left: var(--esp-4);
+    margin: var(--esp-2) 0;
+  }
+  .pessoa__lacunas {
+    font-size: var(--texto-pequeno);
+  }
+  .pessoa__fontes {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+  }
+</style>

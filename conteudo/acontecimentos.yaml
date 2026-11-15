@@ -1,2 +1,352 @@
 # acontecimentos — formato em specs/001-acervo-mvp/contracts/conteudo.md
-[]
+# tipo trajetoria: vida de Sebastião; contexto: o mundo em volta.
+# Tudo aqui já está nos capítulos, com a mesma natureza e as mesmas fontes.
+
+# ── Contexto ──────────────────────────────────────────────
+- id: batismo-forcado-1497
+  titulo: Os judeus de Portugal são batizados à força; nascem os cristãos-novos
+  data: { ano: 1497, precisao: exata }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: bogaciovas-2006, p: 26-27 }
+  capitulo: raizes-cristas-novas-e-sefarditas
+
+- id: inquisicao-em-portugal
+  titulo: O papa institui a Inquisição em Portugal
+  data: { ano: 1536, mes: 5, dia: 23, precisao: exata }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: bogaciovas-2006, p: 28 }
+
+- id: colegio-dos-jesuitas
+  titulo: Jesuítas fundam o colégio em torno do qual nasce São Paulo
+  data: { ano: 1554, precisao: exata }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: alesp-patio-do-colegio }
+  lugares: [sao-paulo]
+  capitulo: raizes-cristas-novas-e-sefarditas
+
+- id: bispado-vai-para-faro
+  titulo: A sede do bispado do Algarve passa de Silves para Faro
+  data: { ano: 1577, precisao: exata }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: infopedia-se-silves }
+  lugares: [silves]
+  capitulo: origem-em-portugal
+
+- id: ataques-a-sao-paulo-1591
+  titulo: Indígenas atacam a vila de São Paulo várias vezes
+  data: { ano: 1591, precisao: exata }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: moyarte }
+    - { ref: porta-2004, p: 648 }
+  lugares: [sao-paulo]
+  capitulo: chegada-ao-brasil
+
+- id: dom-francisco-em-sao-paulo
+  titulo: D. Francisco de Sousa se instala em São Paulo e autoriza os moradores a tirar ouro
+  data: { ano: 1599, precisao: exata }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: vilardaga-2013, p: "800, 807" }
+  lugares: [sao-paulo]
+  pessoas: [francisco-de-sousa]
+  capitulo: chegada-ao-brasil
+
+- id: levante-de-1603
+  titulo: '"Viva o povo! Morra o mau governo!": levante na vila de São Paulo'
+  data: { ano: 1603, mes: 1, dia: 10, precisao: exata }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: moyarte }
+    - { ref: porta-2004, p: 649 }
+  lugares: [sao-paulo]
+  capitulo: atuacao-publica-e-militar
+
+- id: morte-de-dom-francisco
+  titulo: D. Francisco de Sousa morre em São Paulo, sem receber o título de marquês
+  data: { ano: 1611, mes: 6, dia: 11, precisao: exata }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: eve-francisco-de-sousa }
+  lugares: [sao-paulo]
+  pessoas: [francisco-de-sousa]
+  capitulo: chegada-ao-brasil
+
+- id: visitacao-do-santo-oficio
+  titulo: O Santo Ofício envia um visitador às capitanias do Sul
+  data: { ano: 1627, precisao: exata }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: brasilhis-p2388 }
+    - { ref: bogaciovas-2006, p: 155-157 }
+  lugares: [sao-paulo]
+  capitulo: raizes-cristas-novas-e-sefarditas
+
+- id: destruicao-do-guaira
+  titulo: Paulistas destroem as missões jesuíticas do Guairá
+  data: { ano: 1628, precisao: exata }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: ribeiro-anpuh-2015, p: 4-5 }
+  pessoas: [raposo-tavares]
+  capitulo: atuacao-publica-e-militar
+
+- id: bens-de-cornelio-de-arzao
+  titulo: A Inquisição sequestra os bens de Cornélio de Arzão, morador de São Paulo
+  data: { ano: 1628, mes: 4, precisao: exata }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: bogaciovas-2006, p: 155-156 }
+  lugares: [sao-paulo]
+  capitulo: raizes-cristas-novas-e-sefarditas
+
+- id: expulsao-dos-jesuitas
+  titulo: Os jesuítas são expulsos do colégio de São Paulo; voltam treze anos depois
+  data: { ano: 1640, precisao: exata }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: alesp-patio-do-colegio }
+  lugares: [sao-paulo]
+  capitulo: ultimos-anos-e-falecimento
+
+- id: juqueri-vila
+  titulo: O povoado dos Campos do Juqueri já é conhecido como vila
+  data: { ano: 1642, precisao: depois-de, exibicao: desde 1642 }
+  tipo: contexto
+  natureza: historiografia
+  referencias:
+    - { ref: ibge-mairipora }
+  lugares: [juqueri]
+  capitulo: ultimos-anos-e-falecimento
+
+# ── Vida de Sebastião ─────────────────────────────────────
+- id: nascimento
+  titulo: Nasce em Alagoa, termo da cidade de Silves, no Algarve
+  data: { ano: 1568, precisao: aproximada }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: bogaciovas-2006, p: 78 }
+    - { ref: silva-leme-v7, p: 168 }
+  lugares: [alagoa, silves]
+  pessoas: [sebastiao-de-freitas, manuel-pires]
+  capitulo: origem-em-portugal
+  divergencia: ano-de-nascimento
+
+- id: chegada-a-bahia
+  titulo: Chega à Bahia como soldado da companhia de Gabriel Soares, com o governador d. Francisco de Sousa
+  data: { ano: 1591, precisao: exata }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 168-169 }
+  lugares: [salvador]
+  pessoas: [sebastiao-de-freitas, gabriel-soares-de-sousa, francisco-de-sousa]
+  capitulo: chegada-ao-brasil
+
+- id: fixa-se-em-sao-paulo
+  titulo: Segue para a capitania de São Vicente e se fixa na vila de São Paulo
+  data: { ano: 1591, precisao: depois-de }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 169 }
+  lugares: [sao-paulo]
+  pessoas: [sebastiao-de-freitas]
+  capitulo: chegada-ao-brasil
+  divergencia: local-de-moradia
+
+- id: casamento
+  titulo: Casa-se em São Paulo com Maria Pedroso
+  data: { ano: 1592, precisao: aproximada }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: bogaciovas-2006, p: 79 }
+    - { ref: moura-1950, p: 367 }
+  lugares: [sao-paulo]
+  pessoas: [sebastiao-de-freitas, maria-pedroso]
+  capitulo: sao-paulo-e-familia
+  divergencia: pai-de-maria-pedroso
+
+- id: guerra-com-jorge-correia
+  titulo: Acompanha o capitão Jorge Correia na guerra contra os indígenas que cercavam São Paulo
+  data: { ano: 1594, precisao: exata }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 169 }
+  lugares: [sao-paulo]
+  pessoas: [sebastiao-de-freitas]
+  capitulo: atuacao-publica-e-militar
+
+- id: jornada-com-jeronimo-pereira
+  titulo: Volta ao sertão com o capitão Jerônimo Pereira de Sousa
+  data: { ano: 1595, precisao: exata }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 169 }
+  pessoas: [sebastiao-de-freitas]
+  capitulo: atuacao-publica-e-militar
+  divergencia: jornada-jeronimo-pereira
+
+- id: almotacel
+  titulo: É almotacel, o fiscal dos pesos, medidas e preços da vila
+  data: { ano: 1596, precisao: exata, exibicao: 1596 e 1598 }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: moura-1950 }
+    - { ref: moyarte }
+  lugares: [sao-paulo]
+  pessoas: [sebastiao-de-freitas]
+  capitulo: atuacao-publica-e-militar
+
+- id: socorro-a-santos
+  titulo: Acode em socorro de Santos, atacada por piratas estrangeiros
+  data: { ano: 1599, precisao: exata }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: bogaciovas-2006, p: 79 }
+    - { ref: moura-1950, p: 367 }
+  lugares: [santos]
+  pessoas: [sebastiao-de-freitas]
+  capitulo: atuacao-publica-e-militar
+
+- id: armado-cavaleiro
+  titulo: É armado cavaleiro por d. Francisco de Sousa, na vila de São Paulo
+  data: { ano: 1600, precisao: exata }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 169 }
+    - { ref: vilardaga-2013, p: 800 }
+  lugares: [sao-paulo]
+  pessoas: [sebastiao-de-freitas, francisco-de-sousa]
+  capitulo: atuacao-publica-e-militar
+  divergencia: titulo-de-cavaleiro
+
+- id: juiz-ordinario-1600
+  titulo: É juiz ordinário, o cargo que presidia a Câmara
+  data: { ano: 1600, precisao: exata }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: moura-1950 }
+    - { ref: moyarte }
+  lugares: [sao-paulo]
+  pessoas: [sebastiao-de-freitas]
+  capitulo: atuacao-publica-e-militar
+
+- id: vereador
+  titulo: É vereador da Câmara de São Paulo
+  data: { ano: 1604, precisao: exata, exibicao: 1604 e 1609 }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: moura-1950 }
+    - { ref: moyarte }
+  lugares: [sao-paulo]
+  pessoas: [sebastiao-de-freitas]
+  capitulo: atuacao-publica-e-militar
+
+- id: patente-de-capitao
+  titulo: Recebe a patente de capitão da gente de Piratininga
+  data: { ano: 1606, precisao: exata }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 169 }
+  lugares: [sao-paulo]
+  pessoas: [sebastiao-de-freitas]
+  capitulo: atuacao-publica-e-militar
+  divergencia: patente-de-capitao
+
+- id: juiz-ordinario-1624
+  titulo: É de novo juiz ordinário
+  data: { ano: 1624, precisao: exata, exibicao: 1624 e 1626 }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: moura-1950 }
+    - { ref: moyarte }
+  lugares: [sao-paulo]
+  pessoas: [sebastiao-de-freitas]
+  capitulo: atuacao-publica-e-militar
+
+- id: declaracao-de-cristao-novo
+  titulo: Denunciado por um comentário sobre a Virgem, declara ao Santo Ofício ser cristão-novo
+  data: { ano: 1627, precisao: intervalo, ate: 1628, exibicao: durante a visitação de 1627–1628 }
+  tipo: trajetoria
+  natureza: fato
+  referencias:
+    - { ref: antt-caderno-promotor-24, p: "fl. 316" }
+  lugares: [sao-paulo]
+  pessoas: [sebastiao-de-freitas]
+  capitulo: raizes-cristas-novas-e-sefarditas
+  divergencia: declaracao-cristao-novo
+
+- id: bandeira-ao-guaira
+  titulo: Teria acompanhado Raposo Tavares na bandeira ao Guairá
+  data: { ano: 1628, precisao: exata }
+  tipo: trajetoria
+  natureza: tradicao
+  referencias:
+    - { ref: genearc-7956 }
+    - { ref: amorese-ps25-085 }
+  pessoas: [sebastiao-de-freitas, raposo-tavares]
+  capitulo: atuacao-publica-e-militar
+
+- id: testemunha-em-1640
+  titulo: Depõe como testemunha e declara ter cerca de 72 anos
+  data: { ano: 1640, mes: 8, precisao: exata }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: bogaciovas-2006, p: 78 }
+  lugares: [sao-paulo]
+  pessoas: [sebastiao-de-freitas]
+  capitulo: ultimos-anos-e-falecimento
+
+- id: padrinho-do-bisneto
+  titulo: É padrinho do bisneto Sebastião, na Sé de São Paulo
+  data: { ano: 1640, mes: 11, precisao: exata }
+  tipo: trajetoria
+  natureza: historiografia
+  referencias:
+    - { ref: acmsp-batismos-se-1, p: "fl. 2" }
+    - { ref: familysearch-lz21-h7q }
+  lugares: [sao-paulo]
+  pessoas: [sebastiao-de-freitas]
+  capitulo: ultimos-anos-e-falecimento
+
+- id: morte
+  titulo: Morre na sua fazenda em Juqueri, segundo genealogias que não indicam a fonte
+  data: { ano: 1644, precisao: exata }
+  tipo: trajetoria
+  natureza: tradicao
+  referencias:
+    - { ref: genearc-7956 }
+    - { ref: amorese-ps25-085 }
+  lugares: [juqueri]
+  pessoas: [sebastiao-de-freitas]
+  capitulo: ultimos-anos-e-falecimento
+  divergencia: ano-de-morte

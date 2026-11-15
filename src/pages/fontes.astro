@@ -1,0 +1,122 @@
+---
+/** Fontes (T075; US6): todas as referências em ABNT, por tipo, com "onde é usada" e as divergências. */
+import { getCollection } from 'astro:content';
+import LayoutBase from '../layouts/LayoutBase.astro';
+import CabecaPagina from '../components/CabecaPagina.astro';
+import { abntHtml, htmlDivergencia } from '../lib/capitulo';
+import { usosDasReferencias } from '../lib/acervo';
+
+const titulo = 'Fontes';
+const descricao =
+  'Todas as fontes da exposição em formato ABNT, separadas em documentos de época, obras de historiadores e fontes informais, com as páginas que usam cada uma.';
+const usos = await usosDasReferencias();
+const refs = (await getCollection('referencias')).filter((r) => r.id !== 'sem-fonte' && usos.has(r.id));
+const ordenar = (a: { data: { abnt: string } }, b: { data: { abnt: string } }) => a.data.abnt.localeCompare(b.data.abnt, 'pt-BR');
+const grupos = [
+  { id: 'primarias', titulo: 'Documentos de época', texto: 'Fontes primárias: registros produzidos no tempo de Sebastião.', tipo: 'primaria' },
+  { id: 'secundarias', titulo: 'Obras de historiadores e genealogistas', texto: 'Livros, artigos, teses e bases de dados que estudaram as fontes primárias.', tipo: 'secundaria' },
+  { id: 'informais', titulo: 'Fontes informais', texto: 'Sites, enciclopédias e genealogias on-line. Úteis como pista e contexto; nunca sustentam sozinhas um fato documentado.', tipo: 'informal' },
+].map((g) => ({ ...g, refs: refs.filter((r) => r.data.tipo === g.tipo).sort(ordenar) }));
+const divergencias = await Promise.all((await getCollection('divergencias')).map((d) => htmlDivergencia(d.id)));
+---
+
+<LayoutBase titulo={titulo} descricao={descricao}>
+  <CabecaPagina sobretitulo="Consulta" titulo={titulo} descricao={descricao} />
+  <div class="conteiner corpo-pagina">
+    <nav aria-label="Grupos de fontes">
+      <ul class="indice">
+        {grupos.map((g) => <li><a href={`#${g.id}`}>{g.titulo} ({g.refs.length})</a></li>)}
+        <li><a href="#divergencias">Onde as fontes divergem ({divergencias.length})</a></li>
+      </ul>
+    </nav>
+
+    {
+      grupos.map((g) => (
+        <section aria-labelledby={g.id} class="grupo">
+          <h2 id={g.id}>{g.titulo}</h2>
+          <p class="grupo__texto">{g.texto}</p>
+          <ol class="refs">
+            {g.refs.map((r) => (
+              <li id={r.id} class="ref">
+                <p class="ref__abnt">
+                  <span set:html={abntHtml(r.data.abnt)} />
+                  {r.data.url && (
+                    <>
+                      {' '}
+                      <a href={r.data.url} rel="noopener">Acessar</a>
+                    </>
+                  )}
+                </p>
+                {r.data.observacao && <p class="ref__obs">{r.data.observacao}</p>}
+                <details class="ref__usos">
+                  <summary>Onde é usada ({usos.get(r.id)!.length})</summary>
+                  <ul>
+                    {usos.get(r.id)!.map((u) => (
+                      <li>
+                        <a href={u.href}>{u.rotulo}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))
+    }
+
+    <section aria-labelledby="divergencias" class="grupo texto-capitulo">
+      <h2 id="divergencias">Onde as fontes divergem</h2>
+      <p class="grupo__texto">Quando as fontes não concordam, todas as versões ficam registradas, lado a lado.</p>
+      {divergencias.map((html) => <Fragment set:html={html} />)}
+    </section>
+  </div>
+</LayoutBase>
+
+<style>
+  .indice {
+    padding-left: var(--esp-4);
+  }
+  .grupo {
+    margin-top: var(--esp-5);
+  }
+  .grupo__texto {
+    color: var(--texto-secundario);
+  }
+  .refs {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--esp-4);
+  }
+  .ref {
+    border-left: 3px solid var(--borda);
+    padding-left: var(--esp-3);
+    scroll-margin-top: var(--esp-6);
+  }
+  .ref:target {
+    border-left-color: var(--destaque);
+    background: rgb(182 154 112 / 0.12);
+  }
+  .ref__abnt {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+  .ref__obs {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+    margin: var(--esp-1) 0;
+  }
+  .ref__usos summary {
+    cursor: pointer;
+    font-size: var(--texto-pequeno);
+    color: var(--link);
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
+  }
+  .ref__usos ul {
+    margin-top: 0;
+    font-size: var(--texto-pequeno);
+  }
+</style>

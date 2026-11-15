@@ -1,0 +1,144 @@
+---
+/**
+ * Mapa em SVG (T066; US4; D6). Gerado no build; nenhum JavaScript.
+ * Cada lugar é um link focável que leva à sua ficha (nome histórico, nome atual,
+ * acontecimentos e fontes). Lugar aproximado/região → área sombreada.
+ * Trajeto presumido → tracejado E rótulo "presumido" (FR-015).
+ */
+import { gerarMapa, type Vista } from '../lib/mapa';
+import { url } from '../lib/url';
+
+interface Props {
+  vista: Vista;
+  /** "lista": leva à ficha na mesma página (#lugar-id); "pagina": leva a /lugares/<id>/. */
+  destino?: 'lista' | 'pagina';
+  destaque?: string;
+}
+const { vista, destino = 'lista', destaque } = Astro.props;
+const m = await gerarMapa(vista);
+const href = (id: string) => (destino === 'lista' ? `#lugar-${vista}-${id}` : url(`lugares/${id}/`));
+const idTitulo = `mapa-${vista}-titulo`;
+---
+
+<figure class="mapa-svg">
+  <svg viewBox={`0 0 ${m.largura} ${m.altura}`} aria-labelledby={idTitulo}>
+    <title id={idTitulo}>Mapa: {m.titulo}. Os lugares numerados são links para a ficha de cada um.</title>
+    <rect class="mapa-svg__mar" width={m.largura} height={m.altura} />
+    <path class="mapa-svg__grade" d={m.grade} />
+    <path class="mapa-svg__terra" d={m.contorno} />
+    {m.rios && <path class="mapa-svg__rios" d={m.rios} />}
+    {m.pontos.filter((p) => p.raio).map((p) => <circle class="mapa-svg__regiao" cx={p.x} cy={p.y} r={Math.max(p.raio!, 14)} />)}
+    {
+      m.trajetos.map((t) => (
+        <g class:list={['mapa-svg__trajeto', { 'mapa-svg__trajeto--presumido': t.presumido }]}>
+          <path d={t.d} />
+          {t.presumido && (
+            <text x={t.rotulo.x} y={t.rotulo.y} transform={`rotate(${t.rotulo.angulo.toFixed(0)} ${t.rotulo.x.toFixed(0)} ${t.rotulo.y.toFixed(0)})`}>
+              presumido
+            </text>
+          )}
+        </g>
+      ))
+    }
+    {
+      m.pontos.map((p) => (
+        <a href={href(p.id)} class:list={['mapa-svg__lugar', { 'mapa-svg__lugar--destaque': p.id === destaque }]}>
+          {(p.mx !== p.x || p.my !== p.y) && <line class="mapa-svg__guia" x1={p.x} y1={p.y} x2={p.mx} y2={p.my} />}
+          <circle cx={p.mx} cy={p.my} r="11" />
+          <text class="mapa-svg__n" aria-hidden="true" x={p.mx} y={p.my + 4.5}>{p.n}</text>
+          <text class="mapa-svg__nome" x={p.mx + 17} y={p.my + 5}>{p.nome}</text>
+        </a>
+      ))
+    }
+  </svg>
+  <figcaption>
+    {m.titulo}. Contornos: Natural Earth (domínio público). Mapa esquemático, sem escala precisa.
+  </figcaption>
+</figure>
+
+<style>
+  .mapa-svg {
+    margin: 0;
+  }
+  .mapa-svg svg {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    display: block;
+  }
+  .mapa-svg__mar {
+    fill: var(--cor-azul-profundo);
+  }
+  .mapa-svg__terra {
+    fill: var(--cor-azul-petroleo);
+    stroke: var(--cor-acinzentado);
+    stroke-width: 0.8;
+  }
+  .mapa-svg__rios {
+    fill: none;
+    stroke: var(--cor-acinzentado);
+    stroke-width: 1.5;
+    opacity: 0.7;
+  }
+  .mapa-svg__grade {
+    fill: none;
+    stroke: var(--cor-acinzentado);
+    stroke-width: 0.4;
+    opacity: 0.3;
+  }
+  .mapa-svg__regiao {
+    fill: var(--cor-dourado);
+    fill-opacity: 0.25;
+    stroke: var(--cor-dourado);
+    stroke-dasharray: 3 3;
+  }
+  .mapa-svg__trajeto path {
+    fill: none;
+    stroke: var(--cor-dourado);
+    stroke-width: 2.5;
+  }
+  .mapa-svg__trajeto--presumido path {
+    stroke-dasharray: 8 6;
+  }
+  .mapa-svg__trajeto text {
+    fill: var(--cor-dourado);
+    font: italic 600 15px var(--fonte-texto);
+    text-anchor: middle;
+  }
+  .mapa-svg__lugar circle {
+    fill: var(--cor-dourado);
+    stroke: var(--cor-azul-profundo);
+    stroke-width: 2;
+  }
+  .mapa-svg__guia {
+    stroke: var(--cor-dourado);
+    stroke-width: 1.5;
+  }
+  .mapa-svg__n {
+    fill: var(--cor-azul-profundo);
+    font: 700 13px var(--fonte-texto);
+    text-anchor: middle;
+  }
+  .mapa-svg__nome {
+    fill: var(--cor-marfim);
+    font: 600 16px var(--fonte-texto);
+    paint-order: stroke;
+    stroke: var(--cor-azul-profundo);
+    stroke-width: 4px;
+  }
+  .mapa-svg__lugar:hover circle,
+  .mapa-svg__lugar:focus-visible circle,
+  .mapa-svg__lugar--destaque circle {
+    fill: var(--cor-marfim);
+    r: 14;
+  }
+  .mapa-svg__lugar:focus-visible {
+    outline: 3px solid var(--cor-marfim);
+    outline-offset: 2px;
+  }
+  figcaption {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+    margin-top: var(--esp-2);
+  }
+</style>

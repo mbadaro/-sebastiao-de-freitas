@@ -1,0 +1,73 @@
+---
+/** Vínculos notáveis (T073; US5): tipo de ligação, natureza e fonte de cada um. */
+import { getCollection } from 'astro:content';
+import LayoutBase from '../../layouts/LayoutBase.astro';
+import CabecaPagina from '../../components/CabecaPagina.astro';
+import { fontesCurtas, naturezas } from '../../lib/acervo';
+import { url } from '../../lib/url';
+
+const titulo = 'Vínculos notáveis';
+const descricao =
+  'Personagens conhecidos da história do Brasil que cruzaram a vida de Sebastião de Freitas, com o tipo de ligação, a natureza da informação e as fontes.';
+const tipos = { descendencia: 'Descendência', casamento: 'Casamento', convivencia: 'Convivência' } as const;
+const notaveis = await Promise.all(
+  (await getCollection('pessoas'))
+    .filter((p) => p.data.vinculo === 'notavel')
+    .map(async (p) => ({ p, l: p.data.ligacao_notavel!, fontes: await fontesCurtas(p.data.ligacao_notavel!.referencias) })),
+);
+---
+
+<LayoutBase titulo={titulo} descricao={descricao}>
+  <CabecaPagina sobretitulo="Família" titulo={titulo} descricao={descricao} trilha={[{ rotulo: 'Família', href: url('familia/') }]} />
+  <div class="conteiner corpo-pagina">
+    <ul class="notaveis">
+      {
+        notaveis.map(({ p, l, fontes }) => (
+          <li class="notavel">
+            <p class="notavel__tipo">
+              {tipos[l.tipo]} · {naturezas[l.natureza]}
+            </p>
+            <h2 class="notavel__nome">
+              <a href={url(`familia/${p.id}/`)}>{p.data.nome}</a>
+            </h2>
+            <p>{l.descricao}</p>
+            <p class="notavel__fontes">
+              Fontes:{' '}
+              {fontes.map((f, i) => (
+                <>
+                  {i > 0 && '; '}
+                  <a href={f.href} set:html={f.html} />
+                </>
+              ))}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</LayoutBase>
+
+<style>
+  .notaveis {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--esp-5);
+  }
+  .notavel__tipo {
+    font-size: var(--texto-pequeno);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--destaque);
+    margin-bottom: var(--esp-1);
+  }
+  .notavel__nome {
+    font-size: var(--titulo-3);
+    margin: 0 0 var(--esp-2);
+  }
+  .notavel__fontes {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+/** Cabeçalho escuro das páginas de seção (mesmo desenho do cabeçalho dos capítulos). */
+import { url } from '../lib/url';
+
+interface Props {
+  sobretitulo?: string;
+  titulo: string;
+  descricao?: string;
+  trilha?: { rotulo: string; href: string }[];
+}
+const { sobretitulo, titulo, descricao, trilha = [] } = Astro.props;
+---
+
+<header class="cabeca-pagina superficie-escura">
+  <div class="conteiner">
+    <nav aria-label="Você está em" class="trilha">
+      <a href={url()}>Início</a>
+      {
+        trilha.map((t) => (
+          <>
+            <span aria-hidden="true">&nbsp;›&nbsp;</span>
+            <a href={t.href}>{t.rotulo}</a>
+          </>
+        ))
+      }
+    </nav>
+    {sobretitulo && <p class="sobretitulo">{sobretitulo}</p>}
+    <h1>{titulo}</h1>
+    {descricao && <p class="cabeca-pagina__descricao">{descricao}</p>}
+  </div>
+</header>
+
+<style>
+  .cabeca-pagina {
+    padding-block: var(--esp-6) var(--esp-5);
+  }
+  .cabeca-pagina h1 {
+    font-size: var(--titulo-2);
+  }
+  .cabeca-pagina__descricao {
+    color: var(--texto-secundario);
+    font-size: var(--texto-destaque);
+    max-width: 52ch;
+  }
+  .trilha {
+    font-size: var(--texto-pequeno);
+    margin-bottom: var(--esp-4);
+    color: var(--texto-secundario);
+  }
+  :global(.corpo-pagina) {
+    padding-block: var(--esp-5) var(--esp-6);
+    max-width: calc(var(--largura-leitura) + 2 * var(--margem-lateral));
+  }
+</style>

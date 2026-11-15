@@ -1,0 +1,68 @@
+---
+/** Linha do tempo (T062; US3). Endereço permanente: /linha-do-tempo/ (âncoras #<id-acontecimento>). */
+import LayoutBase from '../layouts/LayoutBase.astro';
+import CabecaPagina from '../components/CabecaPagina.astro';
+import LinhaDoTempo from '../components/LinhaDoTempo.astro';
+import { acontecimentosOrdenados } from '../lib/acervo';
+import { formatarData } from '../lib/datas';
+
+const titulo = 'Linha do tempo';
+const descricao =
+  'A vida de Sebastião de Freitas, do Algarve à vila de São Paulo, ano a ano, ao lado dos acontecimentos de Portugal e do Brasil que a cercaram.';
+const site = Astro.site!;
+const eventos = await acontecimentosOrdenados();
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: titulo,
+  description: descricao,
+  itemListElement: eventos.map((a, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${formatarData(a.data.data)}: ${a.data.titulo}`,
+    url: new URL(`${Astro.url.pathname}#${a.id}`, site).href,
+  })),
+};
+---
+
+<LayoutBase titulo={titulo} descricao={descricao}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <CabecaPagina sobretitulo="Séculos XV–XVII" titulo={titulo} descricao={descricao} />
+  <div class="conteiner corpo-pagina">
+    <p class="legenda-tempo">
+      <span><span class="m m--vida" aria-hidden="true"></span> Vida de Sebastião</span>
+      <span><span class="m m--contexto" aria-hidden="true"></span> Contexto histórico</span>
+      <span>Datas com "c." são aproximadas.</span>
+    </p>
+    <LinhaDoTempo />
+  </div>
+</LayoutBase>
+
+<style>
+  .legenda-tempo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--esp-2) var(--esp-4);
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+  }
+  .legenda-tempo > span {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--esp-2);
+  }
+  .m {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--link);
+  }
+  .m--vida {
+    border-radius: 50%;
+    background: var(--link);
+  }
+  .m--contexto {
+    transform: rotate(45deg);
+    border-color: var(--texto-secundario);
+  }
+</style>

@@ -46,7 +46,7 @@ export async function capitulosOrdenados() {
   return (await getCollection('capitulos')).sort((a, b) => a.data.ordem - b.data.ordem);
 }
 
-async function htmlDivergencia(id: string): Promise<string> {
+export async function htmlDivergencia(id: string): Promise<string> {
   const div = await getEntry('divergencias', id);
   if (!div) throw new Error(`divergência "${id}" não existe`);
   const versoes = await Promise.all(
@@ -62,7 +62,7 @@ async function htmlDivergencia(id: string): Promise<string> {
   );
   const obs = div.data.observacao ? `<p class="divergencia__obs">${escapar(div.data.observacao)}</p>` : '';
   return (
-    `<details class="divergencia">` +
+    `<details class="divergencia" id="divergencia-${escapar(id)}">` +
     `<summary>As fontes divergem: <span class="divergencia__tema">${escapar(div.data.tema.toLowerCase())}</span></summary>` +
     `<ol class="divergencia__versoes">${versoes.join('')}</ol>${obs}</details>`
   );

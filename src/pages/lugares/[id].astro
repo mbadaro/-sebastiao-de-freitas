@@ -1,0 +1,49 @@
+---
+/** Página de um lugar (T068; US4). Endereço permanente: /lugares/<id>/ (dado estruturado Place). */
+import { getCollection, type CollectionEntry } from 'astro:content';
+import LayoutBase from '../../layouts/LayoutBase.astro';
+import CabecaPagina from '../../components/CabecaPagina.astro';
+import Mapa from '../../components/Mapa.astro';
+import FichaLugar from '../../components/FichaLugar.astro';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  return (await getCollection('lugares')).map((l) => ({ params: { id: l.id }, props: { lugar: l } }));
+}
+const { lugar } = Astro.props as { lugar: CollectionEntry<'lugares'> };
+const d = lugar.data;
+const titulo = d.nome_historico;
+const descricao = `${d.nome_historico}${d.nome_atual ? ` (hoje ${d.nome_atual})` : ''}: o lugar na trajetória de Sebastião de Freitas, com acontecimentos e fontes.`;
+const site = Astro.site!;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Place',
+  name: d.nome_historico,
+  alternateName: d.nome_atual,
+  description: d.descricao,
+  geo: { '@type': 'GeoCoordinates', latitude: d.coordenadas[0], longitude: d.coordenadas[1] },
+  url: new URL(Astro.url.pathname, site).href,
+};
+---
+
+<LayoutBase titulo={titulo} descricao={descricao.slice(0, 160)}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <CabecaPagina sobretitulo="Lugar" titulo={titulo} trilha={[{ rotulo: 'Mapa', href: url('mapa/') }]} />
+  <div class="conteiner corpo-pagina">
+    <FichaLugar lugar={lugar} nivel={2} />
+  </div>
+  <div class="superficie-escura faixa-mapa">
+    <div class="conteiner">
+      <Mapa vista={d.vista[d.vista.length - 1]} destino="pagina" destaque={lugar.id} />
+    </div>
+  </div>
+</LayoutBase>
+
+<style>
+  .faixa-mapa {
+    padding-block: var(--esp-5);
+  }
+  .faixa-mapa .conteiner {
+    max-width: 48rem;
+  }
+</style>

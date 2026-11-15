@@ -1,5 +1,5 @@
 /*
- * Fontes hospedadas no próprio site (D9, D15). Licença SIL OFL: public/fontes/OFL-*.txt
+ * Fontes hospedadas no próprio site (D9, D15). Licença SIL OFL: public/tipografia/OFL-*.txt
  * Versões variáveis, subconjunto latino: 3 arquivos, ~96 KB (limite: 4 arquivos, 150 KB).
  */
 
@@ -8,7 +8,7 @@
   font-style: normal;
   font-weight: 400 900;
   font-display: swap;
-  src: url('/fontes/playfair-display-latin.woff2') format('woff2');
+  src: url('/tipografia/playfair-display-latin.woff2') format('woff2');
 }
 
 @font-face {
@@ -16,7 +16,7 @@
   font-style: normal;
   font-weight: 200 900;
   font-display: swap;
-  src: url('/fontes/source-sans-3-latin.woff2') format('woff2');
+  src: url('/tipografia/source-sans-3-latin.woff2') format('woff2');
 }
 
 @font-face {
@@ -24,5 +24,5 @@
   font-style: italic;
   font-weight: 200 900;
   font-display: swap;
-  src: url('/fontes/source-sans-3-latin-italic.woff2') format('woff2');
+  src: url('/tipografia/source-sans-3-latin-italic.woff2') format('woff2');
 }

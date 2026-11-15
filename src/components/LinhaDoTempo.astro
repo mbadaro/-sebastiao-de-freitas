@@ -1,0 +1,175 @@
+---
+/**
+ * Linha do tempo (T060–T061; US3). Lista cronológica em HTML puro, gerada no build.
+ * "Vida de Sebastião" × "Contexto": forma e rótulo diferentes, não só cor.
+ * O filtro é um script pequeno; sem JavaScript, todos os itens ficam visíveis.
+ */
+import { acontecimentosOrdenados, fontesCurtas, naturezas } from '../lib/acervo';
+import { formatarData } from '../lib/datas';
+import { url } from '../lib/url';
+import { getEntry } from 'astro:content';
+
+const itens = await Promise.all(
+  (await acontecimentosOrdenados()).map(async (a) => ({
+    a,
+    fontes: await fontesCurtas(a.data.referencias),
+    lugares: await Promise.all(a.data.lugares.map((l) => getEntry('lugares', l.id))),
+    divergencia: a.data.divergencia ? await getEntry('divergencias', a.data.divergencia.id) : undefined,
+  })),
+);
+const rotuloTipo = { trajetoria: 'Vida de Sebastião', contexto: 'Contexto' } as const;
+---
+
+<div class="linha-do-tempo">
+  <fieldset class="filtro" hidden data-filtro>
+    <legend>Mostrar</legend>
+    <label><input type="radio" name="filtro" value="todos" checked /> Tudo</label>
+    <label><input type="radio" name="filtro" value="trajetoria" /> Vida de Sebastião</label>
+    <label><input type="radio" name="filtro" value="contexto" /> Contexto</label>
+  </fieldset>
+
+  <ol class="eventos">
+    {
+      itens.map(({ a, fontes, lugares, divergencia }) => (
+        <li id={a.id} class={`evento evento--${a.data.tipo}`} data-tipo={a.data.tipo}>
+          <p class="evento__data">{formatarData(a.data.data)}</p>
+          <p class="evento__tipo">
+            <span class="evento__marca" aria-hidden="true" />
+            {rotuloTipo[a.data.tipo]} · {naturezas[a.data.natureza]}
+          </p>
+          <h3 class="evento__titulo">{a.data.titulo}</h3>
+          {divergencia && (
+            <p class="evento__divergencia">
+              As fontes divergem sobre {divergencia.data.tema.charAt(0).toLowerCase() + divergencia.data.tema.slice(1)}.
+              {a.data.capitulo && <a href={url(`exposicao/${a.data.capitulo}/#divergencia-${divergencia.id}`)}>Ver as versões</a>}
+            </p>
+          )}
+          <p class="evento__ligacoes">
+            {a.data.capitulo && <a href={url(`exposicao/${a.data.capitulo}/`)}>Ler no capítulo</a>}
+            {lugares.map((l) => l && <a href={url(`lugares/${l.id}/`)}>{l.data.nome_historico}</a>)}
+          </p>
+          <p class="evento__fontes">
+            Fonte{fontes.length > 1 ? 's' : ''}:{' '}
+            {fontes.map((f, i) => (
+              <>
+                {i > 0 && '; '}
+                <a href={f.href} set:html={f.html} />
+              </>
+            ))}
+          </p>
+        </li>
+      ))
+    }
+  </ol>
+</div>
+
+<script>
+  const filtro = document.querySelector<HTMLFieldSetElement>('[data-filtro]');
+  if (filtro) {
+    filtro.hidden = false;
+    filtro.addEventListener('change', (e) => {
+      const valor = (e.target as HTMLInputElement).value;
+      document.querySelectorAll<HTMLElement>('.evento').forEach((li) => {
+        li.hidden = valor !== 'todos' && li.dataset.tipo !== valor;
+      });
+    });
+  }
+</script>
+
+<style>
+  .filtro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--esp-2) var(--esp-4);
+    border: var(--linha-fina) solid var(--borda);
+    border-radius: var(--raio);
+    padding: var(--esp-2) var(--esp-3) var(--esp-3);
+    margin: 0 0 var(--esp-5);
+  }
+  .filtro[hidden] {
+    display: none;
+  }
+  .filtro legend {
+    font-weight: 600;
+    padding-inline: var(--esp-1);
+  }
+  .filtro label {
+    display: inline-flex;
+    gap: var(--esp-2);
+    align-items: center;
+    min-height: 2.75rem;
+    cursor: pointer;
+  }
+  .eventos {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 var(--esp-4);
+    border-left: 2px solid var(--borda);
+  }
+  .evento {
+    position: relative;
+    padding: 0 0 var(--esp-5) var(--esp-3);
+    scroll-margin-top: var(--esp-6);
+  }
+  .evento[hidden] {
+    display: none;
+  }
+  .evento__marca {
+    position: absolute;
+    left: calc(-1 * var(--esp-4) - 8px);
+    top: 0.35rem;
+    width: 14px;
+    height: 14px;
+    background: var(--fundo);
+    border: 2px solid var(--link);
+  }
+  .evento--trajetoria .evento__marca {
+    border-radius: 50%;
+    background: var(--link);
+  }
+  .evento--contexto .evento__marca {
+    transform: rotate(45deg);
+    border-color: var(--texto-secundario);
+  }
+  .evento__data {
+    font-family: var(--fonte-titulo);
+    font-size: var(--texto-destaque);
+    color: var(--titulo);
+    margin: 0;
+  }
+  .evento__tipo {
+    font-size: var(--texto-pequeno);
+    font-weight: 600;
+    color: var(--texto-secundario);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: var(--esp-1) 0;
+  }
+  .evento__titulo {
+    font-family: var(--fonte-texto);
+    font-size: var(--texto-base);
+    font-weight: 600;
+    line-height: var(--entrelinha-texto);
+    margin: 0 0 var(--esp-2);
+    color: var(--texto);
+  }
+  .evento--contexto .evento__titulo {
+    font-weight: 400;
+  }
+  .evento__divergencia {
+    font-size: var(--texto-pequeno);
+    border-left: 3px solid var(--destaque);
+    padding-left: var(--esp-2);
+  }
+  .evento__ligacoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--esp-1) var(--esp-3);
+    margin: var(--esp-2) 0;
+  }
+  .evento__fontes {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+    margin: 0;
+  }
+</style>

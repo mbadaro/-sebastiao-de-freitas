@@ -1,0 +1,68 @@
+---
+/** Família (T073; US5): pessoas agrupadas por vínculo, com a divergência sobre o número de filhos. */
+import { getCollection } from 'astro:content';
+import LayoutBase from '../../layouts/LayoutBase.astro';
+import CabecaPagina from '../../components/CabecaPagina.astro';
+import PessoaCard from '../../components/PessoaCard.astro';
+import { htmlDivergencia } from '../../lib/capitulo';
+import { url } from '../../lib/url';
+
+const titulo = 'Família';
+const descricao =
+  'Os pais, a esposa, os sogros, os filhos e os genros e noras de Sebastião de Freitas, segundo as genealogias paulistas e os documentos reunidos.';
+const pessoas = await getCollection('pessoas');
+const grupos = [
+  { titulo: 'Sebastião e seus pais', vinculos: ['protagonista', 'pai', 'mae'] },
+  { titulo: 'A esposa e os sogros', vinculos: ['conjuge', 'sogro', 'sogra'] },
+  { titulo: 'Os filhos', vinculos: ['filho', 'filha'], divergencia: 'numero-de-filhos' },
+  { titulo: 'Genros e noras', vinculos: ['conjuge-de-filho'] },
+].map((g) => ({ ...g, pessoas: pessoas.filter((p) => g.vinculos.includes(p.data.vinculo)) }));
+const divergencia = await htmlDivergencia('numero-de-filhos');
+---
+
+<LayoutBase titulo={titulo} descricao={descricao}>
+  <CabecaPagina sobretitulo="Pessoas" titulo={titulo} descricao={descricao} />
+  <div class="conteiner corpo-familia">
+    <p class="aviso">
+      Só aparecem pessoas que viveram há mais de cem anos. Netos e descendentes posteriores são
+      citados nos capítulos, quando as fontes os mencionam.
+    </p>
+    {
+      grupos.map((g) => (
+        <section aria-labelledby={`grupo-${g.vinculos[0]}`} class="grupo">
+          <h2 id={`grupo-${g.vinculos[0]}`}>{g.titulo}</h2>
+          {g.divergencia && <div class="texto-capitulo" set:html={divergencia} />}
+          <div class="cartoes">
+            {g.pessoas.map((p) => (
+              <PessoaCard pessoa={p} />
+            ))}
+          </div>
+        </section>
+      ))
+    }
+    <p class="mais">
+      <a class="botao" href={url('familia/vinculos-notaveis/')}>Vínculos notáveis</a>
+    </p>
+  </div>
+</LayoutBase>
+
+<style>
+  .corpo-familia {
+    padding-block: var(--esp-5) var(--esp-6);
+  }
+  .aviso {
+    color: var(--texto-secundario);
+    max-width: var(--largura-leitura);
+  }
+  .grupo {
+    margin-top: var(--esp-5);
+  }
+  .cartoes {
+    display: grid;
+    gap: var(--esp-3);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  }
+  .mais {
+    margin-top: var(--esp-5);
+  }
+</style>

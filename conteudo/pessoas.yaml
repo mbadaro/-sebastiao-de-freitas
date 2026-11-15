@@ -1,2 +1,295 @@
 # pessoas — formato em specs/001-acervo-mvp/contracts/conteudo.md
-[]
+# Só pessoas falecidas há mais de 100 anos (regra dos 100 anos, Princípio V).
+# evidencia_historica: registro de época ou obra que comprova tratar-se de pessoa histórica.
+
+- id: sebastiao-de-freitas
+  nome: Sebastião de Freitas
+  nascimento: { ano: 1568, precisao: aproximada }
+  vinculo: protagonista
+  relacoes:
+    - { tipo: Pai, pessoa: manuel-pires }
+    - { tipo: Esposa, pessoa: maria-pedroso }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 168-169 }
+    - { ref: bogaciovas-2006, p: 78 }
+  lacunas: A data e o local da morte não têm documento conhecido; estava vivo em novembro de 1640.
+  evidencia_historica: { ref: antt-caderno-promotor-24, p: "fl. 316" }
+
+- id: manuel-pires
+  nome: Manuel Pires
+  vinculo: pai
+  relacoes:
+    - { tipo: Filho, pessoa: sebastiao-de-freitas }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 168 }
+  lacunas: Descrito como "pessoa nobre" e provedor da Santa Casa de Misericórdia de Silves. O nome da esposa, mãe de Sebastião, não foi localizado nas fontes reunidas.
+  evidencia_historica: { ref: silva-leme-v7, p: 168 }
+
+- id: maria-pedroso
+  nome: Maria Pedroso
+  nascimento: { ano: 1576, precisao: aproximada }
+  vinculo: conjuge
+  relacoes:
+    - { tipo: Marido, pessoa: sebastiao-de-freitas }
+    - { tipo: Pai, pessoa: antonio-rodrigues-de-alvarenga }
+    - { tipo: Mãe, pessoa: ana-ribeiro }
+  natureza: historiografia
+  referencias:
+    - { ref: bogaciovas-2006, p: 79 }
+    - { ref: moura-1950, p: 367 }
+    - { ref: silva-leme-v7, p: 169 }
+  lacunas: Nascida na vila de São Paulo; casou-se com Sebastião por volta de 1592.
+
+- id: antonio-rodrigues-de-alvarenga
+  nome: Antônio Rodrigues de Alvarenga
+  vinculo: sogro
+  relacoes:
+    - { tipo: Filha, pessoa: maria-pedroso }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 169 }
+  lacunas: As fontes divergem sobre quem era o pai de Maria Pedroso.
+  evidencia_historica: { ref: silva-leme-v7, p: 169 }
+
+- id: ana-ribeiro
+  nome: Ana Ribeiro
+  vinculo: sogra
+  relacoes:
+    - { tipo: Filha, pessoa: maria-pedroso }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 169 }
+  evidencia_historica: { ref: silva-leme-v7, p: 169 }
+
+# Filhos (Silva Leme registra sete; Sillos identifica uma oitava filha)
+- id: isabel
+  nome: Isabel
+  obito: { ano: 1655, precisao: exata }
+  vinculo: filha
+  relacoes:
+    - { tipo: Marido, pessoa: bras-leme }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 170 }
+  lacunas: Morreu em 1655, deixando testamento.
+
+- id: maria
+  nome: Maria
+  vinculo: filha
+  relacoes:
+    - { tipo: 1.º marido, pessoa: joao-de-barros-freire }
+    - { tipo: 2.º marido, pessoa: henrique-da-cunha-gago }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 170 }
+  evidencia_historica: { ref: silva-leme-v7, p: 170 }
+
+- id: catarina
+  nome: Catarina
+  vinculo: filha
+  relacoes:
+    - { tipo: Marido, pessoa: francisco-de-barros-freire }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 170 }
+  lacunas: Casou-se em 1632.
+  evidencia_historica: { ref: silva-leme-v7, p: 170 }
+
+- id: mecia
+  nome: Mécia
+  vinculo: filha
+  relacoes:
+    - { tipo: 1.º marido, pessoa: joao-de-brito-cassao }
+    - { tipo: 2.º marido, pessoa: manuel-soeiro-ramires }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 178-179 }
+  lacunas: Viúva, casou-se outra vez em 1643.
+  evidencia_historica: { ref: silva-leme-v7, p: 178 }
+
+- id: ana-ribeiro-filha
+  nome: Ana Ribeiro
+  vinculo: filha
+  relacoes:
+    - { tipo: Marido, pessoa: sebastiao-fernandes-correia }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 191 }
+  lacunas: Tem o mesmo nome da avó materna. Sua filha Maria Pedroso casou-se em 1640 com d. Simão de Toledo Piza.
+  evidencia_historica: { ref: silva-leme-v7, p: 191 }
+
+- id: joao-de-freitas
+  nome: João de Freitas
+  obito: { ano: 1655, precisao: exata }
+  vinculo: filho
+  relacoes:
+    - { tipo: Esposa, pessoa: ana-de-morais }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 202 }
+  lacunas: Morreu em 1655, com testamento, deixando quatro filhos.
+
+- id: antonio-pedroso-de-freitas
+  nome: Antônio Pedroso de Freitas
+  vinculo: filho
+  relacoes:
+    - { tipo: Esposa, pessoa: clara-parente }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 229 }
+  lacunas: Casou-se em 1635 e teve nove filhos. Foi inventariado em Jundiaí, em 1672.
+  evidencia_historica: { ref: silva-leme-v7, p: 229 }
+
+- id: maria-pedroso-oitava-filha
+  nome: Maria Pedroso
+  vinculo: filha
+  natureza: historiografia
+  referencias:
+    - { ref: sillos-asbrap-26, p: 237-246 }
+  lacunas: Oitava filha, identificada pelo genealogista Luiz Gustavo de Sillos; não consta em Silva Leme.
+  evidencia_historica: { ref: sillos-asbrap-26, p: 237-246 }
+
+# Cônjuges dos filhos
+- id: bras-leme
+  nome: Brás Leme
+  vinculo: conjuge-de-filho
+  relacoes:
+    - { tipo: Esposa, pessoa: isabel }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 170 }
+  evidencia_historica: { ref: silva-leme-v7, p: 170 }
+
+- id: joao-de-barros-freire
+  nome: João de Barros Freire
+  vinculo: conjuge-de-filho
+  relacoes:
+    - { tipo: Esposa, pessoa: maria }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 170 }
+  evidencia_historica: { ref: silva-leme-v7, p: 170 }
+
+- id: henrique-da-cunha-gago
+  nome: Henrique da Cunha Gago, o moço
+  vinculo: conjuge-de-filho
+  relacoes:
+    - { tipo: Esposa, pessoa: maria }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 170 }
+  evidencia_historica: { ref: silva-leme-v7, p: 170 }
+
+- id: francisco-de-barros-freire
+  nome: Francisco de Barros Freire
+  vinculo: conjuge-de-filho
+  relacoes:
+    - { tipo: Esposa, pessoa: catarina }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 170 }
+  evidencia_historica: { ref: silva-leme-v7, p: 170 }
+
+- id: joao-de-brito-cassao
+  nome: João de Brito Cassão
+  obito: { ano: 1640, precisao: antes-de, exibicao: até 1640 }
+  vinculo: conjuge-de-filho
+  relacoes:
+    - { tipo: Esposa, pessoa: mecia }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 178 }
+  lacunas: Português. Já tinha morrido em 1640.
+
+- id: manuel-soeiro-ramires
+  nome: Manuel Soeiro Ramires
+  vinculo: conjuge-de-filho
+  relacoes:
+    - { tipo: Esposa, pessoa: mecia }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 179 }
+  lacunas: Natural de Lisboa; casou-se com Mécia em 1643.
+  evidencia_historica: { ref: silva-leme-v7, p: 179 }
+
+- id: sebastiao-fernandes-correia
+  nome: Sebastião Fernandes Correia
+  vinculo: conjuge-de-filho
+  relacoes:
+    - { tipo: Esposa, pessoa: ana-ribeiro-filha }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 191 }
+  lacunas: Natural de Santa Eulália; primeiro provedor e contador da fazenda real da capitania.
+  evidencia_historica: { ref: silva-leme-v7, p: 191 }
+
+- id: ana-de-morais
+  nome: Ana de Morais
+  vinculo: conjuge-de-filho
+  relacoes:
+    - { tipo: Marido, pessoa: joao-de-freitas }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 202 }
+  lacunas: Filha de Baltasar de Morais de Antas.
+  evidencia_historica: { ref: silva-leme-v7, p: 202 }
+
+- id: clara-parente
+  nome: Clara Parente
+  vinculo: conjuge-de-filho
+  relacoes:
+    - { tipo: Marido, pessoa: antonio-pedroso-de-freitas }
+  natureza: historiografia
+  referencias:
+    - { ref: silva-leme-v7, p: 229 }
+  evidencia_historica: { ref: silva-leme-v7, p: 229 }
+
+# Vínculos notáveis
+- id: francisco-de-sousa
+  nome: D. Francisco de Sousa
+  obito: { ano: 1611, mes: 6, dia: 11, precisao: exata }
+  vinculo: notavel
+  ligacao_notavel:
+    tipo: convivencia
+    descricao: Governador-geral do Brasil de 1591 a 1602. Sebastião chegou à Bahia com ele, em 1591, e foi armado cavaleiro por ele em São Paulo, em 1600.
+    natureza: historiografia
+    referencias:
+      - { ref: silva-leme-v7, p: 168-169 }
+      - { ref: eve-francisco-de-sousa }
+  natureza: historiografia
+  referencias:
+    - { ref: eve-francisco-de-sousa }
+    - { ref: vilardaga-2013, p: 800 }
+
+- id: gabriel-soares-de-sousa
+  nome: Gabriel Soares de Sousa
+  vinculo: notavel
+  ligacao_notavel:
+    tipo: convivencia
+    descricao: Autor do Tratado descritivo do Brasil (1587). Era o capitão da companhia em que Sebastião veio como soldado, em 1591.
+    natureza: historiografia
+    referencias:
+      - { ref: silva-leme-v7, p: 168-169 }
+      - { ref: sousa-tratado-1587 }
+  natureza: historiografia
+  referencias:
+    - { ref: sousa-tratado-1587 }
+    - { ref: eve-francisco-de-sousa }
+  evidencia_historica: { ref: sousa-tratado-1587 }
+
+- id: raposo-tavares
+  nome: Antônio Raposo Tavares
+  vinculo: notavel
+  ligacao_notavel:
+    tipo: convivencia
+    descricao: Bandeirante. Segundo a tradição genealógica, Sebastião o teria acompanhado na bandeira ao Guairá, em 1628. O parentesco por casamento entre as duas famílias depende de fonte ainda não reunida.
+    natureza: tradicao
+    referencias:
+      - { ref: genearc-7956 }
+      - { ref: amorese-ps25-085 }
+  natureza: historiografia
+  referencias:
+    - { ref: ribeiro-anpuh-2015, p: 4-5 }
+  evidencia_historica: { ref: ribeiro-anpuh-2015, p: 4-5 }

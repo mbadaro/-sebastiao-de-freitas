@@ -1,0 +1,119 @@
+---
+/** Mapa (T068; US4). Duas vistas: Portugal–Brasil e capitania de São Vicente. */
+import { getCollection, getEntry } from 'astro:content';
+import LayoutBase from '../layouts/LayoutBase.astro';
+import CabecaPagina from '../components/CabecaPagina.astro';
+import Mapa from '../components/Mapa.astro';
+import FichaLugar from '../components/FichaLugar.astro';
+import { fontesCurtas } from '../lib/acervo';
+import { gerarMapa, type Vista } from '../lib/mapa';
+
+const titulo = 'Mapa';
+const descricao =
+  'Os lugares da vida de Sebastião de Freitas, do Algarve à Bahia e à capitania de São Vicente, com os acontecimentos e as fontes de cada um.';
+
+const secoes: { vista: Vista; titulo: string; texto: string }[] = [
+  { vista: 'atlantico', titulo: 'Do Algarve ao Brasil', texto: 'A origem em Portugal e a travessia do Atlântico.' },
+  { vista: 'sao-vicente', titulo: 'Na capitania de São Vicente', texto: 'A vila de São Paulo e os lugares ao seu redor.' },
+];
+const vistas = await Promise.all(
+  secoes.map(async (s) => {
+    const m = await gerarMapa(s.vista);
+    return { ...s, lugares: await Promise.all(m.pontos.map(async (p) => ({ n: p.n, lugar: (await getEntry('lugares', p.id))! }))) };
+  }),
+);
+const trajetos = await Promise.all(
+  (await getCollection('trajetos')).map(async (t) => ({
+    t,
+    de: (await getEntry('lugares', t.data.de.id))!,
+    para: (await getEntry('lugares', t.data.para.id))!,
+    fontes: await fontesCurtas(t.data.referencias),
+  })),
+);
+---
+
+<LayoutBase titulo={titulo} descricao={descricao}>
+  <CabecaPagina sobretitulo="Lugares e caminhos" titulo={titulo} descricao={descricao} />
+
+  {
+    vistas.map((v) => (
+      <section class="vista" aria-labelledby={`vista-${v.vista}`}>
+        <div class="superficie-escura vista__mapa">
+          <div class="conteiner">
+            <h2 id={`vista-${v.vista}`}>{v.titulo}</h2>
+            <p>{v.texto}</p>
+            <Mapa vista={v.vista} />
+          </div>
+        </div>
+        <div class="conteiner corpo-pagina">
+          <h3 class="vista__lista-titulo">Lugares deste mapa</h3>
+          <ol class="fichas">
+            {v.lugares.map(({ n, lugar }) => (
+              <li id={`lugar-${v.vista}-${lugar.id}`} class="ficha">
+                <FichaLugar lugar={lugar} numero={n} nivel={3} linkPagina />
+              </li>
+            ))}
+          </ol>
+          {v.vista === 'atlantico' && (
+            <>
+              <h3 class="vista__lista-titulo">Caminhos</h3>
+              <ul class="fichas">
+                {trajetos.map(({ t, de, para, fontes }) => (
+                  <li class="ficha">
+                    <p>
+                      <strong>
+                        {de.data.nome_historico} → {para.data.nome_historico}
+                      </strong>{' '}
+                      ({t.data.comprovacao === 'presumido' ? 'trajeto presumido' : 'trajeto documentado'})
+                    </p>
+                    {t.data.descricao && <p>{t.data.descricao}</p>}
+                    <p class="ficha__fontes">
+                      Fontes:{' '}
+                      {fontes.map((f, i) => (
+                        <>
+                          {i > 0 && '; '}
+                          <a href={f.href} set:html={f.html} />
+                        </>
+                      ))}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
+      </section>
+    ))
+  }
+</LayoutBase>
+
+<style>
+  .vista__mapa {
+    padding-block: var(--esp-5);
+  }
+  .vista__mapa .conteiner {
+    max-width: 56rem;
+  }
+  .vista__lista-titulo {
+    margin-top: 0;
+  }
+  .fichas {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--esp-4);
+  }
+  .ficha {
+    border-left: 3px solid var(--borda);
+    padding-left: var(--esp-3);
+    scroll-margin-top: var(--esp-6);
+  }
+  .ficha:target {
+    border-left-color: var(--destaque);
+    background: rgb(182 154 112 / 0.12);
+  }
+  .ficha__fontes {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+  }
+</style>

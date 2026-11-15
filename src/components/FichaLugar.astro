@@ -1,0 +1,86 @@
+---
+/** Ficha de um lugar: alternativa textual do mapa (T067; FR-016) e corpo de /lugares/<id>/. */
+import type { CollectionEntry } from 'astro:content';
+import { acontecimentosDoLugar, fontesCurtas } from '../lib/acervo';
+import { formatarData } from '../lib/datas';
+import { url } from '../lib/url';
+
+interface Props {
+  lugar: CollectionEntry<'lugares'>;
+  numero?: number;
+  nivel?: 2 | 3;
+  linkPagina?: boolean;
+}
+const { lugar, numero, nivel = 3, linkPagina = false } = Astro.props;
+const d = lugar.data;
+const eventos = await acontecimentosDoLugar(lugar.id);
+const fontes = await fontesCurtas(d.referencias);
+const Titulo = (nivel === 2 ? "h2" : "h3") as "h2" | "h3";
+const precisao = { exata: '', aproximada: 'Localização aproximada.', regiao: 'Região; a localização exata é desconhecida.' }[d.precisao];
+---
+
+<Titulo class="ficha__titulo">
+  {numero && <span class="ficha__n" aria-hidden="true">{numero}</span>}
+  {d.nome_historico}
+</Titulo>
+<p class="ficha__atual">
+  {d.nome_atual && <>Hoje: {d.nome_atual}, </>}{d.pais === 'portugal' ? 'Portugal' : 'Brasil'}. {precisao}
+</p>
+{d.descricao && <p>{d.descricao}</p>}
+{
+  eventos.length > 0 && (
+    <ul class="ficha__eventos">
+      {eventos.map((a) => (
+        <li>
+          <a href={url(`linha-do-tempo/#${a.id}`)}>{formatarData(a.data.data)}</a>: {a.data.titulo}
+        </li>
+      ))}
+    </ul>
+  )
+}
+{
+  fontes.length > 0 && (
+    <p class="ficha__fontes">
+      Fontes:{' '}
+      {fontes.map((f, i) => (
+        <>
+          {i > 0 && '; '}
+          <a href={f.href} set:html={f.html} />
+        </>
+      ))}
+    </p>
+  )
+}
+{linkPagina && <p><a href={url(`lugares/${lugar.id}/`)}>Página deste lugar</a></p>}
+
+<style>
+  .ficha__titulo {
+    display: flex;
+    align-items: center;
+    gap: var(--esp-2);
+  }
+  .ficha__n {
+    flex: none;
+    display: inline-grid;
+    place-items: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 50%;
+    background: var(--cor-dourado);
+    color: var(--cor-azul-profundo);
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .ficha__atual {
+    color: var(--texto-secundario);
+    margin-top: 0;
+  }
+  .ficha__eventos {
+    padding-left: var(--esp-4);
+  }
+  .ficha__fontes {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+  }
+</style>
