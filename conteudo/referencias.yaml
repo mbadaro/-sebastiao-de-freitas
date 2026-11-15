@@ -206,6 +206,21 @@
   url: https://pt.wikipedia.org/wiki/Santa_Casa_da_Misericórdia
   acesso: 15 nov. 2026
 
+- id: wikipedia-sefarditas
+  abnt: "JUDEUS sefarditas. In: WIKIPÉDIA: a enciclopédia livre. [S. l.]: Wikimedia Foundation, 2026."
+  curta: "JUDEUS sefarditas, 2026"
+  tipo: informal
+  url: https://pt.wikipedia.org/wiki/Judeus_sefarditas
+  acesso: 15 nov. 2026
+  observacao: Cita o Dicionário Priberam e a CONIB (termo), a UNED (1492) e a Jewish Virtual Library (diáspora).
+
+- id: wikipedia-kahal-zur-israel
+  abnt: "KAHAL Zur Israel Synagogue. In: WIKIPEDIA: the free encyclopedia. [S. l.]: Wikimedia Foundation, 2026."
+  curta: "KAHAL Zur Israel Synagogue, 2026"
+  tipo: informal
+  url: https://en.wikipedia.org/wiki/Kahal_Zur_Israel_Synagogue
+  acesso: 15 nov. 2026
+
 - id: sulinformacao-santa-casa-silves-2023
   abnt: "CÂMARA e Santa Casa de Silves assinam protocolo de Rendimento Social de Inserção. *Sul Informação*, Faro, dez. 2023."
   curta: "SUL INFORMAÇÃO, 2023"

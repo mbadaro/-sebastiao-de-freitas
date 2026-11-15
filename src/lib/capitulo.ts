@@ -69,7 +69,7 @@ async function htmlDivergencia(id: string): Promise<string> {
 }
 
 /** HTML final do capítulo e lista de citações com as referências completas. */
-export async function montarCapitulo(entrada: CollectionEntry<'capitulos'>) {
+export async function montarCapitulo(entrada: CollectionEntry<'capitulos'> | CollectionEntry<'paginas'>) {
   let html = entrada.rendered?.html ?? '';
   const fm = (entrada.rendered?.metadata?.frontmatter ?? {}) as { citacoes?: Citacao[]; divergencias?: string[] };
 

@@ -211,10 +211,10 @@ toda afirmação mostra natureza e fonte; um capítulo do meio abre direto pelo 
 **Teste independente**: ler só `/sefarditas/` e o capítulo das raízes; um leigo explica quem
 foram os sefarditas e o que se sabe sobre o vínculo de Sebastião.
 
-- [ ] T055 ⏳ [US2] Redigir `conteudo/paginas/sefarditas.md` a partir de fontes historiográficas `verificada` (levantadas em T012), com os tópicos de US2-1 (origem na Península Ibérica, presença em Portugal, perseguição, expulsão e conversões forçadas, dispersão, ligação com a trajetória de Sebastião), limitada ao necessário para entender Sebastião, com `:fonte` em todo parágrafo e referências historiográficas levantadas em T012
-- [ ] T056 [US2] Criar `src/pages/sefarditas.astro` (dado estruturado `Article`)
+- [X] T055 ⏳ [US2] Redigir `conteudo/paginas/sefarditas.md` a partir de fontes historiográficas `verificada` (levantadas em T012), com os tópicos de US2-1 (origem na Península Ibérica, presença em Portugal, perseguição, expulsão e conversões forçadas, dispersão, ligação com a trajetória de Sebastião), limitada ao necessário para entender Sebastião, com `:fonte` em todo parágrafo e referências historiográficas levantadas em T012
+- [X] T056 [US2] Criar `src/pages/sefarditas.astro` (dado estruturado `Article`)
 - [ ] T057 ⏳ [US2] Completar o capítulo das raízes em `conteudo/capitulos/` com as fontes do vínculo, cada afirmação atribuída a quem afirma: José Gonçalves Salvador (natureza `historiografia`, após conferir a obra e a página; enquanto não conferida, "a confirmar"), certificado da CIL (atestação institucional contemporânea, natureza `historiografia`, cadastrado em `conteudo/referencias.yaml` sem dados pessoais do descendente — Princípio V); `fato` só com documento primário consultado (ex.: processo inquisitorial); depende do acesso à obra de Salvador e dos dados do certificado fornecidos pelo responsável
-- [ ] T058 [US2] Criar `tests/e2e/sefarditas.spec.ts`: tópicos de US2-1 presentes; vínculo sefardita na abertura da página inicial com acesso direto ao capítulo das raízes
+- [X] T058 [US2] Criar `tests/e2e/sefarditas.spec.ts`: tópicos de US2-1 presentes; vínculo sefardita na abertura da página inicial com acesso direto ao capítulo das raízes
 
 **Ponto de verificação**: US1 e US2 funcionam de forma independente.
 
