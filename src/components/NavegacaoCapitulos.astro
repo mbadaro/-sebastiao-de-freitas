@@ -1,0 +1,87 @@
+---
+/** Navegação entre capítulos (T048; FR-003): anterior, sumário e próximo. */
+import { url } from '../lib/url';
+
+interface Item {
+  slug: string;
+  titulo: string;
+}
+interface Props {
+  anterior?: Item;
+  proximo?: Item;
+}
+const { anterior, proximo } = Astro.props;
+---
+
+<nav class="nav-capitulos" aria-label="Capítulos da exposição">
+  <div class="nav-capitulos__item">
+    {
+      anterior && (
+        <a href={url(`exposicao/${anterior.slug}/`)} rel="prev">
+          <span class="nav-capitulos__rotulo">← Capítulo anterior</span>
+          <span class="nav-capitulos__titulo">{anterior.titulo}</span>
+        </a>
+      )
+    }
+  </div>
+  <a class="nav-capitulos__sumario" href={url('exposicao/')}>Sumário</a>
+  <div class="nav-capitulos__item nav-capitulos__item--proximo">
+    {
+      proximo && (
+        <a href={url(`exposicao/${proximo.slug}/`)} rel="next">
+          <span class="nav-capitulos__rotulo">Próximo capítulo →</span>
+          <span class="nav-capitulos__titulo">{proximo.titulo}</span>
+        </a>
+      )
+    }
+  </div>
+</nav>
+
+<style>
+  .nav-capitulos {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: var(--esp-3);
+    margin-top: var(--esp-6);
+    padding-top: var(--esp-4);
+    border-top: var(--linha-fina) solid var(--borda);
+  }
+  .nav-capitulos__item a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    padding: var(--esp-2) 0;
+  }
+  .nav-capitulos__item--proximo {
+    text-align: right;
+  }
+  .nav-capitulos__rotulo {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+  }
+  .nav-capitulos__titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: var(--titulo);
+  }
+  .nav-capitulos__sumario {
+    padding: var(--esp-2) var(--esp-3);
+    border: var(--linha-fina) solid var(--borda);
+    border-radius: var(--raio);
+    text-decoration: none;
+    font-size: var(--texto-pequeno);
+  }
+  @media (max-width: 40rem) {
+    .nav-capitulos {
+      grid-template-columns: 1fr;
+    }
+    .nav-capitulos__item--proximo {
+      text-align: left;
+    }
+    .nav-capitulos__sumario {
+      justify-self: start;
+      order: 3;
+    }
+  }
+</style>

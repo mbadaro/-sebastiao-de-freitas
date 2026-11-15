@@ -1,0 +1,105 @@
+---
+/**
+ * "Fontes deste capítulo" (T047; US1-2): cada chamada numerada do texto leva aqui, com a natureza
+ * da informação e a referência ABNT completa. Retorno ao ponto do texto pelo link "voltar".
+ */
+interface Fonte {
+  id: string;
+  html: string;
+  tipo: string;
+  url?: string;
+}
+interface Props {
+  citacoes: { n: number; natureza: string; rotulo: string; p?: string; fontes: Fonte[] }[];
+}
+const { citacoes } = Astro.props;
+const tipos: Record<string, string> = { primaria: 'Fonte primária', secundaria: 'Obra', informal: 'Fonte informal' };
+---
+
+{
+  citacoes.length > 0 && (
+    <section class="citacoes" aria-labelledby="citacoes-titulo">
+      <h2 id="citacoes-titulo" class="citacoes__titulo">Fontes deste capítulo</h2>
+      <ol class="citacoes__lista">
+        {citacoes.map((c) => (
+          <li id={`citacao-${c.n}`} class="citacao">
+            <span class="citacao__n">{c.n}</span>
+            <div>
+              <p class="citacao__natureza">{c.rotulo}</p>
+              {c.fontes.map((f) => (
+                <p class="citacao__ref">
+                  <span class="citacao__tipo">{tipos[f.tipo]}</span>
+                  <span set:html={f.html} />
+                  {f.url && (
+                    <>
+                      {' '}
+                      <a href={f.url} rel="noopener">acessar</a>
+                    </>
+                  )}
+                </p>
+              ))}
+              <a class="citacao__voltar" href={`#chamada-${c.n}`}>
+                Voltar ao texto <span aria-hidden="true">↑</span>
+              </a>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
+
+<style>
+  .citacoes {
+    margin-top: var(--esp-6);
+    padding-top: var(--esp-5);
+    border-top: 2px solid var(--cor-azul-petroleo);
+  }
+  .citacoes__titulo {
+    font-size: var(--titulo-3);
+  }
+  .citacoes__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--esp-4);
+  }
+  .citacao {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: var(--esp-3);
+    scroll-margin-top: var(--esp-5);
+  }
+  .citacao:target {
+    background: rgb(182 154 112 / 0.15);
+    outline: 2px solid var(--destaque);
+    outline-offset: var(--esp-2);
+  }
+  .citacao__n {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: var(--destaque);
+    line-height: 1;
+  }
+  .citacao p {
+    margin: 0 0 var(--esp-1);
+  }
+  .citacao__natureza {
+    font-size: var(--texto-pequeno);
+    font-weight: 600;
+    color: var(--texto-secundario);
+  }
+  .citacao__tipo {
+    display: inline-block;
+    margin-right: var(--esp-2);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--destaque);
+  }
+  .citacao__voltar {
+    font-size: var(--texto-pequeno);
+  }
+</style>

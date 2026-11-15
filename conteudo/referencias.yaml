@@ -1,7 +1,112 @@
-# Referências (FR-007, FR-008, FR-010). Formato em specs/001-acervo-mvp/contracts/conteudo.md.
-# Só entram aqui fontes aprovadas na revisão do catálogo (T016). ABNT conferida na obra.
+# Referências (FR-007, FR-008, FR-010) — T046. Formato em specs/001-acervo-mvp/contracts/conteudo.md.
+# ABNT (NBR 6023). "observacao" registra como a fonte foi consultada (regra de atribuição).
 
 # Identificador reservado para informação sem origem conhecida (nunca sustenta "fato").
 - id: sem-fonte
   abnt: Sem fonte localizada.
   tipo: informal
+
+# --- Fontes primárias -------------------------------------------------------------------------
+
+- id: antt-caderno-promotor-24
+  abnt: "ARQUIVO NACIONAL DA TORRE DO TOMBO. Tribunal do Santo Ofício, Inquisição de Lisboa. *24.º Caderno do Promotor (1599-1640)*. Lisboa, [16--]. Liv. 224, fls. 311-316."
+  tipo: primaria
+  localizacao: "PT/TT/TSO-IL/030/0224, mf. 5193, imagem 646."
+  url: http://digitarq.arquivos.pt/details?id=2318049
+  observacao: Lido em transcrição publicada no perfil de Sebastião no FamilySearch e em relatório genealógico de terceiro; imagem original não conferida.
+
+# --- Obras genealógicas e historiográficas ----------------------------------------------------
+
+- id: silva-leme-v7
+  abnt: "SILVA LEME, Luiz Gonzaga da. *Genealogia paulistana*. São Paulo: Duprat & Comp., 1905. v. 7."
+  tipo: secundaria
+  url: https://archive.org/details/genealogia-paulistana-vii
+  acesso: 15 nov. 2026
+  observacao: Conferido na digitalização do Internet Archive (domínio público). Silva Leme cita Pedro Taques, Nobiliarquia Paulistana.
+
+- id: bogaciovas-2006
+  abnt: "BOGACIOVAS, Marcelo Meira Amaral. *Tribulações do povo de Israel na São Paulo colonial*. 2006. Dissertação (Mestrado em História Social) – Faculdade de Filosofia, Letras e Ciências Humanas, Universidade de São Paulo, São Paulo, 2006."
+  tipo: secundaria
+  url: https://teses.usp.br/teses/disponiveis/8/8138/tde-11072007-103932/
+  acesso: 15 nov. 2026
+  observacao: Lida diretamente. Cita documentos do Arquivo da Cúria Metropolitana de São Paulo e da Torre do Tombo.
+
+- id: bogaciovas-2015
+  abnt: "BOGACIOVAS, Marcelo Meira Amaral. *Cristãos-novos em São Paulo (séculos XVI-XIX)*: assimilação e nobilitação. São Paulo: ASBRAP, 2015."
+  tipo: secundaria
+
+- id: salvador-1969
+  abnt: "SALVADOR, José Gonçalves. *Cristãos-novos, jesuítas e Inquisição*: aspectos de sua atuação nas capitanias do Sul, 1530-1680. São Paulo: Pioneira: Editora da Universidade de São Paulo, 1969."
+  tipo: secundaria
+
+- id: salvador-1976
+  abnt: "SALVADOR, José Gonçalves. *Os cristãos-novos*: povoamento e conquista do solo brasileiro (1530-1680). São Paulo: Pioneira, 1976."
+  tipo: secundaria
+
+- id: salvador-1978
+  abnt: "SALVADOR, José Gonçalves. *Os cristãos-novos e o comércio no Atlântico meridional*. São Paulo: Pioneira, 1978."
+  tipo: secundaria
+
+- id: salvador-2001
+  abnt: "SALVADOR, José Gonçalves. *Vozes da história*. São Paulo: Editora da Universidade de São Paulo, 2001."
+  tipo: secundaria
+
+- id: wolff-1986
+  abnt: "WOLFF, Egon; WOLFF, Frieda. *Dicionário biográfico I*: judaizantes e judeus no Brasil, 1500-1808. Rio de Janeiro: [s. n.], 1986."
+  tipo: secundaria
+  observacao: Conhecido por citação no perfil do FamilySearch.
+
+- id: silva-lina-2005
+  abnt: "SILVA, Lina Gorenstein Ferreira da. *A Inquisição contra as mulheres*: Rio de Janeiro, séculos XVII e XVIII. São Paulo: Humanitas, 2005."
+  tipo: secundaria
+  observacao: Conhecido por citação na base BRASILHIS.
+
+- id: moura-1950
+  abnt: "MOURA, Américo Brasiliense Antunes de. Os povoadores do campo de Piratininga: traços biográficos e genealógicos. *Revista do Instituto Histórico e Geográfico de São Paulo*, São Paulo, v. 47, p. 367, 1950."
+  tipo: secundaria
+  url: http://ihgsp.org.br/revista-ihgsp-vol-47/
+  observacao: Lido em citação de relatório genealógico de terceiro.
+
+- id: sillos-asbrap-26
+  abnt: "SILLOS, Luiz Gustavo de. Maria Pedroso, a filha esquecida de Sebastião de Freitas. *Revista da ASBRAP*, São Paulo, n. 26, p. 237-246, [20--]."
+  tipo: secundaria
+  url: https://www.asbrap.org.br/artigos/rev26_art_j-maria_pedroso.pdf
+  observacao: Conhecido por citação no GeneArc e no FamilySearch; endereço fora do ar em 15 nov. 2026.
+
+- id: brasilhis-p2388
+  abnt: "SEBASTIÃO de Freitas. In: BASE de Dados BRASILHIS: redes pessoais e circulação no Brasil durante a Monarquia Hispânica (1580-1640). Salamanca: Universidad de Salamanca, [20--]. Verbete P-2388."
+  tipo: secundaria
+  url: https://brasilhis.usal.es/pt-br/node/4560
+  acesso: 15 nov. 2026
+
+- id: certificado-cil
+  abnt: "COMUNIDADE ISRAELITA DE LISBOA. *Certificado de comunidade judaica*. Lisboa, 2026. Documento particular."
+  tipo: secundaria
+  observacao: Atestação institucional emitida a um descendente; os dados do titular não são divulgados.
+
+# --- Fontes informais (origem conhecida, sem valor de fonte formal) ----------------------------
+
+- id: moyarte
+  abnt: "MOYARTE. *História do Centro de São Paulo*. [S. l.]: Moyarte, [20--]. Páginas das décadas de 1591 a 1650."
+  tipo: informal
+  url: https://moyarte.com.br/centro-de-sao-paulo/historia-do-centro-de-sao-paulo/
+  acesso: 15 nov. 2026
+
+- id: genearc-7956
+  abnt: "GENEARC. *Sebastião de Freitas*. [S. l.]: GeneArc, [20--]. Ficha genealógica n. 7956."
+  tipo: informal
+  url: https://www.genearc.net/index.php?op=ZGV0YWxoZVBlc3NvYS5waHA=&id=Nzk1Ng==
+  acesso: 12 nov. 2026
+
+- id: amorese-ps25-085
+  abnt: "AMORESE. *Sebastião de Freitas*. [S. l.]: Amorese Genealogia, [20--]."
+  tipo: informal
+  url: https://www.amorese.com.br/GENEALOGIA/ps25/ps25_085.html
+  acesso: 12 nov. 2026
+
+- id: familysearch-lz21-h7q
+  abnt: "FAMILYSEARCH. *Sebastião de Freitas (1565-1644)*: fontes. Salt Lake City: FamilySearch, 2026. Árvore colaborativa, perfil LZ21-H7Q."
+  tipo: informal
+  url: https://www.familysearch.org/tree/person/sources/LZ21-H7Q
+  acesso: 15 nov. 2026
+  observacao: Reúne 49 fontes anexadas por colaboradores, algumas com transcrição de documentos.

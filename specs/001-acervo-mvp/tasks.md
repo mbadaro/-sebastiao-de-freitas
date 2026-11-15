@@ -176,7 +176,7 @@ Constituição ([data-model.md](data-model.md), [contracts/conteudo.md](contract
 - [ ] T043 [P] Criar `src/lib/ligacoes.ts` com funções simples de filtro (onde cada referência é usada; acontecimentos por lugar e por pessoa); pode ser criado na primeira história que precisar dele (US4 ou US6)
 - [X] T044 Configurar `npm run validar` (verificação do Astro + build) e garantir `ordem` e `slug` únicos, arquivo de imagem existente e mensagens de erro em pt-BR no formato "arquivo › item: regra"; criar `scripts/validar-conteudo.ts` **somente** para regras que não couberem no esquema (T040) nem no plugin (T042)
 - [X] T045 Criar os casos negativos de `quickstart.md` (seção 1) em `tests/validacao/validar-conteudo.test.ts`, que executam a validação (T044) sobre fixtures em `tests/validacao/fixtures/` e esperam falha, usando o executor de testes nativo do Node (`node:test`, sem dependência nova): parágrafo sem fonte, `fato` com `sem-fonte`, referência inexistente, pessoa nascida em 1950 sem óbito, imagem sem `alt`, capítulo sem `descricao`
-- [ ] T046 ⏳ Cadastrar em `conteudo/referencias.yaml` as referências aprovadas em T016, com ABNT conferida na obra (editora, ano, volume) e `localizacao` quando houver; referência cuja obra ainda não foi acessada entra com a ABNT marcada "a conferir" e não sustenta `fato` — depende de T016 e do acesso às obras
+- [X] T046 ⏳ Cadastrar em `conteudo/referencias.yaml` as referências aprovadas em T016, com ABNT conferida na obra (editora, ano, volume) e `localizacao` quando houver; referência cuja obra ainda não foi acessada entra com a ABNT marcada "a conferir" e não sustenta `fato` — depende de T016 e do acesso às obras
 
 **Ponto de verificação**: `npm run validar` e `node --test tests/validacao/` passam; os casos
 negativos falham como esperado.
@@ -191,14 +191,14 @@ lado e navegação sequencial e direta.
 **Teste independente**: da página inicial, seguir a exposição até o fim sem outros recursos;
 toda afirmação mostra natureza e fonte; um capítulo do meio abre direto pelo endereço.
 
-- [ ] T047 [P] [US1] Criar `src/components/Fonte.astro` e `src/components/Divergencia.astro` (versões lado a lado, cada uma com sua fonte) e a lista "Referências deste capítulo" com a referência ABNT completa ao fim de cada capítulo (US1-2 sem depender de `/fontes/`)
-- [ ] T048 [P] [US1] Criar `src/components/NavegacaoCapitulos.astro` (anterior, próximo e sumário) e `src/components/CartaoCapitulo.astro`
-- [ ] T049 [US1] Criar `src/pages/exposicao/index.astro`: sumário de todos os capítulos por `ordem`, com dado estruturado `ItemList`
-- [ ] T050 [US1] Criar `src/pages/exposicao/[slug].astro`: capítulo com `Article` e `BreadcrumbList`, navegação anterior/próximo, imagens via `Figura`, título e descrição do frontmatter
-- [ ] T051 [P] [US1] Cadastrar em `conteudo/divergencias.yaml` as divergências do fichamento (ao menos as 6 conhecidas), cada versão com sua referência
+- [X] T047 [P] [US1] Criar `src/components/Fonte.astro` e `src/components/Divergencia.astro` (versões lado a lado, cada uma com sua fonte) e a lista "Referências deste capítulo" com a referência ABNT completa ao fim de cada capítulo (US1-2 sem depender de `/fontes/`)
+- [X] T048 [P] [US1] Criar `src/components/NavegacaoCapitulos.astro` (anterior, próximo e sumário) e `src/components/CartaoCapitulo.astro`
+- [X] T049 [US1] Criar `src/pages/exposicao/index.astro`: sumário de todos os capítulos por `ordem`, com dado estruturado `ItemList`
+- [X] T050 [US1] Criar `src/pages/exposicao/[slug].astro`: capítulo com `Article` e `BreadcrumbList`, navegação anterior/próximo, imagens via `Figura`, título e descrição do frontmatter
+- [X] T051 [P] [US1] Cadastrar em `conteudo/divergencias.yaml` as divergências do fichamento (ao menos as 6 conhecidas), cada versão com sua referência
 - [ ] T052 ⏳ [US1] Redigir os capítulos em `conteudo/capitulos/NN-<slug>.md` **exclusivamente** a partir de `pesquisa/fichamento.md` e de fontes `verificada`, seguindo a [regra editorial](#regra-editorial-vale-para-toda-tarefa-que-produz-conteúdo) (informação não confirmada nunca como fato), na estrutura provisória do data-model (origem em Portugal; raízes cristãs-novas e sefarditas; chegada ao Brasil; São Paulo e família; atuação pública e militar; últimos anos e falecimento; legado): `:fonte` em todo parágrafo, contexto histórico ligado aos acontecimentos, lacunas declaradas, nenhuma hipótese própria; enviar ao responsável para revisão humana antes de publicar (Princípio II)
 - [ ] T053 [US1] Substituir o conteúdo provisório da página inicial pelos dados das coleções (`src/pages/index.astro` e componentes da Fase 4)
-- [ ] T054 [US1] Criar `tests/e2e/exposicao.spec.ts`: início → primeiro capítulo → último pelo "próximo"; abertura direta de capítulo do meio; da página inicial até a referência de uma afirmação em no máximo 3 ações (SC-003); divergência com versões lado a lado
+- [X] T054 [US1] Criar `tests/e2e/exposicao.spec.ts`: início → primeiro capítulo → último pelo "próximo"; abertura direta de capítulo do meio; da página inicial até a referência de uma afirmação em no máximo 3 ações (SC-003); divergência com versões lado a lado
 
 **Ponto de verificação**: US1 funcional e testável sozinha. **MVP mínimo publicável.**
 

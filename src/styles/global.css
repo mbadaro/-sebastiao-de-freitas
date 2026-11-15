@@ -160,6 +160,114 @@ a:hover {
   color: var(--titulo);
 }
 
+/* Texto dos capítulos (US1). */
+.texto-capitulo p {
+  margin-bottom: var(--esp-4);
+}
+.texto-capitulo blockquote {
+  margin: var(--esp-4) 0;
+  padding: var(--esp-3) var(--esp-4);
+  border-left: 3px solid var(--destaque);
+  background: rgb(36 71 96 / 0.06);
+  font-style: italic;
+}
+.texto-capitulo blockquote p {
+  margin: 0;
+}
+
+/* Marcador de afirmação gerado pelo plugin remark-fonte (FR-006). */
+.marcador {
+  white-space: nowrap;
+}
+.marcador__natureza {
+  display: inline-block;
+  margin-left: 0.25em;
+  padding: 0 0.45em;
+  border: var(--linha-fina) solid currentColor;
+  border-radius: 999px;
+  font-family: var(--fonte-texto);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.6;
+  vertical-align: 0.15em;
+  color: var(--texto-secundario);
+}
+.marcador--historiografia .marcador__natureza {
+  color: var(--link);
+}
+.marcador--fato .marcador__natureza {
+  color: var(--titulo);
+  border-width: 2px;
+}
+.marcador--tradicao .marcador__natureza {
+  border-style: dotted;
+}
+.marcador--hipotese .marcador__natureza {
+  border-style: dashed;
+}
+.marcador__chamada {
+  display: inline-block;
+  min-width: 1.25em;
+  padding: 0.1em 0.1em;
+  text-align: center;
+  font-weight: 700;
+  text-decoration: none;
+}
+.marcador__chamada sup {
+  font-size: 0.8em;
+}
+
+/* Bloco de divergência entre fontes (FR-009): versões lado a lado. */
+.divergencia {
+  margin: var(--esp-5) 0;
+  padding: var(--esp-4);
+  border: var(--linha-fina) solid var(--borda);
+  border-top: 3px solid var(--destaque);
+  background: #fbfaf6;
+}
+.divergencia__rotulo {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--destaque);
+  margin-bottom: var(--esp-1);
+}
+.divergencia__tema {
+  font-weight: 600;
+  margin-bottom: var(--esp-3);
+}
+.divergencia__versoes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--esp-3);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+}
+.divergencia__versao {
+  padding: var(--esp-3);
+  border: var(--linha-fina) solid var(--borda);
+  background: var(--cor-marfim);
+}
+.divergencia__versao p {
+  margin: 0 0 var(--esp-2);
+}
+.divergencia__ref {
+  display: block;
+  margin-top: var(--esp-1);
+}
+.divergencia__fonte,
+.divergencia__obs {
+  font-size: var(--texto-pequeno);
+  color: var(--texto-secundario);
+}
+.divergencia__obs {
+  margin: var(--esp-3) 0 0;
+  font-style: italic;
+}
+
 /* Entrada discreta das seções (D16). */
 @keyframes surgir {
   from {

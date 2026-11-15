@@ -1,0 +1,96 @@
+---
+/** Sumário da exposição (T049; FR-003): acesso direto a qualquer capítulo. */
+import LayoutBase from '../../layouts/LayoutBase.astro';
+import Secao from '../../components/Secao.astro';
+import { capitulosOrdenados } from '../../lib/capitulo';
+import { url } from '../../lib/url';
+
+const capitulos = await capitulosOrdenados();
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Exposição: Sebastião de Freitas',
+  itemListElement: capitulos.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.data.titulo,
+    url: new URL(url(`exposicao/${c.data.slug}/`), Astro.site).href,
+  })),
+};
+---
+
+<LayoutBase
+  titulo="Exposição"
+  descricao="A trajetória de Sebastião de Freitas em capítulos, do Algarve à vila de São Paulo, com a fonte de cada informação."
+>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <Secao superficie="escura" rotuloId="exposicao-titulo">
+    <p class="sobretitulo">Exposição</p>
+    <h1 id="exposicao-titulo">A trajetória de Sebastião de Freitas</h1>
+    <p class="intro">
+      Sete capítulos, do Algarve à vila de São Paulo. Leia em sequência ou vá direto ao que lhe
+      interessa.
+    </p>
+  </Secao>
+  <Secao superficie="clara" rotuloId="sumario-titulo">
+    <h2 id="sumario-titulo" class="apenas-leitor">Sumário</h2>
+    <ol class="sumario">
+      {
+        capitulos.map((c, i) => (
+          <li>
+            <a class="sumario__item" href={url(`exposicao/${c.data.slug}/`)}>
+              <span class="sumario__numero" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <span>
+                <span class="sumario__titulo">{c.data.titulo}</span>
+                <span class="sumario__descricao">{c.data.descricao}</span>
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </Secao>
+</LayoutBase>
+
+<style>
+  .intro {
+    font-size: var(--texto-destaque);
+    color: var(--texto-secundario);
+  }
+  .sumario {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--esp-2);
+  }
+  .sumario__item {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    gap: var(--esp-3);
+    padding: var(--esp-4) 0;
+    border-bottom: var(--linha-fina) solid var(--borda);
+    text-decoration: none;
+    color: var(--texto);
+  }
+  .sumario__item:hover .sumario__titulo {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+  .sumario__numero {
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    color: var(--destaque);
+    line-height: 1;
+  }
+  .sumario__titulo {
+    display: block;
+    font-family: var(--fonte-titulo);
+    font-size: 1.625rem;
+    color: var(--titulo);
+    margin-bottom: var(--esp-1);
+  }
+  .sumario__descricao {
+    color: var(--texto-secundario);
+  }
+</style>

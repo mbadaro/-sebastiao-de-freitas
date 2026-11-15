@@ -1,2 +1,84 @@
-# divergencias — formato em specs/001-acervo-mvp/contracts/conteudo.md
-[]
+# Divergências entre fontes (FR-009, SC-005). Cada versão com sua referência; nenhuma é escolhida
+# sem fundamento. Origem: pesquisa/fichamento.md.
+
+- id: ano-de-nascimento
+  tema: Ano de nascimento
+  versoes:
+    - texto: Por volta de 1565.
+      referencias: [{ ref: genearc-7956 }, { ref: amorese-ps25-085 }, { ref: certificado-cil }]
+    - texto: Por volta de 1568 — em agosto de 1640 ele declarou ter cerca de 72 anos.
+      referencias: [{ ref: bogaciovas-2006, p: 78 }]
+  observacao: A segunda versão se apoia numa declaração do próprio Sebastião, registrada em processo eclesiástico citado por Bogaciovas.
+
+- id: declaracao-cristao-novo
+  tema: O que ele disse ao Santo Ofício sobre ser cristão-novo
+  versoes:
+    - texto: Negou ser cristão-novo.
+      referencias: [{ ref: brasilhis-p2388 }, { ref: silva-lina-2005, p: 65 }]
+    - texto: Negou, mas depois procurou o reitor dos jesuítas da vila para que se registrasse que era cristão-novo, "e assi o veio declarar".
+      referencias: [{ ref: antt-caderno-promotor-24 }, { ref: familysearch-lz21-h7q }]
+  observacao: As duas versões vêm do mesmo episódio; a segunda reproduz o trecho completo da denúncia.
+
+- id: jornada-jeronimo-pereira
+  tema: Ano da jornada ao sertão com o capitão Jerônimo Pereira de Sousa
+  versoes:
+    - texto: '1595.'
+      referencias: [{ ref: silva-leme-v7, p: 169 }]
+    - texto: '1596.'
+      referencias: [{ ref: amorese-ps25-085 }]
+  observacao: O site Amorese atribui o ano de 1596 a José Gonçalves Salvador.
+
+- id: titulo-de-cavaleiro
+  tema: Ano em que foi feito cavaleiro
+  versoes:
+    - texto: Armado cavaleiro em 1600, em São Paulo, por d. Francisco de Sousa.
+      referencias: [{ ref: silva-leme-v7, p: 169 }]
+    - texto: Provisão de cavaleiro em 1601.
+      referencias: [{ ref: moura-1950 }]
+  observacao: Pode tratar-se do ato (1600) e do seu registro (1601).
+
+- id: patente-de-capitao
+  tema: Patente de capitão
+  versoes:
+    - texto: Em 1606, patente de capitão da gente de Piratininga do campo de São Paulo.
+      referencias: [{ ref: silva-leme-v7, p: 169 }]
+    - texto: Em 12 de outubro de 1606.
+      referencias: [{ ref: bogaciovas-2006, p: 79 }]
+    - texto: Em 22 de julho de 1606.
+      referencias: [{ ref: genearc-7956 }]
+    - texto: Em 1608, provisão de capitão da vila.
+      referencias: [{ ref: moura-1950 }]
+  observacao: A provisão de 1608 pode ser um ato diferente da patente de 1606.
+
+- id: pai-de-maria-pedroso
+  tema: Nome do pai de Maria Pedroso, esposa de Sebastião
+  versoes:
+    - texto: Antonio Rodrigues de Alvarenga.
+      referencias: [{ ref: silva-leme-v7, p: 169 }]
+    - texto: O cirurgião Antônio Rodrigues; o sobrenome "de Alvarenga" teria sido acrescentado por Pedro Taques, seguido por Silva Leme.
+      referencias: [{ ref: bogaciovas-2006, p: 79 }]
+
+- id: numero-de-filhos
+  tema: Número de filhos
+  versoes:
+    - texto: Sete filhos.
+      referencias: [{ ref: silva-leme-v7, p: 169 }]
+    - texto: Oito filhos, incluindo uma segunda Maria (Maria Pedroso), omitida por Silva Leme.
+      referencias: [{ ref: sillos-asbrap-26, p: 237 }]
+
+- id: ano-de-morte
+  tema: Ano e local da morte
+  versoes:
+    - texto: Morreu em 1644, na sua fazenda em Juqueri.
+      referencias: [{ ref: genearc-7956 }, { ref: amorese-ps25-085 }]
+    - texto: Morreu por volta de 1625, em São Paulo.
+      referencias: [{ ref: certificado-cil }]
+  observacao: Bogaciovas registra Sebastião vivo em agosto de 1640, e o FamilySearch traz o batismo de um bisneto, em novembro de 1640, do qual ele foi padrinho.
+
+- id: local-de-moradia
+  tema: Vila onde morava
+  versoes:
+    - texto: Vila de São Paulo.
+      referencias: [{ ref: silva-leme-v7, p: 169 }, { ref: bogaciovas-2006, p: 78 }]
+    - texto: Vila de Santos.
+      referencias: [{ ref: wolff-1986, p: 81 }]
