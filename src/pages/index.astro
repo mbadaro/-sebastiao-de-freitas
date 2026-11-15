@@ -1,13 +1,80 @@
 ---
-// Página provisória (T004/Fase 3). Será substituída pela página inicial na Fase 4.
+/**
+ * Página inicial (T034) — primeira entrega e referência visual do site.
+ * Conteúdo de prévia em conteudo/paginas/inicio.md; passa a ler as coleções em T053.
+ */
 import LayoutBase from '../layouts/LayoutBase.astro';
+import Hero from '../components/Hero.astro';
+import PreviaTrajetoria from '../components/PreviaTrajetoria.astro';
+import PreviaLugares from '../components/PreviaLugares.astro';
 import Secao from '../components/Secao.astro';
-import SeloNatureza from '../components/SeloNatureza.astro';
+import DestaqueDocumento from '../components/DestaqueDocumento.astro';
+import DescubraAHistoria from '../components/DescubraAHistoria.astro';
+import { frontmatter as p } from '../../conteudo/paginas/inicio.md';
+import { url } from '../lib/url';
 ---
-<LayoutBase titulo="Sebastião de Freitas" descricao="Exposição histórica digital sobre Sebastião de Freitas, em construção.">
-  <Secao superficie="escura" rotuloId="t">
-    <h1 id="t">Sebastião de Freitas</h1>
-    <p>Em construção.</p>
+
+<LayoutBase titulo={p.titulo} descricao={p.descricao}>
+  <div class="aviso-previa" role="note">
+    <p>
+      <strong>Prévia da identidade visual.</strong> Textos provisórios; as fontes citadas estão em
+      verificação.
+    </p>
+  </div>
+
+  <Hero
+    sobretitulo={p.abertura.sobretitulo}
+    apresentacao={p.abertura.apresentacao}
+    sefardita={p.abertura.sefardita}
+    fonteSefardita={p.abertura.fonte_sefardita}
+  />
+
+  <PreviaTrajetoria marcos={p.trajetoria} />
+
+  <PreviaLugares lugares={p.lugares} />
+
+  <Secao superficie="clara" rotuloId="documentos-titulo">
+    <p class="sobretitulo">Documentos e evidências</p>
+    <h2 id="documentos-titulo">O que sustenta esta história</h2>
+    <p class="documentos__intro">
+      Nada aqui é afirmado sem origem. Estas são algumas das obras que registram a trajetória de
+      Sebastião de Freitas.
+    </p>
+    <ul class="documentos">
+      {p.documentos.map((d: { tipo: string; titulo: string; autoria: string; texto: string }) => <li><DestaqueDocumento {...d} /></li>)}
+    </ul>
+    <p class="documentos__acoes">
+      <a class="botao" href={url('fontes/')}>Ver todas as fontes</a>
+    </p>
   </Secao>
-  <Secao superficie="clara"><p><SeloNatureza natureza="fato" /> <SeloNatureza natureza="hipotese" /></p></Secao>
+
+  <DescubraAHistoria />
 </LayoutBase>
+
+<style>
+  .aviso-previa {
+    background: var(--cor-dourado);
+    color: var(--cor-azul-profundo);
+    text-align: center;
+    font-size: var(--texto-pequeno);
+    padding: var(--esp-2) var(--margem-lateral);
+  }
+  .aviso-previa p {
+    margin: 0 auto;
+  }
+  .documentos__intro {
+    color: var(--texto-secundario);
+    margin-bottom: var(--esp-5);
+  }
+  .documentos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+    gap: var(--esp-4);
+  }
+  .documentos__acoes {
+    margin-top: var(--esp-6);
+  }
+</style>

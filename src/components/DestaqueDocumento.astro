@@ -1,0 +1,65 @@
+---
+/** Cartão de documento ou fonte em destaque (T032). */
+interface Props {
+  tipo: string;
+  titulo: string;
+  autoria: string;
+  texto: string;
+  /** Situação da verificação da fonte (pesquisa/catalogo-de-fontes.md). */
+  situacao?: string;
+}
+const { tipo, titulo, autoria, texto, situacao = 'Fonte em verificação' } = Astro.props;
+---
+
+<article class="documento">
+  <p class="documento__tipo">{tipo}</p>
+  <h3 class="documento__titulo"><cite>{titulo}</cite></h3>
+  <p class="documento__autoria">{autoria}</p>
+  <p class="documento__texto">{texto}</p>
+  <p class="documento__situacao">{situacao}</p>
+</article>
+
+<style>
+  .documento {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--esp-5) var(--esp-4) var(--esp-4);
+    background: #fbfaf6;
+    border: var(--linha-fina) solid var(--borda);
+    border-top: 3px solid var(--cor-dourado);
+    box-shadow: var(--sombra);
+  }
+  .documento__tipo {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--destaque);
+    margin-bottom: var(--esp-3);
+  }
+  .documento__titulo {
+    font-size: 1.625rem;
+    margin-bottom: var(--esp-1);
+  }
+  .documento__titulo cite {
+    font-style: italic;
+  }
+  .documento__autoria {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+    margin-bottom: var(--esp-3);
+  }
+  .documento__texto {
+    flex: 1;
+  }
+  .documento__situacao {
+    align-self: flex-start;
+    margin: 0;
+    padding: 0.1em 0.6em;
+    border: var(--linha-fina) dashed var(--texto-secundario);
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    color: var(--texto-secundario);
+  }
+</style>

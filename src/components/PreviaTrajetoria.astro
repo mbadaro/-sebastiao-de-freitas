@@ -1,0 +1,113 @@
+---
+/** Seção "Trajetória" da página inicial (T030): marcos com data, natureza e fonte. */
+import Secao from './Secao.astro';
+import SeloNatureza, { type Natureza } from './SeloNatureza.astro';
+import { url } from '../lib/url';
+
+interface Marco {
+  data: string;
+  titulo: string;
+  texto: string;
+  natureza: Natureza;
+  fonte: string;
+}
+interface Props {
+  marcos: Marco[];
+}
+const { marcos } = Astro.props;
+---
+
+<Secao superficie="clara" rotuloId="trajetoria-titulo">
+  <div class="cabeca">
+    <p class="sobretitulo">Trajetória</p>
+    <h2 id="trajetoria-titulo">Uma vida entre dois continentes</h2>
+    <p class="introducao">
+      Os principais marcos registrados pelas fontes. Cada um indica a natureza da informação e
+      de onde ela vem.
+    </p>
+  </div>
+
+  <ol class="marcos">
+    {
+      marcos.map((m) => (
+        <li class="marco">
+          <p class="marco__data">{m.data}</p>
+          <h3 class="marco__titulo">{m.titulo}</h3>
+          <p class="marco__texto">{m.texto}</p>
+          <p class="marco__meta">
+            <SeloNatureza natureza={m.natureza} />
+            <span class="marco__fonte">{m.fonte}</span>
+          </p>
+        </li>
+      ))
+    }
+  </ol>
+
+  <p class="acoes">
+    <a class="botao" href={url('linha-do-tempo/')}>Ver a linha do tempo completa</a>
+  </p>
+</Secao>
+
+<style>
+  .cabeca {
+    margin-bottom: var(--esp-6);
+  }
+  .introducao {
+    color: var(--texto-secundario);
+  }
+  .marcos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: var(--esp-5) var(--esp-4);
+    counter-reset: marco;
+  }
+  .marco {
+    position: relative;
+    padding-top: var(--esp-4);
+    border-top: 2px solid var(--cor-azul-petroleo);
+  }
+  .marco::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: var(--cor-marfim);
+    border: 2px solid var(--destaque);
+    transform: rotate(45deg);
+  }
+  .marco__data {
+    font-family: var(--fonte-titulo);
+    font-size: 1.75rem;
+    color: var(--destaque);
+    margin-bottom: var(--esp-1);
+  }
+  .marco__titulo {
+    font-family: var(--fonte-texto);
+    font-size: 1.1875rem;
+    font-weight: 600;
+    margin-bottom: var(--esp-2);
+  }
+  .marco__texto {
+    margin-bottom: var(--esp-3);
+  }
+  .marco__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--esp-2);
+    margin: 0;
+  }
+  .marco__fonte {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+    font-style: italic;
+  }
+  .acoes {
+    margin-top: var(--esp-6);
+  }
+</style>

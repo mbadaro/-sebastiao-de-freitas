@@ -1,0 +1,173 @@
+---
+/**
+ * Seção "Lugares e caminhos" da página inicial (T031).
+ * Mapa estático Portugal–Brasil; trajetos presumidos tracejados e rotulados (FR-015).
+ * A lista ao lado é a alternativa textual do mapa (FR-016).
+ */
+import Secao from './Secao.astro';
+import mapa from '../assets/mapas/atlantico.svg?raw';
+import { url } from '../lib/url';
+
+interface Lugar {
+  nome: string;
+  pais: string;
+  texto: string;
+}
+interface Props {
+  lugares: Lugar[];
+}
+const { lugares } = Astro.props;
+const contorno = mapa.replace(/<!--[\s\S]*?-->/, '').replace(/^\s*<svg[^>]*>|<\/svg>\s*$/g, '');
+---
+
+<Secao superficie="escura" rotuloId="lugares-titulo">
+  <div class="grade">
+    <div class="texto">
+      <p class="sobretitulo">Lugares e caminhos</p>
+      <h2 id="lugares-titulo">Do Algarve à vila de São Paulo</h2>
+      <p>
+        A travessia do Atlântico e a vida na capitania de São Vicente, nos lugares registrados
+        pelas fontes.
+      </p>
+      <ol class="lugares">
+        {
+          lugares.map((l, i) => (
+            <li>
+              <span class="lugares__numero" aria-hidden="true">{i + 1}</span>
+              <span>
+                <strong>{l.nome}</strong> <span class="lugares__pais">({l.pais})</span>
+                <br />
+                {l.texto}
+              </span>
+            </li>
+          ))
+        }
+      </ol>
+      <p class="legenda">
+        <span class="legenda__linha" aria-hidden="true"></span>
+        Trajeto presumido: as fontes registram os lugares, não o percurso.
+      </p>
+      <a class="botao" href={url('mapa/')}>Explorar o mapa</a>
+    </div>
+
+    <figure class="mapa">
+      <svg viewBox="80 20 560 720" role="img" aria-labelledby="mapa-titulo mapa-desc">
+        <title id="mapa-titulo">Mapa: de Silves, no Algarve, à Bahia e à vila de São Paulo</title>
+        <desc id="mapa-desc">
+          Três lugares ligados por trajetos tracejados, que indicam percurso presumido. A mesma
+          informação está na lista desta seção.
+        </desc>
+        <g set:html={contorno} />
+        <path class="rota" d="M565,105 C470,260 360,420 298,576" />
+        <path class="rota" d="M298,576 C270,620 245,650 226,675" />
+        <text class="rota__rotulo" x="420" y="330" transform="rotate(-58 420 330)">trajeto presumido</text>
+        <g class="ponto"><circle cx="565" cy="105" r="9" /><text x="565" y="109">1</text></g>
+        <g class="ponto"><circle cx="298" cy="576" r="9" /><text x="298" y="580">2</text></g>
+        <g class="ponto"><circle cx="226" cy="675" r="9" /><text x="226" y="679">3</text></g>
+        <text class="nome" x="582" y="98">Silves</text>
+        <text class="nome" x="316" y="574">Bahia</text>
+        <text class="nome" x="244" y="690">São Paulo</text>
+      </svg>
+      <figcaption>Contornos: Natural Earth (domínio público). Mapa esquemático.</figcaption>
+    </figure>
+  </div>
+</Secao>
+
+<style>
+  .grade {
+    display: grid;
+    gap: var(--esp-6);
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  }
+  .lugares {
+    list-style: none;
+    padding: 0;
+    margin: var(--esp-5) 0;
+    display: grid;
+    gap: var(--esp-3);
+  }
+  .lugares li {
+    display: flex;
+    gap: var(--esp-3);
+    align-items: flex-start;
+  }
+  .lugares__numero {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--cor-dourado);
+    color: var(--cor-azul-profundo);
+    font-weight: 700;
+  }
+  .lugares__pais {
+    color: var(--texto-secundario);
+  }
+  .legenda {
+    display: flex;
+    align-items: center;
+    gap: var(--esp-2);
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+    margin-bottom: var(--esp-4);
+  }
+  .legenda__linha {
+    flex: none;
+    width: 2.5rem;
+    border-top: 2px dashed var(--cor-dourado);
+  }
+  .mapa {
+    margin: 0;
+  }
+  .mapa svg {
+    width: 100%;
+    max-height: 36rem;
+  }
+  .mapa :global(.mapa-terra) {
+    fill: var(--cor-azul-petroleo);
+    stroke: var(--cor-acinzentado);
+    stroke-width: 0.8;
+  }
+  .mapa :global(.mapa-grade) {
+    fill: none;
+    stroke: var(--cor-acinzentado);
+    stroke-width: 0.4;
+    opacity: 0.3;
+  }
+  .rota {
+    fill: none;
+    stroke: var(--cor-dourado);
+    stroke-width: 2.5;
+    stroke-dasharray: 7 8;
+  }
+  .rota__rotulo {
+    fill: var(--cor-dourado);
+    font-size: 19px;
+    font-style: italic;
+    letter-spacing: 0.04em;
+  }
+  .ponto circle {
+    fill: var(--cor-dourado);
+    stroke: var(--cor-azul-profundo);
+    stroke-width: 2;
+  }
+  .ponto text {
+    fill: var(--cor-azul-profundo);
+    font-size: 13px;
+    font-weight: 700;
+    text-anchor: middle;
+  }
+  .nome {
+    fill: var(--cor-marfim);
+    font-size: 21px;
+    font-weight: 600;
+  }
+  figcaption {
+    font-size: 0.8125rem;
+    color: var(--texto-secundario);
+    text-align: right;
+  }
+</style>

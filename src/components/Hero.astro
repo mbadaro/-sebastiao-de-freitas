@@ -1,0 +1,154 @@
+---
+/**
+ * Abertura da página inicial (T029; FR-001; US2-3).
+ * Composição tipográfica sobre o contorno do mapa Portugal–Brasil, sem depender de imagem.
+ * O vínculo sefardita aparece com a origem da afirmação (regra editorial).
+ */
+import mapa from '../assets/mapas/atlantico.svg?raw';
+import { url } from '../lib/url';
+
+interface Props {
+  sobretitulo: string;
+  apresentacao: string;
+  sefardita: string;
+  fonteSefardita: string;
+}
+const { sobretitulo, apresentacao, sefardita, fonteSefardita } = Astro.props;
+const contorno = mapa.replace(/<!--[\s\S]*?-->/, '').replace(/^\s*<svg[^>]*>|<\/svg>\s*$/g, '');
+---
+
+<section class="hero superficie-escura" aria-labelledby="hero-titulo">
+  <svg class="hero__mapa" viewBox="0 0 800 760" aria-hidden="true" focusable="false">
+    <g set:html={contorno} />
+    <path class="hero__rota" d="M565,105 C470,260 360,420 298,576 S240,650 226,675" />
+    <circle class="hero__ponto" cx="565" cy="105" r="6" />
+    <circle class="hero__ponto" cx="298" cy="576" r="6" />
+    <circle class="hero__ponto" cx="226" cy="675" r="6" />
+  </svg>
+
+  <div class="conteiner hero__conteudo">
+    <p class="sobretitulo surgir">{sobretitulo}</p>
+    <h1 id="hero-titulo" class="hero__titulo surgir surgir--1">
+      Sebastião <span class="hero__de">de</span> Freitas
+    </h1>
+    <p class="hero__periodo surgir surgir--1">Do Algarve à vila de São Paulo · séculos XVI e XVII</p>
+    <p class="hero__apresentacao surgir surgir--2">{apresentacao}</p>
+
+    <aside class="hero__sefardita surgir surgir--3" aria-labelledby="hero-raizes">
+      <p id="hero-raizes" class="hero__rotulo">Raízes sefarditas</p>
+      <p>{sefardita}</p>
+      <p class="hero__fonte">Fonte: {fonteSefardita}</p>
+    </aside>
+
+    <div class="hero__acoes surgir surgir--3">
+      <a class="botao botao-primario" href={url('exposicao/')}>Comece a exposição <span aria-hidden="true">→</span></a>
+      <a class="botao" href={url('sefarditas/')}>Conheça as raízes sefarditas</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3.5rem, 2rem + 8vw, 9rem) clamp(3.5rem, 2rem + 6vw, 7rem);
+    isolation: isolate;
+  }
+  .hero__mapa {
+    position: absolute;
+    z-index: -1;
+    right: -12%;
+    top: 50%;
+    width: min(62rem, 120%);
+    transform: translateY(-50%);
+    opacity: 0.32;
+    /* Esmaece as bordas do recorte do mapa. */
+    mask-image: radial-gradient(ellipse 60% 55% at 60% 50%, #000 55%, transparent 100%);
+  }
+  .hero__mapa :global(.mapa-terra) {
+    fill: var(--cor-azul-petroleo);
+    stroke: var(--cor-acinzentado);
+    stroke-width: 0.6;
+  }
+  .hero__mapa :global(.mapa-grade) {
+    fill: none;
+    stroke: var(--cor-acinzentado);
+    stroke-width: 0.4;
+    opacity: 0.35;
+  }
+  .hero__rota {
+    fill: none;
+    stroke: var(--cor-dourado);
+    stroke-width: 2;
+    stroke-dasharray: 6 7;
+  }
+  .hero__ponto {
+    fill: var(--cor-dourado);
+  }
+
+  .hero__conteudo {
+    position: relative;
+  }
+  .hero__titulo {
+    font-size: clamp(2.75rem, 1.5rem + 6vw, 6.5rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--esp-2);
+  }
+  .hero__de {
+    font-style: italic;
+    color: var(--cor-dourado);
+  }
+  .hero__periodo {
+    font-size: var(--texto-pequeno);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--texto-secundario);
+    margin-bottom: var(--esp-5);
+  }
+  .hero__apresentacao {
+    font-size: var(--texto-destaque);
+    line-height: 1.5;
+    max-width: 38ch;
+    margin-bottom: var(--esp-5);
+  }
+  .hero__sefardita {
+    max-width: 38rem;
+    padding: var(--esp-4);
+    border-left: 3px solid var(--cor-dourado);
+    background: rgb(36 71 96 / 0.55);
+    margin-bottom: var(--esp-5);
+  }
+  .hero__sefardita p {
+    margin-bottom: var(--esp-2);
+  }
+  .hero__rotulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: var(--cor-dourado);
+  }
+  .hero__fonte {
+    font-size: var(--texto-pequeno);
+    font-style: italic;
+    /* Marfim: o azul acinzentado não atinge 4,5:1 sobre o fundo deste quadro. */
+    color: var(--cor-marfim);
+    margin-bottom: 0 !important;
+  }
+  .hero__acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--esp-3);
+  }
+
+  .surgir--1 { animation-delay: 120ms; }
+  .surgir--2 { animation-delay: 240ms; }
+  .surgir--3 { animation-delay: 360ms; }
+
+  @media (max-width: 40rem) {
+    .hero__mapa {
+      right: -40%;
+      width: 150%;
+      opacity: 0.22;
+    }
+  }
+</style>

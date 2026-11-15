@@ -1,0 +1,77 @@
+---
+/** Seção "Descubra a história" da página inicial (T033): acesso direto às seções (FR-003). */
+import Secao from './Secao.astro';
+import { url } from '../lib/url';
+
+const caminhos = [
+  { titulo: 'A exposição', texto: 'A biografia em capítulos, do Algarve aos últimos anos.', caminho: 'exposicao/' },
+  { titulo: 'Raízes sefarditas', texto: 'Quem foram os sefarditas e os cristãos-novos, e o que se sabe do vínculo de Sebastião.', caminho: 'sefarditas/' },
+  { titulo: 'Linha do tempo', texto: 'Os acontecimentos da sua vida ao lado dos eventos do seu tempo.', caminho: 'linha-do-tempo/' },
+  { titulo: 'Mapa', texto: 'Os lugares e os caminhos da trajetória, em Portugal e no Brasil.', caminho: 'mapa/' },
+  { titulo: 'Família', texto: 'Pais, esposa, filhos e os vínculos com personagens da história paulista.', caminho: 'familia/' },
+  { titulo: 'Fontes', texto: 'Todas as referências, com a indicação de onde cada uma é usada.', caminho: 'fontes/' },
+];
+---
+
+<Secao superficie="escura" rotuloId="descubra-titulo">
+  <p class="sobretitulo">Descubra a história</p>
+  <h2 id="descubra-titulo">Por onde começar</h2>
+  <ul class="cartoes">
+    {
+      caminhos.map((c) => (
+        <li>
+          <a class="cartao" href={url(c.caminho)}>
+            <span class="cartao__titulo">{c.titulo}</span>
+            <span class="cartao__texto">{c.texto}</span>
+            <span class="cartao__seta" aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Secao>
+
+<style>
+  .cartoes {
+    list-style: none;
+    margin: var(--esp-5) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: var(--esp-3);
+  }
+  .cartao {
+    display: flex;
+    flex-direction: column;
+    gap: var(--esp-2);
+    height: 100%;
+    padding: var(--esp-4);
+    border: var(--linha-fina) solid var(--borda);
+    border-radius: var(--raio);
+    color: var(--texto);
+    text-decoration: none;
+    transition: border-color var(--duracao-curta) var(--curva),
+      background-color var(--duracao-curta) var(--curva);
+  }
+  .cartao:hover {
+    border-color: var(--cor-dourado);
+    background: rgb(36 71 96 / 0.45);
+  }
+  .cartao__titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: var(--titulo);
+  }
+  .cartao__texto {
+    flex: 1;
+    color: var(--texto-secundario);
+  }
+  .cartao__seta {
+    color: var(--cor-dourado);
+    font-size: 1.25rem;
+    transition: transform var(--duracao-curta) var(--curva);
+  }
+  .cartao:hover .cartao__seta {
+    transform: translateX(4px);
+  }
+</style>

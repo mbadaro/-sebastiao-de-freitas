@@ -10,8 +10,8 @@ export default defineConfig({
   },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
   webServer: {
-    command: 'npm run preview -- --port 4321',
+    command: 'npx astro preview --port 4321 --ignore-lock',
     url: 'http://localhost:4321/sebastiao-de-freitas/',
-    reuseExistingServer: true,
+    reuseExistingServer: !process.env.CI,
   },
 });
