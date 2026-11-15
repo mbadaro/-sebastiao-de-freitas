@@ -25,6 +25,7 @@ gratuita no **GitHub Pages** com domínio próprio. Decisões detalhadas em
 | 1 | 2026-11-13 | Versão inicial |
 | 2 | 2026-11-14 | Decisões Q-1 a Q-3; incorporação do briefing de identidade visual ("Museu Digital Imersivo"): nova seção [Identidade visual](#identidade-visual), [Sequência de entregas](#sequência-de-entregas) com a página inicial como primeira entrega e aprovação visual antes das demais páginas, decisões D14–D16 em research.md, orçamento de fontes e imagem de abertura em Desempenho, novos riscos e pré-requisito de Node.js |
 | 3 | 2026-11-14 | FR-021 na matriz com os selos "Ilustração" e "Fotografia atual" (sem seção separada); regra de uso de documentos do FamilySearch e outros acervos digitais (dependências editoriais e D8). **Plano fechado** |
+| 4 | 2026-11-15 | Implementação: dependências `@astrojs/markdown-remark` (aprovada pelo responsável), `@astrojs/check` e `typescript` registradas; validação de integridade em `src/lib/integridade.ts` |
 
 ## Contexto Técnico
 
@@ -266,6 +267,8 @@ Proporcional a um site estático, público e somente de leitura:
 |---|---|---|---|---|---|---|
 | Astro | Gerar o site estático; validar coleções | FR-001–FR-028 (base) | Eleventy, Hugo | Madura, manutenção ativa | MIT | Reescrever templates; acervo intacto |
 | remark-directive | Interpretar `:fonte` e `::divergencia` | FR-006, FR-007, FR-009 | Sintaxe própria via regex | Ecossistema unified, estável | MIT | Plugin próprio simples |
+| @astrojs/markdown-remark | Processador de Markdown que aceita plugins remark (no Astro 7 o padrão passou a ser o Sätteri) | FR-006, FR-007, FR-009 (D4) | Investigar suporte do Sätteri a diretivas | Pacote oficial do Astro | MIT | Remover se o Sätteri passar a aceitar diretivas |
+| @astrojs/check + typescript (desenvolvimento) | Verificação de tipos em `npm run validar` | T044 | Sem verificação de tipos | Oficiais | MIT / Apache-2.0 | Remover a verificação |
 | @astrojs/sitemap | Gerar sitemap | FR-026 | Script próprio | Integração oficial | MIT | Script de ~30 linhas |
 | d3-geo | Projetar coordenadas no SVG (só build) | FR-014 | proj4js, cálculo próprio | Muito madura | ISC | Projeção simples própria |
 | Natural Earth | Contornos geográficos | FR-014 | Dados do IBGE/DGT | Referência consolidada | Domínio público | Qualquer base aberta |

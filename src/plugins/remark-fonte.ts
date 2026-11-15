@@ -69,6 +69,9 @@ export default function remarkFonte() {
             throw new Error(`${nomeArquivo} › natureza inválida "${nat}" — use fato, historiografia, tradicao ou hipotese`);
           }
           if (!ref.trim()) throw new Error(`${nomeArquivo} › :fonte sem ref`);
+          if (nat === 'fato' && ref.split(/\s+/).includes('sem-fonte')) {
+            throw new Error(`${nomeArquivo} › informação sem fonte não pode ser "fato" (FR-007)`);
+          }
           const n = citacoes.length + 1;
           citacoes.push({ n, natureza: nat, refs: ref.trim().split(/\s+/), p });
           filhos[i] = {

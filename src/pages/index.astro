@@ -12,6 +12,10 @@ import DestaqueDocumento from '../components/DestaqueDocumento.astro';
 import DescubraAHistoria from '../components/DescubraAHistoria.astro';
 import { frontmatter as p } from '../../conteudo/paginas/inicio.md';
 import { url } from '../lib/url';
+import { verificarIntegridade } from '../lib/integridade';
+
+// Integridade do acervo: interrompe a geração do site se houver ligação quebrada (T044).
+await verificarIntegridade();
 ---
 
 <LayoutBase titulo={p.titulo} descricao={p.descricao}>

@@ -1,0 +1,10 @@
+# Referências (FR-007, FR-008, FR-010). Formato em specs/001-acervo-mvp/contracts/conteudo.md.
+# Só entram aqui fontes aprovadas na revisão do catálogo (T016). ABNT conferida na obra.
+
+# Identificador reservado para informação sem origem conhecida (nunca sustenta "fato").
+- id: sem-fonte
+  abnt: Sem fonte localizada.
+  tipo: informal
+- id: silva-leme-v7
+  abnt: "SILVA LEME, Luiz Gonzaga da. *Genealogia paulistana*. São Paulo: Duprat & Cia., 1905. v. 7."
+  tipo: secundaria
