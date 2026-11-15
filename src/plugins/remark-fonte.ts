@@ -77,11 +77,22 @@ export default function remarkFonte() {
           filhos[i] = {
             type: 'html',
             value:
-              `<span class="marcador marcador--${nat}">` +
-              `<span class="marcador__natureza">${rotulos[nat]}</span>` +
-              `<a class="marcador__chamada" href="#citacao-${n}" id="chamada-${n}" aria-label="Fonte ${n}"><sup>${n}</sup></a>` +
-              `</span>`,
+              // Nota discreta no texto (revisão de 2026-11-15): só o número. A natureza aparece no
+              // rótulo acessível, na dica ao passar o mouse e, por extenso, em "Notas e fontes".
+              `<sup class="marcador marcador--${nat}">` +
+              `<a class="marcador__chamada" href="#citacao-${n}" id="chamada-${n}" ` +
+              `aria-label="Nota ${n}: ${rotulos[nat]}" title="${rotulos[nat]} — ver fonte">${n}</a>` +
+              `</sup>`,
           };
+          // Tipografia de nota: "texto :fonte{}." vira "texto.¹" (sem espaço, nota após a pontuação).
+          const antes = filhos[i - 1];
+          if (antes?.type === 'text' && antes.value) antes.value = antes.value.replace(/\s+$/, '');
+          const depois = filhos[i + 1];
+          const pont = depois?.type === 'text' ? /^[.,;:!?]/.exec(depois.value ?? '') : null;
+          if (pont && antes?.type === 'text' && depois) {
+            antes.value += pont[0];
+            depois.value = (depois.value ?? '').slice(1);
+          }
         } else if ((f.type === 'leafDirective' || f.type === 'containerDirective') && f.name === 'divergencia') {
           const id = f.attributes?.id ?? '';
           if (!id) throw new Error(`${nomeArquivo} › ::divergencia sem id`);

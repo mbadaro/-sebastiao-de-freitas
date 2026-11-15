@@ -36,6 +36,16 @@ responsável pelo projeto.
 - P: Fotografias atuais de lugares são permitidas? → R: Sim, identificadas como "Fotografia
   atual" (FR-021).
 
+### Sessão 2026-11-15
+
+- P: Como exibir natureza e fonte sem prejudicar a leitura (FR-006, FR-009)? → R: A história vem
+  em primeiro plano. No texto, cada afirmação leva só uma nota numerada discreta (com a natureza
+  no rótulo acessível e na dica); a natureza por extenso e a referência completa ficam em "Notas e
+  fontes", ao fim do capítulo. Divergências aparecem recolhidas numa linha ("As fontes divergem:
+  …") e, abertas, mostram as versões lado a lado.
+- P: Qual o papel do site em relação às fontes? → R: Reunir o que existe sobre Sebastião e dizer de
+  onde cada informação veio; não é pesquisa original, e nada é retirado por falta de verificação.
+
 ## Cenários de Usuário e Testes *(obrigatório)*
 
 ### História de Usuário 1 — Percorrer a exposição sobre Sebastião de Freitas (Prioridade: P1)

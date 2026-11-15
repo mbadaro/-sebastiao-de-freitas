@@ -63,12 +63,6 @@ const jsonLd = {
   </header>
 
   <article class="conteiner capitulo">
-    <div class="legenda-natureza">
-      <p>
-        Cada informação traz um selo com sua natureza e um número que leva à fonte.{' '}
-        <a href={url('sobre/')}>Como ler as fontes</a>
-      </p>
-    </div>
     <div class="texto-capitulo" set:html={html} />
     <ListaCitacoes citacoes={citacoes} />
     <NavegacaoCapitulos anterior={anterior} proximo={proximo} />
@@ -95,15 +89,5 @@ const jsonLd = {
   .capitulo {
     padding-block: var(--esp-5) var(--esp-6);
     max-width: calc(var(--largura-leitura) + 2 * var(--margem-lateral));
-  }
-  .legenda-natureza {
-    font-size: var(--texto-pequeno);
-    color: var(--texto-secundario);
-    border-left: 3px solid var(--destaque);
-    padding-left: var(--esp-3);
-    margin-bottom: var(--esp-5);
-  }
-  .legenda-natureza p {
-    margin: 0;
   }
 </style>

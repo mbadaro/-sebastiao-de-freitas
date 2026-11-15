@@ -304,9 +304,10 @@ imagens segue as condições de cada arquivo.
   PT/TT/TSO-IL/030/0224, mf. 5193 (imagem 646).
 - **Localização**: http://digitarq.arquivos.pt/details?id=2318049
 - **Classificação**: `primaria` — é a denúncia da Visitação de 1627 (data pela BRASILHIS).
-- **Status**: `consultado` por **transcrição de terceiros** (duas transcrições independentes e
-  concordantes: notas do FamilySearch e relatório genealógico em
-  `pesquisa/familysearch/relatorioGenealogico.pdf`, p. 10). Conferência na imagem 646: pendente.
+- **Status**: **`verificada`** em 2026-11-15 — trecho sobre Sebastião lido na imagem da fl. 316
+  (numeração antiga 314), fornecida pelo responsável via FamilySearch
+  (`pesquisa/familysearch/torreDoTomboIII.png`); confere com as duas transcrições publicadas.
+  As imagens ficam fora do repositório (direitos de reprodução do ANTT não verificados).
 - **Teor (transcrição)**: "Denunciouse de hum Sebastião de Freitas natural do Algarve. Estando com
   outros moradores da mesma villa de Sam Paulo, na casa em q Estavão se pos hum delles a Ler por
   hum livro de Outavas da vida de S. Joseph autor Joseph de Valderidesso, no canto da Annunciação

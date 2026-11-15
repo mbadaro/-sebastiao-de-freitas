@@ -54,10 +54,9 @@ async function htmlDivergencia(id: string): Promise<string> {
   );
   const obs = div.data.observacao ? `<p class="divergencia__obs">${escapar(div.data.observacao)}</p>` : '';
   return (
-    `<aside class="divergencia" aria-label="Divergência entre fontes: ${escapar(div.data.tema)}">` +
-    `<p class="divergencia__rotulo">Divergência entre fontes</p>` +
-    `<p class="divergencia__tema">${escapar(div.data.tema)}</p>` +
-    `<ol class="divergencia__versoes">${versoes.join('')}</ol>${obs}</aside>`
+    `<details class="divergencia">` +
+    `<summary>As fontes divergem: <span class="divergencia__tema">${escapar(div.data.tema.toLowerCase())}</span></summary>` +
+    `<ol class="divergencia__versoes">${versoes.join('')}</ol>${obs}</details>`
   );
 }
 

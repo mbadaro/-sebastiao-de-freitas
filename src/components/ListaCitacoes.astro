@@ -1,6 +1,6 @@
 ---
 /**
- * "Fontes deste capítulo" (T047; US1-2): cada chamada numerada do texto leva aqui, com a natureza
+ * "Notas e fontes" (T047; US1-2): cada chamada numerada do texto leva aqui, com a natureza
  * da informação e a referência ABNT completa. Retorno ao ponto do texto pelo link "voltar".
  */
 interface Fonte {
@@ -19,7 +19,11 @@ const tipos: Record<string, string> = { primaria: 'Fonte primária', secundaria:
 {
   citacoes.length > 0 && (
     <section class="citacoes" aria-labelledby="citacoes-titulo">
-      <h2 id="citacoes-titulo" class="citacoes__titulo">Fontes deste capítulo</h2>
+      <h2 id="citacoes-titulo" class="citacoes__titulo">Notas e fontes</h2>
+      <p class="citacoes__intro">
+        Cada nota indica a natureza da informação (documento da época, obra de historiador,
+        tradição genealógica ou hipótese) e de onde ela vem.
+      </p>
       <ol class="citacoes__lista">
         {citacoes.map((c) => (
           <li id={`citacao-${c.n}`} class="citacao">
@@ -57,6 +61,11 @@ const tipos: Record<string, string> = { primaria: 'Fonte primária', secundaria:
   }
   .citacoes__titulo {
     font-size: var(--titulo-3);
+  }
+  .citacoes__intro {
+    font-size: var(--texto-pequeno);
+    color: var(--texto-secundario);
+    margin-bottom: var(--esp-4);
   }
   .citacoes__lista {
     list-style: none;

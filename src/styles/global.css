@@ -175,68 +175,57 @@ a:hover {
   margin: 0;
 }
 
-/* Marcador de afirmação gerado pelo plugin remark-fonte (FR-006). */
+/* Nota de fonte no texto (FR-006): discreta, para não interromper a leitura. A natureza da
+   informação aparece por extenso em "Notas e fontes" e no rótulo acessível da nota. */
 .marcador {
-  white-space: nowrap;
-}
-.marcador__natureza {
-  display: inline-block;
-  margin-left: 0.25em;
-  padding: 0 0.45em;
-  border: var(--linha-fina) solid currentColor;
-  border-radius: 999px;
-  font-family: var(--fonte-texto);
-  font-size: 0.75rem;
-  font-weight: 600;
-  font-style: normal;
-  line-height: 1.6;
-  vertical-align: 0.15em;
-  color: var(--texto-secundario);
-}
-.marcador--historiografia .marcador__natureza {
-  color: var(--link);
-}
-.marcador--fato .marcador__natureza {
-  color: var(--titulo);
-  border-width: 2px;
-}
-.marcador--tradicao .marcador__natureza {
-  border-style: dotted;
-}
-.marcador--hipotese .marcador__natureza {
-  border-style: dashed;
+  font-size: 0.7em;
+  line-height: 0;
+  margin-left: 0.05em;
 }
 .marcador__chamada {
   display: inline-block;
-  min-width: 1.25em;
-  padding: 0.1em 0.1em;
+  min-width: 1.4em;
+  padding: 0.35em 0.15em; /* área de toque maior, sem alterar o visual */
   text-align: center;
-  font-weight: 700;
+  font-family: var(--fonte-texto);
+  font-weight: 600;
   text-decoration: none;
+  color: var(--destaque);
 }
-.marcador__chamada sup {
-  font-size: 0.8em;
+.marcador__chamada:hover,
+.marcador__chamada:focus-visible {
+  text-decoration: underline;
+}
+.marcador--tradicao .marcador__chamada,
+.marcador--hipotese .marcador__chamada {
+  font-style: italic;
 }
 
-/* Bloco de divergência entre fontes (FR-009): versões lado a lado. */
+/* Divergência entre fontes (FR-009): recolhida numa linha; aberta, mostra as versões lado a lado. */
 .divergencia {
-  margin: var(--esp-5) 0;
-  padding: var(--esp-4);
+  margin: calc(-1 * var(--esp-2)) 0 var(--esp-4);
+  font-size: var(--texto-pequeno);
+}
+.divergencia summary {
+  cursor: pointer;
+  color: var(--texto-secundario);
+  list-style-position: outside;
+  margin-left: 1rem;
+}
+.divergencia summary:hover {
+  color: var(--texto);
+}
+.divergencia[open] {
+  padding: var(--esp-3) var(--esp-4) var(--esp-4);
   border: var(--linha-fina) solid var(--borda);
   border-top: 3px solid var(--destaque);
   background: #fbfaf6;
 }
-.divergencia__rotulo {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--destaque);
-  margin-bottom: var(--esp-1);
+.divergencia[open] summary {
+  margin-bottom: var(--esp-3);
 }
 .divergencia__tema {
   font-weight: 600;
-  margin-bottom: var(--esp-3);
 }
 .divergencia__versoes {
   list-style: none;
