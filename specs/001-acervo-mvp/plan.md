@@ -107,8 +107,9 @@ src/                         # APLICAÇÃO
 └── styles/
 
 scripts/
-├── validar-conteudo.ts      # regras além dos esquemas (ver data-model.md)
-└── gerar-mapas.ts           # projeção dos lugares e trajetos sobre o SVG (build)
+└── recortar-natural-earth.mjs  # recorte único do Natural Earth 1:10m para a vista sao-vicente
+# Implementado: regras além dos esquemas em src/lib/integridade.ts e src/plugins/remark-fonte.ts;
+# projeção dos mapas em src/lib/mapa.ts, executada no build (revisão de 2026-11-16).
 
 dados-geo/                   # Natural Earth (domínio público), usado só no build
 public/                      # robots.txt, fontes tipográficas, favicon
@@ -224,6 +225,11 @@ Ordem de alto nível (a decomposição em tarefas é do `/speckit-tasks`):
 Em paralelo, desde o início: **levantamento de conteúdo** (fichamento das fontes já
 verificadas e dos documentos do FamilySearch fornecidos pelo responsável).
 
+## Dívida técnica conhecida
+
+- `markdown.remarkPlugins` está obsoleto no Astro 7 (aviso no build). Migrar para
+  `unified()` de `@astrojs/markdown-remark` quando o Astro for atualizado (decisão de 2026-11-16).
+
 ## Desempenho
 
 Metas verificáveis (Princípio VI), medidas com Lighthouse em modo celular na página inicial, em
@@ -310,7 +316,7 @@ Pages com repositório privado: plano pago do GitHub.
 | FR-011 | `alteracoes.yaml`, `/sobre/historico-de-revisoes/` | Registro editorial + Git | Validação de campos; revisão |
 | FR-012 | Componente LinhaDoTempo | `<ol>` com tipo visual distinto | e2e; cenário manual 5 |
 | FR-013 | `lib/datas` | Formatação por `precisao`; `exibicao` para divergências | Testes da função; e2e |
-| FR-014 | Componente Mapa + `gerar-mapas` | SVG com duas vistas e trajetos | e2e; cenário manual 6 |
+| FR-014 | Componente Mapa + `src/lib/mapa.ts` | SVG com duas vistas e trajetos | e2e; cenário manual 6 |
 | FR-015 | Mapa, `lugares.yaml`, `trajetos.yaml` | Área para aproximado; tracejado + rótulo para presumido | Validação; cenário manual 7 |
 | FR-016 | Listas textuais do mapa e da linha do tempo | HTML nativo, sem depender de JS | e2e de teclado; cenário manual 8 |
 | FR-017 | `lib/ligacoes` | Ligações inversas calculadas no build | e2e de links internos |

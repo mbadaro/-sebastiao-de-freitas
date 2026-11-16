@@ -97,7 +97,7 @@ por falta de verificação.
 | 5.9 | "Pessoa de respeito auctoridade e estimação tendo sempre as redeas do governo" | SL7, p. 169 | verificada | historiografia | Avaliação do genealogista; citar como tal |
 | 5.10 | Em 1609 arrematou bens no leilão do inventário de Pedro Álvares | Inventário de Pedro Álvares, 1609 (Projeto Compartilhar) | consultado | historiografia (a confirmar) | — |
 | 5.11 | Sesmaria em 2/1/1604, por carta de Pedro Vaz de Barros | GeneArc | informal | tradicao | Confirmar nas Sesmarias |
-| 5.12 | Participou da bandeira de Antônio Raposo Tavares ao Guairá (1628) | GeneArc; Amorese | informal | tradicao (a confirmar) | Sem fonte localizada até agora |
+| 5.12 | Esteve "em 1628 na bandeira de Guairá"; em 1616 mandara ao sertão "um menino seu filho na bandeira de Antônio Raposo" | MOURA, 1950, p. 367 (em transcrição); GeneArc; Amorese | consultado | historiografia | A bandeira de 1628 foi organizada por Raposo Tavares (CERDEIRA, EVE, 2009). O "Antônio Raposo" de 1616 pode não ser Raposo Tavares, que chegou em 1618 |
 | 5.13 | Em 1616 "mandara ao sertão um menino" | MOURA | consultado | — | Trecho incompleto; ler o original |
 
 ## Capítulo 6 — Últimos anos e falecimento
@@ -115,8 +115,8 @@ por falta de verificação.
 | 7.1 | Tronco do título Freitas na *Genealogia Paulistana* (p. 168–223) | SL7 | verificada | historiografia | — |
 | 7.2 | Bisavô do comissário do Santo Ofício Pe. Gaspar Gonçalves de Araújo, habilitado em 1713 | BOG06, p. 78 (cita ANTT, maço 8, doc. 171) | consultado | historiografia | Ironia histórica que vale contar: descendente de cristão-novo como agente da Inquisição |
 | 7.3 | Descendentes em São Paulo, Minas Gerais e Goiás | Instagram @arquivohistoricodigitalcatalao | informal | tradicao | Usar só como indicação geral, se usar |
-| 7.4 | Vínculo notável — convivência com Antônio Raposo Tavares na bandeira do Guairá (1628) | ver 5.12 | informal | tradicao (a confirmar) | — |
-| 7.5 | Vínculo notável — a bisneta Mécia da Cunha (n. 1656) casou c. 1675 com Francisco Vieira Tavares, filho de Diogo da Costa Tavares, meio-irmão de Antônio Raposo Tavares | anexo genealógico do certificado da CIL (casamento); informação do responsável (parentesco com Raposo Tavares) | consultado | tradicao (a confirmar) | Fonte documental do casamento e da filiação de Francisco: pendente |
+| 7.4 | Vínculo notável — Antônio Raposo Tavares: Sebastião esteve na bandeira do Guairá (1628) que ele organizou | ver 5.12; CERDEIRA, EVE, 2009 | consultado | historiografia | — |
+| 7.5 | Duas bisnetas casaram com filhos do capitão Diogo da Costa Tavares: Maria Leite com Antônio Vieira Tavares (já casados em 1663; ela † 1704 sem geração) e Mécia da Cunha Lobo com Francisco Vieira Tavares (c. 1675). Diogo seria meio-irmão de Raposo Tavares | SILVA LEME, v. 5, p. 62-63 (verificada) e p. 94 (em transcrição); parentesco: conexões da árvore do FamilySearch | consultado | historiografia; parentesco: tradicao | — |
 
 ## Ampliação da narrativa (2026-11-15)
 
@@ -154,7 +154,7 @@ Pedido do responsável: enriquecer o texto com o contexto dos lugares e pessoas 
 | C.5 | D. Francisco de Sousa: c. 1540, filho do conde de Prado; chegou a Salvador em 9/6/1591; governou até 1602; superintendente das minas a partir de 1608; título de marquês prometido, não recebido; morreu em São Paulo em 11/6/1611 | EVE — Enciclopédia Virtual da Expansão Portuguesa (Rita Domingues, 2009) | consultado | historiografia |
 | C.6 | Gabriel Soares de Sousa: autor do *Tratado descritivo do Brasil* (1587); viveu 17 anos na Bahia; morreu em 1591 | Wikipedia; EVE (plano apoiado pelo governador); GeneArc (morreu na expedição) | informal / consultado | historiografia (citada) |
 | C.7 | Colégio jesuíta de São Paulo, 1554 (Nóbrega, Anchieta); jesuítas expulsos do colégio em 1640 por conflitos com os bandeirantes; retorno treze anos depois | ALESP, "No Pátio do Colégio…" | informal | historiografia (citada) |
-| C.8 | Guairá (atual Paraná): reduções jesuíticas; bandeira de 1628 de Manuel Preto, com Raposo Tavares como imediato; maior parte das reduções destruída | InfoEscola | informal | historiografia (citada) |
+| C.8 | Guairá: reduções jesuíticas destruídas pelos paulistas em 1628; bandeira de Raposo Tavares (1628–1638) como "ponto culminante" do bandeirismo (Taunay) | RIBEIRO, ANPUH [2015], p. 4-5; CERDEIRA, EVE, 2009 | consultado | historiografia | InfoEscola substituída em 2026-11-15; retirado "comandada por Manuel Preto" |
 | C.9 | Juqueri: sesmaria dos Campos do Juqueri; povoado conhecido como vila desde 1642, em torno de capela de N. S. do Desterro; município em 1889 (Juqueri); Mairiporã em 1948 | IBGE, histórico do município | consultado | historiografia |
 | C.10 | **Divergência**: título de marquês das Minas "conferido" a d. Francisco (Silva Leme) × prometido e não recebido (EVE) | SL7, p. 169; EVE | — | divergência |
 

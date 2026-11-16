@@ -27,11 +27,11 @@ histórias US1–US6, mapa e linha do tempo por teclado e sem JavaScript).
 | 6 | Lugar do mapa pelo teclado | ✅ | e2e; o "painel" é a ficha na lista, alcançada pelo link do mapa (sem JavaScript) |
 | 7 | Trajeto presumido tracejado e rotulado | ✅ | e2e |
 | 8 | Sem JavaScript: listas completas | ✅ | e2e |
-| 9 | Leitor de tela (NVDA) | ⏳ responsável (opcional) | axe sem violações em todas as páginas |
+| 9 | Leitor de tela (NVDA) | Dispensado por ora (decisão do responsável, 2026-11-16) | axe sem violações em todas as páginas |
 | 10 | Lighthouse celular: início, capítulo, mapa | ✅ | ver tabela abaixo |
 | 11 | Prévia de link compartilhado | ✅ | `og:title`, `og:description`, `og:image` por seção |
 | 12 | Novo acontecimento só em `conteudo/` | ✅ | acontecimento de teste em Santos apareceu na linha do tempo, no mapa e em `/lugares/santos/`; removido em seguida |
-| 13 | Teste com 3 leitores | ⏳ responsável (T084) | — |
+| 13 | Teste com 3 leitores | ✅ (2026-11-16) | Responsável e outros leitores revisaram o site e aprovaram; ajustes futuros conforme surgirem |
 
 ### Lighthouse (modo celular, 12.6.1, servidor local)
 

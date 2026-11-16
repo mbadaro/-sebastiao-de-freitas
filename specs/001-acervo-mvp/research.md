@@ -151,7 +151,10 @@ público (**Natural Earth**), com interação própria e leve:
 - Duas vistas: **"Portugal–Brasil"** (travessia atlântica) e **"Capitania de São Vicente"**
   (detalhe de São Paulo, Juqueri, Santos e arredores). O Guairá aparece na vista regional.
 - Lugares são elementos focáveis e clicáveis; ao selecionar um lugar, abre um painel com nome
-  histórico, nome atual, acontecimentos e fontes.
+  histórico, nome atual, acontecimentos e fontes. **Implementado (2026-11-15) sem JavaScript**:
+  cada lugar do SVG é um link para a sua ficha na lista textual logo abaixo do mapa (destacada
+  com `:target`) e para `/lugares/<id>/`. Mesmo efeito, operável por teclado e leitor de tela,
+  sem código no navegador.
 - Trajetos documentados: linha contínua. Trajetos presumidos: linha tracejada **e** rótulo
   "presumido". Lugares aproximados: área sombreada em vez de ponto. A diferença nunca depende só
   de cor (WCAG).
