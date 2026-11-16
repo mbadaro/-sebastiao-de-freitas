@@ -3,6 +3,11 @@
 import Secao from './Secao.astro';
 import { url } from '../lib/url';
 
+interface Props {
+  superficie?: 'clara' | 'escura';
+}
+const { superficie = 'escura' } = Astro.props;
+
 const caminhos = [
   { titulo: 'A exposição', texto: 'A biografia em capítulos, do Algarve aos últimos anos.', caminho: 'exposicao/' },
   { titulo: 'Raízes sefarditas', texto: 'Quem foram os sefarditas e os cristãos-novos, e o que se sabe do vínculo de Sebastião.', caminho: 'sefarditas/' },
@@ -13,7 +18,7 @@ const caminhos = [
 ];
 ---
 
-<Secao superficie="escura" rotuloId="descubra-titulo">
+<Secao superficie={superficie} rotuloId="descubra-titulo">
   <p class="sobretitulo">Descubra a história</p>
   <h2 id="descubra-titulo">Por onde começar</h2>
   <ul class="cartoes">
@@ -55,7 +60,7 @@ const caminhos = [
   }
   .cartao:hover {
     border-color: var(--cor-dourado);
-    background: rgb(36 71 96 / 0.45);
+    background: rgb(182 154 112 / 0.12);
   }
   .cartao__titulo {
     font-family: var(--fonte-titulo);

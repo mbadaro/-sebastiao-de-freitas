@@ -28,7 +28,8 @@ const marcos = await Promise.all(
     if (!a) throw new Error(`inicio.md: acontecimento "${id}" não existe`);
     const fontes = await fontesCurtas(a.data.referencias);
     return {
-      data: formatarData(a.data.data),
+      // Na página inicial, só o ano (o mês e o dia ficam na linha do tempo).
+      data: formatarData({ ...a.data.data, mes: undefined, dia: undefined, exibicao: undefined }),
       titulo: a.data.titulo,
       natureza: a.data.natureza,
       fonte: fontes.map((f) => f.html).join('; '),
@@ -47,11 +48,13 @@ const lugares = (await getCollection('lugares')).filter((l) => l.data.vista.incl
     fonteSefardita={p.abertura.fonte_sefardita}
   />
 
-  <PreviaTrajetoria marcos={marcos} />
+  <DescubraAHistoria superficie="clara" />
 
   <PreviaLugares lugares={lugares} />
 
-  <Secao superficie="clara" rotuloId="documentos-titulo">
+  <PreviaTrajetoria marcos={marcos} />
+
+  <Secao superficie="clara" rotuloId="documentos-titulo" classe="secao--divisoria">
     <p class="sobretitulo">Documentos e evidências</p>
     <h2 id="documentos-titulo">O que sustenta esta história</h2>
     <p class="documentos__intro">
@@ -66,10 +69,12 @@ const lugares = (await getCollection('lugares')).filter((l) => l.data.vista.incl
     </p>
   </Secao>
 
-  <DescubraAHistoria />
 </LayoutBase>
 
 <style>
+  :global(.secao--divisoria) {
+    border-top: var(--linha-fina) solid var(--borda);
+  }
   .documentos__intro {
     color: var(--texto-secundario);
     margin-bottom: var(--esp-5);

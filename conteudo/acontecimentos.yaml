@@ -304,7 +304,7 @@
 
 - id: declaracao-de-cristao-novo
   titulo: Denunciado por um comentário sobre a Virgem, declara ao Santo Ofício ser cristão-novo
-  data: { ano: 1627, precisao: intervalo, ate: 1628, exibicao: durante a visitação de 1627–1628 }
+  data: { ano: 1627, precisao: intervalo, ate: 1628 }
   tipo: trajetoria
   natureza: fato
   referencias:

@@ -86,7 +86,10 @@ export async function gerarMapa(vista: Vista) {
     if (l.data.raio_km) raio = Math.abs(proj([lon, lat + l.data.raio_km / 111])![1] - y);
     // Desloca o marcador se cair sobre outro (ex.: Alagoa e Silves na vista do Atlântico).
     let [mx, my] = [x, y];
-    while (pontos.some((p) => Math.hypot(p.mx - mx, p.my - my) < 24)) my += 26;
+    // Sobe se o lugar fica ao norte do vizinho em que esbarra; desce se fica ao sul.
+    const vizinho = pontos.find((p) => Math.hypot(p.mx - mx, p.my - my) < 24);
+    const passo = vizinho && y < vizinho.y ? -26 : 26;
+    while (pontos.some((p) => Math.hypot(p.mx - mx, p.my - my) < 24)) my += passo;
     pontos.push({ id: l.id, n: pontos.length + 1, nome: l.data.nome_historico, x, y, mx, my, raio, precisao: l.data.precisao });
   }
 
