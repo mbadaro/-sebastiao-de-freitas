@@ -302,7 +302,7 @@ passar pela narrativa.
 - [X] T083 Executar `quickstart.md` completo (seções 1 a 4), Lighthouse em página inicial, capítulo e mapa, e navegação com NVDA; registrar resultados em `specs/001-acervo-mvp/checklists/verificacao-final.md`
 - [X] T084 ⏳ Realizar o teste com 3 leitores (recrutados pelo responsável) sem conhecimento prévio (SC-001) e registrar o resultado em `specs/001-acervo-mvp/checklists/verificacao-final.md` — feito pelo responsável em 2026-11-16.
 - [X] T085 ⏳ 🛑 Registrar o domínio `.com.br` (nome escolhido e registro pago pelo responsável no Registro.br), configurar DNS, `public/CNAME` e a opção `site` em `astro.config.mjs`
-- [ ] T086 ⏳ 🛑 Publicar a versão final no domínio próprio, após aprovação explícita do responsável, e enviar o sitemap ao Google Search Console (conta do responsável)
+- [X] T086 ⏳ 🛑 Publicar a versão final no domínio próprio, após aprovação explícita do responsável, e enviar o sitemap ao Google Search Console (conta do responsável)
 
 ---
 
