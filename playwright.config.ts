@@ -9,12 +9,12 @@ export default defineConfig({
   timeout: 60_000,
   reporter: 'list',
   use: {
-    baseURL: 'http://localhost:4321/sebastiao-de-freitas/',
+    baseURL: 'http://localhost:4321/',
   },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
   webServer: {
     command: 'npx astro preview --port 4321 --ignore-lock',
-    url: 'http://localhost:4321/sebastiao-de-freitas/',
+    url: 'http://localhost:4321/',
     reuseExistingServer: !process.env.CI,
   },
 });

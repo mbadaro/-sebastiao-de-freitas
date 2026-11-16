@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mbadaro.github.io/sebastiao-de-freitas/sitemap-index.xml
+Sitemap: https://sebastiaodefreitas.com.br/sitemap-index.xml

@@ -5,9 +5,9 @@ import remarkFonte from './src/plugins/remark-fonte.ts';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  // Endereço provisório da prévia; muda para o domínio próprio na T085.
-  site: 'https://mbadaro.github.io',
-  base: '/sebastiao-de-freitas',
+  // Domínio próprio (T085, 2026-11-16).
+  site: 'https://sebastiaodefreitas.com.br',
+  base: '/',
   trailingSlash: 'always',
   output: 'static',
   // Sitemap para buscadores (T080); a página 404 fica de fora.

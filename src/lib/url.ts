@@ -1,7 +1,7 @@
 /**
  * Monta endereços internos respeitando o prefixo do site (`base`).
- * Hoje o site roda em /sebastiao-de-freitas/; com domínio próprio, em /.
- * Uso: url('exposicao/') → '/sebastiao-de-freitas/exposicao/'
+ * Com domínio próprio o site roda na raiz (/); se voltar a um subcaminho, basta mudar `base`.
+ * Uso: url('exposicao/') → '/exposicao/'
  */
 export function url(caminho = ''): string {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');

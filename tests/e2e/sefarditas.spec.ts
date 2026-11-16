@@ -1,7 +1,7 @@
 // T058 (US2): a página das raízes sefarditas cobre os tópicos e liga ao capítulo das raízes.
 import { test, expect } from '@playwright/test';
 
-const BASE = '/sebastiao-de-freitas/';
+const BASE = '/';
 
 test('página sefarditas traz os tópicos de US2-1', async ({ page }) => {
   await page.goto(`${BASE}sefarditas/`);

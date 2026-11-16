@@ -40,7 +40,7 @@ test.describe('linha do tempo (US3)', () => {
   test('sem JavaScript, tudo continua visível', async ({ browser }) => {
     const ctx = await browser.newContext({ javaScriptEnabled: false });
     const page = await ctx.newPage();
-    await page.goto('http://localhost:4321/sebastiao-de-freitas/linha-do-tempo/');
+    await page.goto('http://localhost:4321/linha-do-tempo/');
     await expect(page.locator('.evento')).toHaveCount(acontecimentos.length);
     await expect(page.locator('[data-filtro]')).toBeHidden();
     await ctx.close();
